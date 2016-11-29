@@ -161,7 +161,7 @@ class cmfApplicationTemplate {
 
     private function phtml($p58) {
         extract($this->getAssing());
-        require(cAppPathTemplates . $p58 . '.phtml');
+        require(preg_replace('~(/([^\/.]+)(\.php))$~isuU', '/templates/$2.phtml', cCompile::path('application', cAppPathController . $p58 . '.php')));
     }
 
 }

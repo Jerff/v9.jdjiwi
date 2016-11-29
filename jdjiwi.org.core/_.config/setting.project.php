@@ -16,7 +16,7 @@ define('cCacheSQLitePath', cDataPath . 'cache/SQLite/mydb.sq3');
 define('cAppPathAjax', cSoursePath . 'application/ajax/');
 define('cAppPathController', cSoursePath . 'application/controller/');
 define('cAppPathTemplates', cSoursePath . 'application/templates/');
-define('cAppPathPage', cSoursePath . 'application/templates/.page/');
+define('cAppPathPage', cSoursePath . 'application/templates/');
 
 
 define('cAdminPath', cSoursePath . 'admin/');
