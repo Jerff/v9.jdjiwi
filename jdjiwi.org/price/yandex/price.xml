@@ -1,0 +1,3046 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE yml_catalog SYSTEM "shops.dtd">
+<yml_catalog date="2012-10-25 14:19">
+<shop>
+    <name>Интернет магазин одежды</name>
+    <company>SOUTHMOON</company>
+    <url>http://www.core.ru/</url>
+
+    <currencies>
+        <currency id="RUR" rate="1"/>
+    </currencies>
+
+    <categories>
+        <category id="1">Женская одежда и аксессуары</category>
+        <category id="9">Модная мужская одежда</category>
+        <category id="22">Подарки и украшения</category>
+        <category id="49" parentId="1">Сумки</category>
+        <category id="18" parentId="1">Футболки женские</category>
+        <category id="19" parentId="1">Велюровые костюмы</category>
+        <category id="21" parentId="1">Кошельки женские</category>
+        <category id="33" parentId="1">Платья</category>
+        <category id="37" parentId="1">Толстовки женские</category>
+        <category id="38" parentId="1">Куртки женские</category>
+        <category id="23" parentId="22">Брелки</category>
+        <category id="20" parentId="9">Ремни мужские</category>
+        <category id="24" parentId="9">Мужское нижнее белье</category>
+        <category id="25" parentId="9">Футболки мужские</category>
+        <category id="32" parentId="9">Футболки-поло</category>
+        <category id="27" parentId="9">Мужские спортивные штаны</category>
+        <category id="28" parentId="9">Джинсы мужские</category>
+        <category id="29" parentId="9">Шорты мужские</category>
+        <category id="30" parentId="9">Рубашки мужские</category>
+        <category id="31" parentId="9">Толстовки мужские</category>
+        <category id="34" parentId="9">Головные уборы</category>
+        <category id="35" parentId="9">Куртки мужские</category>
+        <category id="36" parentId="9">Мужские шарфы</category>
+        <category id="39" parentId="9">Свитера мужские</category>
+        <category id="40" parentId="9">Под заказ</category>
+        <category id="41" parentId="40">Толстовки</category>
+        <category id="42" parentId="40">Футболки-поло</category>
+        <category id="43" parentId="40">Бейсболки</category>
+        <category id="44" parentId="40">Куртки и жилеты</category>
+        <category id="45" parentId="40">Шорты</category>
+        <category id="46" parentId="40">Спортивные штаны</category>
+        <category id="47" parentId="40">Свитера и джемперы</category>
+        <category id="48" parentId="40">Спортивные куртки</category>
+    </categories>
+
+    <offers>
+        <offer id="271" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/polo/futbolka-polo_dsquared2_temno-sinjaja_s_nashivkoj/</url>
+            <price>1600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>32</categoryId>
+            <picture>http://www.core.ru/files/product/section/37/0/futbolka-polo_dsquared2_temno-sinjaja_s_nashivkoj.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>&lt;nobr&gt;Футболка-поло&lt;/nobr&gt; «Dsquared2» &lt;nobr&gt;темно-синяя&lt;/nobr&gt; с&amp;nbsp;нашивкой</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="272" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/polo/futbolka-polo_dsquared2_temno-sinjaja/</url>
+            <price>1600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>32</categoryId>
+            <picture>http://www.core.ru/files/product/section/17/6/futbolka-polo_dsquared2_temno-sinjaja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>&lt;nobr&gt;Футболка-поло&lt;/nobr&gt; «Dsquared2» &lt;nobr&gt;темно-синяя&lt;/nobr&gt;, на&amp;nbsp;груди&amp;nbsp;— значек</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="277" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/polo/futbolka-polo_dsquared2_gheltaja/</url>
+            <price>1600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>32</categoryId>
+            <picture>http://www.core.ru/files/product/section/1/4/futbolka-polo_dsquared2_gheltaja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>&lt;nobr&gt;Футболка-поло&lt;/nobr&gt; «Dsquared2» желтая</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="278" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/polo/futbolka-polo_dsquared2_krasnaja/</url>
+            <price>1600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>32</categoryId>
+            <picture>http://www.core.ru/files/product/section/34/15/futbolka-polo_dsquared2_krasnaja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>&lt;nobr&gt;Футболка-поло&lt;/nobr&gt; «Dsquared2» красная</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="274" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/polo/futbolka-polo_mughskaja_dsquared2_belaja_so_znachkom/</url>
+            <price>1600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>32</categoryId>
+            <picture>http://www.core.ru/files/product/section/41/0/futbolka-polo_mughskaja_dsquared2_belaja_so_znachkom.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>&lt;nobr&gt;Футболка-поло&lt;/nobr&gt; мужская «Dsquared2» белая со&amp;nbsp;значком</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="87" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/polo/futbolka_mughskaja_fila/</url>
+            <price>1200</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>32</categoryId>
+            <picture>http://www.core.ru/files/product/section/4/37/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FILA</vendor>
+            <model>&lt;nobr&gt;Футболка-поло&lt;/nobr&gt; мужская «FILA» в&amp;nbsp;полоску</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="158" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/tolstovki_pod_zakaz/casual_tolstovka_fila_settanta_mk1_zelenaja/</url>
+            <price>5000</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>41</categoryId>
+            <picture>http://www.core.ru/files/product/section/21/10/casual_tolstovka_fila_settanta_mk1_zelenaja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FILA</vendor>
+            <model>Casual толстовка Fila Settanta Mk1 зеленая</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="159" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/tolstovki_pod_zakaz/casual_tolstovka_fila_settanta_mk1_krasnaja/</url>
+            <price>5000</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>41</categoryId>
+            <picture>http://www.core.ru/files/product/section/14/39/casual_tolstovka_fila_settanta_mk1_krasnaja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FILA</vendor>
+            <model>Casual толстовка Fila Settanta Mk1 красная</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="160" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/tolstovki_pod_zakaz/casual_tolstovka_fila_settanta_mk1_sinjaja/</url>
+            <price>5000</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>41</categoryId>
+            <picture>http://www.core.ru/files/product/section/40/9/casual_tolstovka_fila_settanta_mk1_sinjaja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FILA</vendor>
+            <model>Casual толстовка Fila Settanta Mk1 синяя</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="262" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/beghevaja_ghenskaja_sumka/</url>
+            <price>3600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/36/48/beghevaja_ghenskaja_sumka_foto.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Бежевая женская сумка</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="193" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/beghevaja_sumka_iz_koghi_skata/</url>
+            <price>12700</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/7/24/beghevaja_ghenskaja_sumka_iz_koghi_skata.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Бежевая сумка из кожи ската</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="145" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/bejsbolki_pod_zakaz/bejsbolka_mughskaja_sergio_tacchini_belaja/</url>
+            <price>2100</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>43</categoryId>
+            <picture>http://www.core.ru/files/product/section/14/2/bejsbolka_sergio_tacchini_belaja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>SERGIO TACCHINI</vendor>
+            <model>Бейсболка белая</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="144" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/bejsbolki_pod_zakaz/bejsbolka_mughskaja_sergio_tacchini_golubaja/</url>
+            <price>2100</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>43</categoryId>
+            <picture>http://www.core.ru/files/product/section/40/49/bejsbolka_mughskaja_sergio_tacchini_golubaja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>SERGIO TACCHINI</vendor>
+            <model>Бейсболка мужская Sergio Tacchini голубая</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="179" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/golovnye_ubory/bejsbolka_mughskaja_subinint/</url>
+            <price>700</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>34</categoryId>
+            <picture>http://www.core.ru/files/product/section/23/8/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>SUBININT</vendor>
+            <model>Бейсболка мужская SUBININT</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="268" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/golovnye_ubory/bejsbolka_mughskaja_dsquared2_belaja/</url>
+            <price>600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>34</categoryId>
+            <picture>http://www.core.ru/files/product/section/32/7/bejsbolka_mughskaja_dsquared2_belaja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>Бейсболка мужская «Dsquared2» белая</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="270" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/golovnye_ubory/bejsbolka_mughskaja_dsquared2_gheltaja/</url>
+            <price>600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>34</categoryId>
+            <picture>http://www.core.ru/files/product/section/20/40/bejsbolka_mughskaja_dsquared2_gheltaja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>Бейсболка мужская «Dsquared2» желтая</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="269" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/golovnye_ubory/bejsbolka_mughskaja_dsquared2_chernaja/</url>
+            <price>600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>34</categoryId>
+            <picture>http://www.core.ru/files/product/section/2/12/bejsbolka_mughskaja_dsquared2_chernaja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>Бейсболка мужская «Dsquared2» черная</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="131" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/bejsbolki_pod_zakaz/bejsbolka_mughskaja_chernaja_80s_baseball/</url>
+            <price>2100</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>43</categoryId>
+            <picture>http://www.core.ru/files/product/section/49/29/bejsbolka_mughskaja_chernaja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>SERGIO TACCHINI</vendor>
+            <model>Бейсболка мужская черная 80s Baseball</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="37" type="vendor.model" available="false">
+            <url>http://www.core.ru/gifts_and_decorations/brelki/brelok_panda/</url>
+            <price>1500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>23</categoryId>
+            <picture>http://www.core.ru/files/product/section/45/38/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>PRADA</vendor>
+            <model>&quot;ПАНДА&quot;</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="113" type="vendor.model" available="false">
+            <url>http://www.core.ru/gifts_and_decorations/brelki/brelok_gucci_sobachka/</url>
+            <price>1500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>23</categoryId>
+            <picture>http://www.core.ru/files/product/section/11/41/2.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>GUCCI</vendor>
+            <model>GUCCI собачка</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="31" type="vendor.model" available="false">
+            <url>http://www.core.ru/gifts_and_decorations/brelki/brelok_dva_serdechka/</url>
+            <price>600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>23</categoryId>
+            <picture>http://www.core.ru/files/product/section/9/49/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>GUCCI</vendor>
+            <model>«ДВА СЕРДЕЧКА»</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="38" type="vendor.model" available="false">
+            <url>http://www.core.ru/gifts_and_decorations/brelki/brelok_serdechko/</url>
+            <price>600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>23</categoryId>
+            <picture>http://www.core.ru/files/product/section/22/35/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>PRADA</vendor>
+            <model>«СЕРДЕЧКО»</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="254" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/mats_costumes/veljurovyj_kostjum/</url>
+            <price>2600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>19</categoryId>
+            <picture>http://www.core.ru/files/product/section/7/36/kostjum_aleksa.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>MASHA TSIGAL</vendor>
+            <model>&amp;laquo;АЛЕКСА&amp;raquo;</model>
+            <description></description>
+            <sales_notes>В Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="117" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/mats_costumes/veljurovyj_kostjum_mashi_cigal_koshka_sirenevyj/</url>
+            <price>4000</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>19</categoryId>
+            <picture>http://www.core.ru/files/product/section/40/49/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>MASHA TSIGAL</vendor>
+            <model>Маши Цигаль &amp;laquo;КОШКА&amp;raquo; сиреневый</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="116" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/mats_costumes/kostjum_mashi_cigal_krylja_neghno_goluboj/</url>
+            <price>3200</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>19</categoryId>
+            <picture>http://www.core.ru/files/product/section/16/42/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>MASHA TSIGAL</vendor>
+            <model>Маши Цигаль &amp;laquo;КРЫЛЬЯ&amp;raquo; нежно голубой</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="88" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/mats_costumes/seraja_koshka/</url>
+            <price>2600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>19</categoryId>
+            <picture>http://www.core.ru/files/product/section/28/25/1.3792.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>MASHA TSIGAL</vendor>
+            <model>Маши Цигаль &amp;laquo;серая кошка&amp;raquo;</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="24" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/mats_costumes/veljurovyj_kostjum_mashi_cigal_rozovaja_aleksa/</url>
+            <price>2600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>19</categoryId>
+            <picture>http://www.core.ru/files/product/section/5/9/veljurovyj_kostjum_mashi_cigal.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>MASHA TSIGAL</vendor>
+            <model>Маши Цигаль розовая &amp;laquo;АЛЕКСА&amp;raquo;</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="21" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/mats_costumes/pink_bunny/</url>
+            <price>2600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>19</categoryId>
+            <picture>http://www.core.ru/files/product/section/5/31/2.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>MASHA TSIGAL</vendor>
+            <model>Маши Цигаль розовый &amp;laquo;ЗАЙЧИК&amp;raquo;</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="23" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/mats_costumes/seraja_aleksa/</url>
+            <price>2600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>19</categoryId>
+            <picture>http://www.core.ru/files/product/section/22/21/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>MASHA TSIGAL</vendor>
+            <model>Маши Цигаль серая &amp;laquo;АЛЕКСА&amp;raquo;</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="15" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/mats_costumes/dark_gray_cat/</url>
+            <price>2600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>19</categoryId>
+            <picture>http://www.core.ru/files/product/section/27/17/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>MASHA TSIGAL</vendor>
+            <model>Маши Цигаль темно-серая &amp;laquo;КОШКА&amp;raquo;</model>
+            <description></description>
+        </offer>
+        <offer id="16" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/mats_costumes/black_cat/</url>
+            <price>2600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>19</categoryId>
+            <picture>http://www.core.ru/files/product/section/1/47/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>MASHA TSIGAL</vendor>
+            <model>Маши Цигаль черная &amp;laquo;КОШКА&amp;raquo;</model>
+            <description></description>
+            <sales_notes>в москве бесплатно</sales_notes>
+        </offer>
+        <offer id="22" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/mats_costumes/black_bunny/</url>
+            <price>2600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>19</categoryId>
+            <picture>http://www.core.ru/files/product/section/42/39/2.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>MASHA TSIGAL</vendor>
+            <model>Маши Цигаль черный &amp;laquo;ЗАЙЧИК&amp;raquo;</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="107" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/svitera_mughskie/vintaghnyj_mughskoj_sviter_black_pepper/</url>
+            <price>2850</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>39</categoryId>
+            <picture>http://www.core.ru/files/product/section/4/42/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>BLACK PEPPER</vendor>
+            <model>Винтажный мужской свитер BLACK PEPPER</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="172" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/svitera_i_dghempery/dghemper_mughskoj_fila_vintage_-_fonatio_zelenyj/</url>
+            <price>4500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>47</categoryId>
+            <picture>http://www.core.ru/files/product/section/37/0/dghemper_mughskoj_fila_vintage_-_fonatio_zelenyj.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FILA</vendor>
+            <model>Джемпер мужской Fila Vintage - Fonatio зеленый</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="170" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/svitera_i_dghempery/dghemper_mughskoj_fila_vintage_-_fonatio_seryj/</url>
+            <price>4500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>47</categoryId>
+            <picture>http://www.core.ru/files/product/section/29/49/dghemper_mughskoj_fila_vintage_-_fonatio_seryj.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FILA</vendor>
+            <model>Джемпер мужской Fila Vintage - Fonatio серый</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="171" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/svitera_i_dghempery/dghemper_mughskoj_fila_vintage_-_fonatio_temno-sinij/</url>
+            <price>4500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>47</categoryId>
+            <picture>http://www.core.ru/files/product/section/28/46/dghemper_mughskoj_fila_vintage_-_fonatio_temno-sinij.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FILA</vendor>
+            <model>Джемпер мужской Fila Vintage - Fonatio Темно-синий</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="279" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mens_shorts/dghinsovye_mughskie_shorty_dsquared2_toronto/</url>
+            <price>1500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>29</categoryId>
+            <picture>http://www.core.ru/files/product/section/0/36/dghinsovye_mughskie_shorty_dsquared2_toronto.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>Джинсовые мужские шорты «Dsquared2» toronto</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="59" type="vendor.model" available="false">
+            <url>http://www.core.ru//</url>
+            <price>1600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>28</categoryId>
+            <picture>http://www.core.ru/files/product/section/38/27/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>&quot;MILAN&quot;</model>
+            <description></description>
+            <sales_notes>Джинсы DSQUARED &quot;MILAN&quot;</sales_notes>
+        </offer>
+        <offer id="74" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mens_jeans/dghinsy_dsquared_classic/</url>
+            <price>2000</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>28</categoryId>
+            <picture>http://www.core.ru/files/product/section/1/33/dghinsy_dsquared2_classic.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>«DSQUARED» Classic</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="73" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mens_jeans/dghinsy_fine_quality_fashion/</url>
+            <price>2000</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>28</categoryId>
+            <picture>http://www.core.ru/files/product/section/2/25/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>«FINE QUALITY FASHION»</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="105" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mens_jeans/dghinsy_mughskie_dsquared_grotch_bottom/</url>
+            <price>2250</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>28</categoryId>
+            <picture>http://www.core.ru/files/product/section/26/31/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>DSQUARED «Grotch Bottom»</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="276" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mens_jeans/dghinsy_mughskie_dsquared2_chernye/</url>
+            <price>2000</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>28</categoryId>
+            <picture>http://www.core.ru/files/product/section/35/11/dghinsy_mughskie_dsquared2.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>«Dsquared2» черные</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="67" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mens_jeans/dghinsy_craftsmanship_golubye/</url>
+            <price>2000</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>28</categoryId>
+            <picture>http://www.core.ru/files/product/section/34/7/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>«Dsquared2»&amp;nbsp;— Craftsmanship (голубые)</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="62" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mens_jeans/dghinsy_so_znachkami_craftsmanship/</url>
+            <price>1600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>28</categoryId>
+            <picture>http://www.core.ru/files/product/section/17/45/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>со значками &quot;CRAFTSMANSHIP&quot;</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="133" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/kurtki_pod_zakaz/ghaket_bez_rukavov_courmayer/</url>
+            <price>4300</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>44</categoryId>
+            <picture>http://www.core.ru/files/product/section/36/35/ghaket_sergio_tacchini_courmayer.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>SERGIO TACCHINI</vendor>
+            <model>Жакет без рукавов Courmayer</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="134" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/kurtki_pod_zakaz/ghaket_mughskoj_bez_rukavov_goluboj/</url>
+            <price>4500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>44</categoryId>
+            <picture>http://www.core.ru/files/product/section/42/5/ghaket_bez_rukavov_sergio_tacchini_st_marino.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>SERGIO TACCHINI</vendor>
+            <model>Жакет мужской без рукавов голубой</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="96" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/tolstovki_ghenskie/ghenskaja_belaja_tolstovka_s_kapjushonom/</url>
+            <price>1250</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>37</categoryId>
+            <picture>http://www.core.ru/files/product/section/24/20/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Женская белая толстовка с капюшоном</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="212" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/ghenskaja_sumka_iz_koghi_zmei/</url>
+            <price>12200</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/13/46/ghenskaja_sumka_iz_koghi_zmei.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Женская сумка из кожи змеи</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="214" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/ghenskij_klatch_iz_koghi_zmei/</url>
+            <price>11300</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/6/48/ghenskij_klatch_iz_koghi_zmei.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Женский клатч из кожи змеи</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="143" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/kurtki_pod_zakaz/ghilet_mughskoj_ellesse_temno-sinij/</url>
+            <price>5000</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>44</categoryId>
+            <picture>http://www.core.ru/files/product/section/19/50/ghilet_mughskoj_ellesse_temno-sinij.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>ELLESSE</vendor>
+            <model>Жилет мужской Ellesse темно-синий</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="137" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/shorty_pod_zakaz/klassicheskie_retro_shorty_ellesse_chernye/</url>
+            <price>3500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>45</categoryId>
+            <picture>http://www.core.ru/files/product/section/3/2/shorty_mughskie_ehlisse.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>ELLESSE</vendor>
+            <model>Классические ретро шорты Ellesse черные</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="206" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/klatch/</url>
+            <price>6100</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/14/40/klatch_iz_koghi_skata._razmer_21sm_x_11sm..jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Клатч</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="216" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/klatch_iz_koghi_zmei/</url>
+            <price>4100</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/42/20/klatch_iz_koghi_zmei.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Клатч из кожи змеи</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="204" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/klatch_iz_koghi_skata/</url>
+            <price>11600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/50/26/klatch_iz_koghi_skata.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Клатч из кожи ската</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="251" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/klatch_chernyj_iz_naturalnoj_koghi/</url>
+            <price>5500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/42/31/klatch_chernyj_iz_naturalnoj_koghi.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Клатч черный из натуральной кожи</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="218" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/womens_wallets/klatch-koshelek_iz_koghi_skata/</url>
+            <price>3800</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>21</categoryId>
+            <picture>http://www.core.ru/files/product/section/46/0/klatch-koshelek_iz_koghi_skata.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Клатч-кошелек из кожи ската</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="250" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/korichnevaja_sumka_iz_naturalnoj_koghi/</url>
+            <price>6200</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/31/16/korichnevaja_sumka_iz_naturalnoj_koghi.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Коричневая сумка из натуральной кожи</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="118" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/mats_costumes/kostjum_mashi_cigal_koshka_nasythenno_rozovyj/</url>
+            <price>4000</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>19</categoryId>
+            <picture>http://www.core.ru/files/product/section/2/32/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>MASHA TSIGAL</vendor>
+            <model>Костюм Маши Цигаль &amp;laquo;КОШКА&amp;raquo; насыщенно розовый</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="233" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/womens_wallets/koshelek/</url>
+            <price>3000</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>21</categoryId>
+            <picture>http://www.core.ru/files/product/section/8/8/koshelek_chernyj_-_kogha_skata.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model></model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="235" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/womens_wallets/koshelek_1/</url>
+            <price>3000</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>21</categoryId>
+            <picture>http://www.core.ru/files/product/section/37/43/koshelek.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model></model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="238" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/womens_wallets/koshelek_klatch_s_serdechkom/</url>
+            <price>2900</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>21</categoryId>
+            <picture>http://www.core.ru/files/product/section/4/9/koshelek_-_klatch_s_serdechkom.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>- клатч с сердечком</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="30" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/womens_wallets/koshelek_gucci_181593/</url>
+            <price>1750</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>21</categoryId>
+            <picture>http://www.core.ru/files/product/section/11/25/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>GUCCI</vendor>
+            <model>Gucci</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="226" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/womens_wallets/koshelek_ghenskij/</url>
+            <price>3600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>21</categoryId>
+            <picture>http://www.core.ru/files/product/section/3/27/koshelek_ghenskij.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>женский</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="232" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/womens_wallets/koshelek_ghenskij_iz_skata/</url>
+            <price>3100</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>21</categoryId>
+            <picture>http://www.core.ru/files/product/section/19/8/koshelek_ghenskij_iz_skata.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>женский из ската</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="29" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/womens_wallets/koshelek_zolotistyj/</url>
+            <price>1750</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>21</categoryId>
+            <picture>http://www.core.ru/files/product/section/10/49/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>GUCCI</vendor>
+            <model>золотистый Gucci</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="227" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/womens_wallets/koshelek_iz_koghi_pitona/</url>
+            <price>3200</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>21</categoryId>
+            <picture>http://www.core.ru/files/product/section/48/43/koshelek_iz_koghi_pitona.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>из кожи питона</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="217" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/womens_wallets/koshelek_iz_koghi_skata_gladkij/</url>
+            <price>3800</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>21</categoryId>
+            <picture>http://www.core.ru/files/product/section/2/45/koshelek_iz_koghi_skata_gladkij.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>из кожи ската (гладкий)</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="224" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/womens_wallets/koshelek_iz_koghi_skata_c_otdelkoj_-_koghi_pitona/</url>
+            <price>3600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>21</categoryId>
+            <picture>http://www.core.ru/files/product/section/37/13/koshelek_iz_koghi_skata_c_otdelkoj_-_koghi_pitona.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>из кожи ската c отделкой - кожи питона</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="230" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/womens_wallets/koshelek_iz_koghi_skata_c_risunkom/</url>
+            <price>3100</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>21</categoryId>
+            <picture>http://www.core.ru/files/product/section/33/15/koshelek_iz_koghi_skata_c_risunkom.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>из кожи ската c рисунком</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="220" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/womens_wallets/koshelek_iz_koghi_skata_korichnevyj/</url>
+            <price>3800</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>21</categoryId>
+            <picture>http://www.core.ru/files/product/section/31/33/koshelek_iz_koghi_skata_korichnevyj.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>из кожи ската коричневый</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="236" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/womens_wallets/koshelek_iz_koghi_skata_rozovyj/</url>
+            <price>2900</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>21</categoryId>
+            <picture>http://www.core.ru/files/product/section/30/25/koshelek_iz_koghi_skata_rozovyj.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>из кожи ската розовый</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="223" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/womens_wallets/koshelek_iz_koghi_skata_s_risunkom/</url>
+            <price>3700</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>21</categoryId>
+            <picture>http://www.core.ru/files/product/section/50/20/koshelek_iz_koghi_skata_s_risunkom.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>из кожи ската с рисунком</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="231" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/womens_wallets/koshelek_iz_koghi_skata_s_risunkom_tigra/</url>
+            <price>3100</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>21</categoryId>
+            <picture>http://www.core.ru/files/product/section/1/5/koshelek_iz_koghi_skata_s_risunkom_tigra.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>из кожи ската с рисунком тигра</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="234" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/womens_wallets/koshelek_iz_koghi_skata_chernyj/</url>
+            <price>3000</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>21</categoryId>
+            <picture>http://www.core.ru/files/product/section/5/38/koshelek_iz_koghi_skata_chernyj.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>из кожи ската черный</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="222" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/womens_wallets/koshelek_iz_koghi_skata_otdelka_-_kogha_pitona/</url>
+            <price>3700</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>21</categoryId>
+            <picture>http://www.core.ru/files/product/section/16/16/koshelek_iz_koghi_skata_otdelka_-_kogha_pitona.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>из кожи ската, отделка - кожа питона</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="228" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/womens_wallets/koshelek_krasnyj_iz_koghi_skata/</url>
+            <price>3200</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>21</categoryId>
+            <picture>http://www.core.ru/files/product/section/49/5/koshelek_krasnyj_iz_koghi_skata.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>красный из кожи ската</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="229" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/womens_wallets/koshelek_rozovyj_iz_koghi_skata/</url>
+            <price>3200</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>21</categoryId>
+            <picture>http://www.core.ru/files/product/section/6/24/koshelek_rozovyj_iz_koghi_skata.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>розовый из кожи ската</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="221" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/womens_wallets/koshelek_chernyj_s_belymi_vstavkami_iz_koghi_skata/</url>
+            <price>3700</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>21</categoryId>
+            <picture>http://www.core.ru/files/product/section/33/45/koshelek_chernyj_s_belymi_vstavkami_iz_koghi_skata.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>черный с белыми вставками из кожи ската</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="203" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/krasivaja_sumka_iz_koghi_skata/</url>
+            <price>12200</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/24/19/krasivaja_ghenskaja_sumka_iz_koghi_skata.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Красивая сумка из кожи ската</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="195" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/krasnaja_ghenskaja_sumka_iz_koghi_skata/</url>
+            <price>12600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/3/1/krasnaja_ghenskaja_sumka_iz_koghi_skata_s_rombikami.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Красная женская сумка из кожи ската</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="211" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/krasnaja_sumka_iz_koghi_zmei/</url>
+            <price>13400</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/16/30/krasnaja_sumka_iz_koghi_zmei.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Красная сумка из кожи змеи</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="209" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/krasnaja_sumka_iz_koghi_krokodila/</url>
+            <price>27800</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/34/6/krasnaja_sumka_iz_koghi_krokodila.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Красная сумка из кожи крокодила</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="194" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/krasnaja_sumka_iz_koghi_skata/</url>
+            <price>12600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/6/12/krasnaja_ghenskaja_sumka_iz_koghi_skata.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Красная сумка из кожи ската</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="219" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/womens_wallets/krasnyj_koshelek_iz_koghi_skata/</url>
+            <price>3800</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>21</categoryId>
+            <picture>http://www.core.ru/files/product/section/39/17/krasnyj_koshelek_iz_koghi_skata.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Красный кошелек из кожи ската</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="97" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/kurtki_ghenskie/kurtka_ghenskaja_iz_iskustvennogo_mexa_osen-vesna/</url>
+            <price>2280</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>38</categoryId>
+            <picture>http://www.core.ru/files/product/section/44/27/kurtka_dlja_devushek_iz_iskusstvennogo_mexa.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>из искусственного меха осень-весна</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="150" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/kurtki_pod_zakaz/kurtka_mughskaja_fila_vintage_golubaja/</url>
+            <price>6000</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>44</categoryId>
+            <picture>http://www.core.ru/files/product/section/37/2/kurtka_mughskaja_fila_vintage_golubaja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FILA</vendor>
+            <model>Куртка мужская Fila Vintage голубая</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="94" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/kurtki_mughskie/kurtka_mughskaja_fred_perry/</url>
+            <price>3500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>35</categoryId>
+            <picture>http://www.core.ru/files/product/section/49/13/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FRED PERRY</vendor>
+            <model>FRED PERRY белая</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="132" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/kurtki_pod_zakaz/kurtka_mughskaja_golubaja/</url>
+            <price>3500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>44</categoryId>
+            <picture>http://www.core.ru/files/product/section/37/39/kurtka_mughskaja_sergio_tacchini_golubaja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>SERGIO TACCHINI</vendor>
+            <model>Куртка мужская голубая</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="89" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/women_s_t-shirts/longsliv_ghenskij_chernyj/</url>
+            <price>1450</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>18</categoryId>
+            <picture>http://www.core.ru/files/product/section/0/7/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>ZENANA OUTFITTERS</vendor>
+            <model>Лонгслив женский черный</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="72" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/t-shirts/futbolka_seraja/</url>
+            <price>2250</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>25</categoryId>
+            <picture>http://www.core.ru/files/product/section/15/12/6.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DOLCE &amp; GABBANA</vendor>
+            <model>Майка мужская DOLCE &amp;amp; GABBANA серая</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="55" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mens_sports_pants/sportivnye_shtany_evolu/</url>
+            <price>1200</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>27</categoryId>
+            <picture>http://www.core.ru/files/product/section/11/49/2.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>EVOLU</vendor>
+            <model>Мужские спортивные штаны «EVOLU» серые</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="169" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/tolstovki_pod_zakaz/olimpijka_fila_vintage_royal_belaja_s_sinim/</url>
+            <price>3600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>41</categoryId>
+            <picture>http://www.core.ru/files/product/section/32/19/olimpijka_fila_vintage_royal_belaja_s_sinim.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FILA</vendor>
+            <model>Олимпийка Fila Vintage royal белая с синим</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="168" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/tolstovki_pod_zakaz/olimpijka_fila_vintage_temno-sinjaja/</url>
+            <price>4400</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>41</categoryId>
+            <picture>http://www.core.ru/files/product/section/17/47/olimpijka_fila_vintage_temno-sinjaja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FILA</vendor>
+            <model>Олимпийка Fila Vintage темно-синяя</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="65" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mens_shorts/shorty_belye/</url>
+            <price>1200</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>29</categoryId>
+            <picture>http://www.core.ru/files/product/section/43/7/2.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>Пляжные шорты мужские DSQUARED белые</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="129" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/polo_pod_zakaz/polo_ellesse_heritage_80s_grand_rousses/</url>
+            <price>3800</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>42</categoryId>
+            <picture>http://www.core.ru/files/product/section/27/35/polo_mughskoe_ellesse_heritage_80s_grand_rousses.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>ELLESSE</vendor>
+            <model>Поло Ellesse Heritage 80s Grand Rousses</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="80" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/polo/polo_dsquared_krasnyj/</url>
+            <price>1250</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>32</categoryId>
+            <picture>http://www.core.ru/files/product/section/17/30/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>Поло мужской DSQUARED красный</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="79" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/polo/polo_dsquared_palmy/</url>
+            <price>1250</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>32</categoryId>
+            <picture>http://www.core.ru/files/product/section/37/15/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>Поло мужской DSQUARED розовый (пальмы)</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="77" type="vendor.model" available="false">
+            <url>http://www.core.ru//</url>
+            <price>1600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>32</categoryId>
+            <picture>http://www.core.ru/files/product/section/1/36/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>Поло мужской DSQUARED фиолетовый</model>
+            <description></description>
+        </offer>
+        <offer id="128" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/polo_pod_zakaz/polo_mughskoj_ellesse_belyj/</url>
+            <price>3600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>42</categoryId>
+            <picture>http://www.core.ru/files/product/section/21/17/polo_mughskoj_ellesse_belyj.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>ELLESSE</vendor>
+            <model>Поло мужской Ellesse белый</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="163" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/polo_pod_zakaz/polo_mughskoj_fila_match/</url>
+            <price>3400</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>42</categoryId>
+            <picture>http://www.core.ru/files/product/section/32/7/polo_mughskoj_fila_match.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FILA</vendor>
+            <model>Поло мужской Fila Match</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="164" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/polo_pod_zakaz/polo_mughskoj_fila_match_belyj/</url>
+            <price>3400</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>42</categoryId>
+            <picture>http://www.core.ru/files/product/section/42/21/polo_mughskoj_fila_match_belyj.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FILA</vendor>
+            <model>Поло мужской Fila Match белый</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="165" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/polo_pod_zakaz/polo_mughskoj_fila_match_krasnyj/</url>
+            <price>3400</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>42</categoryId>
+            <picture>http://www.core.ru/files/product/section/44/27/polo_mughskoj_fila_match_krasnyj.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FILA</vendor>
+            <model>Поло мужской Fila Match красный</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="166" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/polo_pod_zakaz/polo_mughskoj_fila_match_seryj/</url>
+            <price>3400</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>42</categoryId>
+            <picture>http://www.core.ru/files/product/section/46/5/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FILA</vendor>
+            <model>Поло мужской Fila Match серый</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="167" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/polo_pod_zakaz/polo_mughskoj_fila_match_sinij/</url>
+            <price>3400</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>42</categoryId>
+            <picture>http://www.core.ru/files/product/section/24/29/polo_mughskoj_fila_match_sinij.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FILA</vendor>
+            <model>Поло мужской Fila Match синий</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="191" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/polo_pod_zakaz/polo_mughskoj_fila_panatta_temno-sinij_s_belym_vorotnichkom/</url>
+            <price>3300</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>42</categoryId>
+            <picture>http://www.core.ru/files/product/section/15/28/polo_mughskoj_fila_panatta_temno-sinij_s_belym_vorotnichkom.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FILA</vendor>
+            <model>Поло мужской Fila Panatta темно-синий с белым воротничком</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="189" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/polo_pod_zakaz/polo_mughskoj_fila_vintage_-_santiago_belyj_s_sinim_vorotnichkom/</url>
+            <price>3800</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>42</categoryId>
+            <picture>http://www.core.ru/files/product/section/16/6/polo_mughskoj_fila_vintage_-_santiago_belyj_s_sinim_vorotnichkom.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FILA</vendor>
+            <model>Поло мужской Fila Vintage - Santiago белый с синим воротничком</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="190" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/polo_pod_zakaz/polo_mughskoj_fila_vintage_boratella_temno-sinij/</url>
+            <price>4000</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>42</categoryId>
+            <picture>http://www.core.ru/files/product/section/31/42/polo_mughskoj_fila_vintage_boratella_temno-sinij.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FILA</vendor>
+            <model>Поло мужской Fila Vintage Boratella темно-синий</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="188" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/polo_pod_zakaz/polo_mughskoj_fila_vintage_c_belym_vorotnichkom/</url>
+            <price>3800</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>42</categoryId>
+            <picture>http://www.core.ru/files/product/section/40/12/polo_mughskoj_fila_vintage_c_belym_vorotnichkom.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FILA</vendor>
+            <model>Поло мужской Fila Vintage c белым воротничком</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="82" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/polo/polo_moncler/</url>
+            <price>1250</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>32</categoryId>
+            <picture>http://www.core.ru/files/product/section/16/7/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>MONCLER</vendor>
+            <model>Поло мужской MONCLER черный</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="176" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/polo_pod_zakaz/polo_mughskoj_seryj_fila_santiago/</url>
+            <price>4000</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>42</categoryId>
+            <picture>http://www.core.ru/files/product/section/42/43/polo_mughskoj_seryj_fila_santiago.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FILA</vendor>
+            <model>Поло мужской серый Fila Santiago</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="225" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/womens_wallets/portmone_iz_koghi_skata/</url>
+            <price>3600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>21</categoryId>
+            <picture>http://www.core.ru/files/product/section/39/3/portmone_iz_koghi_skata.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Портмоне из кожи ската</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="27" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mens_belts/remen_fish/</url>
+            <price>1600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>20</categoryId>
+            <picture>http://www.core.ru/files/product/section/32/37/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>DSQUARED &amp;laquo;Fish&amp;raquo;</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="28" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mens_belts/remen_basketball/</url>
+            <price>1600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>20</categoryId>
+            <picture>http://www.core.ru/files/product/section/28/16/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>DSQUARED &amp;laquo;баскетбол&amp;raquo;</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="109" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mens_belts/remen_mughskoj_dsquared_born_in_canada/</url>
+            <price>1650</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>20</categoryId>
+            <picture>http://www.core.ru/files/product/section/32/34/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>DSQUARED BORN IN CANADA</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="110" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mens_belts/remen_mughskoj_dsquared_canadian_gigolo/</url>
+            <price>1650</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>20</categoryId>
+            <picture>http://www.core.ru/files/product/section/30/42/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>DSQUARED CANADIAN GIGOLO</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="25" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mens_belts/remen_miner_style_1964/</url>
+            <price>2050</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>20</categoryId>
+            <picture>http://www.core.ru/files/product/section/47/19/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>DSQUARED MINER STYLE 1964</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="178" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mens_belts/remen_mughskoj_dsquared_since_1964/</url>
+            <price>1600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>20</categoryId>
+            <picture>http://www.core.ru/files/product/section/25/44/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>DSQUARED since 1964</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="108" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mens_belts/remen_mughskoj_dsquared_kaseta/</url>
+            <price>1650</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>20</categoryId>
+            <picture>http://www.core.ru/files/product/section/26/16/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>DSQUARED касета</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="177" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mens_belts/remen_mughskoj_dsquared_s_polosoj/</url>
+            <price>1600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>20</categoryId>
+            <picture>http://www.core.ru/files/product/section/42/41/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>DSQUARED с полосой</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="26" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mens_belts/remen_love_moschino/</url>
+            <price>1650</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>20</categoryId>
+            <picture>http://www.core.ru/files/product/section/10/39/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>MOSCHINO</vendor>
+            <model>LOVE MOSCHINO</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="207" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/rozovaja_sumka_iz_koghi_krokodila/</url>
+            <price>29000</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/16/42/rozovaja_sumka_iz_koghi_krokodila.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Розовая сумка из кожи крокодила</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="64" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/shirts_men/rubashka_belaja/</url>
+            <price>1400</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>30</categoryId>
+            <picture>http://www.core.ru/files/product/section/40/4/2.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>DSQUARED белая</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="63" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/shirts_men/rubashka_seraja/</url>
+            <price>1400</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>30</categoryId>
+            <picture>http://www.core.ru/files/product/section/27/32/2.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>DSQUARED серая с белым</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="83" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/platja/svadebnoe_plate/</url>
+            <price>9750</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>33</categoryId>
+            <picture>http://www.core.ru/files/product/section/16/5/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Свадебное платье</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="123" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/svitera_mughskie/sviter_mughskoj_belyj/</url>
+            <price>1500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>39</categoryId>
+            <picture>http://www.core.ru/files/product/section/15/15/sviter_mughskoj_belyj_otto_mayer.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>OTTO MAYER</vendor>
+            <model>Свитер мужской белый</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="120" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/svitera_mughskie/sviter_mughskoj_korichnevyj/</url>
+            <price>1500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>39</categoryId>
+            <picture>http://www.core.ru/files/product/section/14/8/sviter_mughskoj_korichnevyj.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>OTTO MAYER</vendor>
+            <model>Свитер мужской коричневый</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="122" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/svitera_mughskie/sviter_mughskoj_s_chernymi_poloskami/</url>
+            <price>1500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>39</categoryId>
+            <picture>http://www.core.ru/files/product/section/7/13/sviter_mughskoj_otto_mayer.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>OTTO MAYER</vendor>
+            <model>Свитер мужской с черными полосками</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="119" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/svitera_mughskie/sviter_mughskoj_temno-sinij/</url>
+            <price>1500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>39</categoryId>
+            <picture>http://www.core.ru/files/product/section/22/1/sviter_otto_mayer.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>OTTO MAYER</vendor>
+            <model>Свитер мужской темно-синий</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="121" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/svitera_mughskie/sviter_mughskoj_fioletovyj/</url>
+            <price>1500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>39</categoryId>
+            <picture>http://www.core.ru/files/product/section/49/22/sviter_mughskoj_otto_mayer_fioletovyj.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>OTTO MAYER</vendor>
+            <model>Свитер мужской фиолетовый</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="153" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/kurtki_pod_zakaz/sportivnaja_kurtka_fila_vintage_-_terrinda/</url>
+            <price>6000</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>44</categoryId>
+            <picture>http://www.core.ru/files/product/section/13/15/sportivnaja_kurtka_fila_vintage_-_terrinda.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FILA</vendor>
+            <model>Спортивная куртка Fila Vintage - Terrinda</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="154" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/kurtki_pod_zakaz/sportivnaja_kurtka_fila_vintage_-_terrinda_golubaja/</url>
+            <price>6000</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>44</categoryId>
+            <picture>http://www.core.ru/files/product/section/1/20/sportivnaja_kurtka_fila_vintage_-_terrinda_golubaja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FILA</vendor>
+            <model>Спортивная куртка Fila Vintage - Terrinda голубая</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="173" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/sportivnye_kurtki/sportivnaja_kurtka_fila_vintage_-_vilas_belaja/</url>
+            <price>4500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>48</categoryId>
+            <picture>http://www.core.ru/files/product/section/17/36/sportivnaja_kurtka_fila_vintage_-_vilas_belaja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FILA</vendor>
+            <model>Спортивная куртка Fila Vintage - Vilas белая</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="174" type="vendor.model" available="false">
+            <url>http://www.core.ru//</url>
+            <price>4500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>48</categoryId>
+            <picture>http://www.core.ru/files/product/section/23/15/sportivnaja_kurtka_fila_vintage_-_vilas_krasnaja_s_belym.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FILA</vendor>
+            <model>Спортивная куртка Fila Vintage - Vilas красная с белым</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="175" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/sportivnye_kurtki/sportivnaja_kurtka_fila_vintage_-_vistoralli_temno_sinjaja/</url>
+            <price>4700</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>48</categoryId>
+            <picture>http://www.core.ru/files/product/section/23/26/sportivnaja_kurtka_fila_vintage_-_vistoralli_temno_sinjaja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FILA</vendor>
+            <model>Спортивная куртка Fila Vintage - Vistoralli темно синяя</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="147" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/sportivnye_shtany_pod_za/sportivnye_shtany_80s_dallas/</url>
+            <price>4000</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>46</categoryId>
+            <picture>http://www.core.ru/files/product/section/8/36/sportivnye_shtany_sergio_tacchini_golubye.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>SERGIO TACCHINI</vendor>
+            <model>Спортивные штаны 80s Dallas</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="148" type="vendor.model" available="false">
+            <url>http://www.core.ru//</url>
+            <price>4000</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>46</categoryId>
+            <picture>http://www.core.ru/files/product/section/1/10/brjuki_sergio_tacchini.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>SERGIO TACCHINI</vendor>
+            <model>Спортивные штаны 80s Royal синии</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="146" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/sportivnye_shtany_pod_za/sportivnye_shtany_carlsson_becker/</url>
+            <price>3700</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>46</categoryId>
+            <picture>http://www.core.ru/files/product/section/29/22/sportivnye_shtany_ellesse_carlsson_becker.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>ELLESSE</vendor>
+            <model>Спортивные штаны Carlsson Becker</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="149" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/sportivnye_shtany_pod_za/sportivnye_shtany_ellesse_jolanda_mughskie/</url>
+            <price>3700</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>46</categoryId>
+            <picture>http://www.core.ru/files/product/section/31/1/sportivnye_shtany_ellesse_jolanda_mughskie.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>ELLESSE</vendor>
+            <model>Спортивные штаны Ellesse Jolanda мужские</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="139" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/kurtki_pod_zakaz/steganaja_mughskaja_kurtka_sergio_tacchini/</url>
+            <price>6000</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>44</categoryId>
+            <picture>http://www.core.ru/files/product/section/33/11/steganaja_mughskaja_kurtka_sergio_tacchini_temno_sinjaja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>SERGIO TACCHINI</vendor>
+            <model>Стеганая мужская куртка Sergio Tacchini</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="256" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/sumka_2/</url>
+            <price>5600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/34/4/italjanskaja_ghenskaja_sumka.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Сумка</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="257" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/sumka_3/</url>
+            <price>5200</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/15/16/modnaja_ghenskaja_sumka_proizvodstvo_italija.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Сумка</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="258" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/sumka_4/</url>
+            <price>4900</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/0/29/sumka_ghenskaja_cena_4900.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Сумка</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="259" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/sumka_5/</url>
+            <price>4600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/3/44/ghenskaja_italjanskaja_sumka_belogo_cveta.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Сумка</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="201" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/sumka/</url>
+            <price>12300</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/43/6/sumka_dlja_ghenthin_iz_koghi_skata.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Сумка</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="202" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/sumka_1/</url>
+            <price>12200</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/38/0/sumka_iz_koghi_skata_2_ruchki_zamok-molnija..jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Сумка</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="260" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/sumka_bordovaja/</url>
+            <price>4200</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/31/1/sumka_bordovaja_ghenskaja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Сумка бордовая</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="196" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/sumka_ghenskaja/</url>
+            <price>12600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/43/7/sumka_ghenskaja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Сумка женская</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="243" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/sumka_ghenskaja_1/</url>
+            <price>8200</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/6/0/sumka_ghenskaja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Сумка женская</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="244" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/sumka_ghenskaja_2/</url>
+            <price>8200</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/50/9/sumka_ghenskaja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Сумка женская</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="246" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/sumka_ghenskaja_3/</url>
+            <price>7900</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/35/40/sumka_ghenskaja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Сумка женская</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="255" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/sumka_ghenskaja_4/</url>
+            <price>6200</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/43/16/nedorogaja_ghenskaja_sumka.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Сумка женская</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="248" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/sumka_ghenskaja_-_imitacija_koghi_alligatora/</url>
+            <price>7600</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/23/12/sumka_ghenskaja_-_imitacija_koghi_alligatora.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Сумка женская - имитация кожи аллигатора</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="242" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/sumka_ghenskaja_beghevaja/</url>
+            <price>8200</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/16/17/sumka_ghenskaja_beghevaja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Сумка женская бежевая</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="249" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/sumka_ghenskaja_iz_naturalnoj_koghi/</url>
+            <price>7400</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/50/8/sumka_ghenskaja_iz_naturalnoj_koghi.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Сумка женская из натуральной кожи</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="252" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/sumka_ghenskaja_lukoshko/</url>
+            <price>5300</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/18/23/sumka_ghenskaja_lukoshko.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Сумка женская лукошко</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="247" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/sumka_ghenskaja_pod_reptiliju/</url>
+            <price>7900</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/50/16/sumka-ghenskaja-pod-reptiliju.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Сумка женская под рептилию</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="261" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/sumka_ghenskaja_s_rozochkoj/</url>
+            <price>4200</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/38/47/sumka_ghenskaja_belaja_s_rozochkoj.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Сумка женская с розочкой</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="241" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/sumka_ghenskaja_chernaja/</url>
+            <price>8200</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/6/21/sumka_ghenskaja_chernaja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Сумка женская черная</model>
+            <description></description>
+            <sales_notes>В Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="245" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/sumka_iz_velikolepnoj_italjanskoj_koghi/</url>
+            <price>7900</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/50/38/sumka_iz_velikolepnoj_italjanskoj_koghi.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Сумка из великолепной итальянской кожи</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="210" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/sumka_iz_koghi_zmei/</url>
+            <price>13800</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/45/32/sumka_iz_koghi_zmei.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Сумка из кожи змеи</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="213" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/sumka_iz_koghi_zmei_1/</url>
+            <price>11300</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/50/3/sumka_iz_koghi_zmei.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Сумка из кожи змеи</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="215" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/sumka_iz_koghi_zmei_bledno-rozovaja/</url>
+            <price>6500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/40/21/sumka_iz_koghi_zmei_bledno-rozovaja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Сумка из кожи змеи бледно-розовая</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="192" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/sumka_iz_koghi_skata/</url>
+            <price>13100</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/0/50/sumka_ghenskaja_iz_koghi_skata.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Сумка из кожи ската</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="200" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/sumka_iz_koghi_skata_otdelka_-_kogha_pitona_zamok_-_molnija/</url>
+            <price>12400</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/22/44/sumka_iz_koghi_skata_otdelka_-_kogha_pitona_zamok_-_molnija.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Сумка из кожи ската (отделка - кожа питона), замок - молния</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="199" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/sumka_iz_koghi_skata_s_belym_risunkom/</url>
+            <price>12400</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/25/24/sumka_iz_koghi_skata_s_belym_risunkom.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Сумка из кожи ската с белым рисунком</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="197" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/sumka_iz_koghi_skata_s_otdelkoj_-_koghi_pitona/</url>
+            <price>12500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/29/30/sumka_iz_koghi_skata_s_otdelkoj_-_koghi_pitona.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Сумка из кожи ската с отделкой - кожи питона</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="239" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/sumka_krasnaja_iz_naturalnoj_koghi/</url>
+            <price>8800</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/11/10/sumka_krasnaja_iz_naturalnoj_koghi.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Сумка красная из натуральной кожи</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="240" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/sumka_chernaja_ghenskaja_iz_naturalnoj_koghi/</url>
+            <price>8400</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/43/13/sumka_chernaja_ghenskaja_iz_naturalnoj_koghi.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Сумка черная женская из натуральной кожи</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="253" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/sumka_chernaja_iz_naturalnoj_koghi/</url>
+            <price>4000</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/4/0/sumka_chernaja_iz_naturalnoj_koghi.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Сумка черная из натуральной кожи</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="69" type="vendor.model" available="false">
+            <url>http://www.core.ru//</url>
+            <price>1200</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>31</categoryId>
+            <picture>http://www.core.ru/files/product/section/11/0/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>&quot;БЕЛАЯ&quot;</model>
+            <description></description>
+            <sales_notes>Толстовка DSQUARED &quot;БЕЛАЯ&quot;</sales_notes>
+        </offer>
+        <offer id="68" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mens_hoodies/tolstovka_golubaja/</url>
+            <price>1200</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>31</categoryId>
+            <picture>http://www.core.ru/files/product/section/9/37/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>&quot;ГОЛУБАЯ&quot;</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="70" type="vendor.model" available="false">
+            <url>http://www.core.ru//</url>
+            <price>1200</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>31</categoryId>
+            <picture>http://www.core.ru/files/product/section/24/15/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>&quot;СЕРАЯ&quot;</model>
+            <description></description>
+            <sales_notes>Толстовка DSQUARED &quot;СЕРАЯ&quot;</sales_notes>
+        </offer>
+        <offer id="125" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/tolstovki_pod_zakaz/tolstovka_ellesse_heritage_80s_reynolds_rimini/</url>
+            <price>4700</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>41</categoryId>
+            <picture>http://www.core.ru/files/product/section/28/7/tolstovka_ellesse.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>ELLESSE</vendor>
+            <model>Толстовка Ellesse Heritage 80s Reynolds Rimini</model>
+            <description></description>
+            <sales_notes>В Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="156" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/tolstovki_pod_zakaz/tolstovka_fila_vintage_golubaja_s_poloskami/</url>
+            <price>4700</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>41</categoryId>
+            <picture>http://www.core.ru/files/product/section/30/26/tolstovka_fila_vintage_golubaja_s_poloskami.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FILA</vendor>
+            <model>Толстовка Fila Vintage голубая с полосками</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="127" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/tolstovki_pod_zakaz/tolstovka_heritage_80s_bardolino/</url>
+            <price>4500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>41</categoryId>
+            <picture>http://www.core.ru/files/product/section/12/4/tolstovka_mughskaja_heritage_80s_bardolino.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>ELLESSE</vendor>
+            <model>Толстовка Heritage 80s Bardolino</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="141" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/tolstovki_pod_zakaz/tolstovka_mcenroe_young_line/</url>
+            <price>4700</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>41</categoryId>
+            <picture>http://www.core.ru/files/product/section/49/49/tolstovka_sergio_tacchini_mcenroe_young_line.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>SERGIO TACCHINI</vendor>
+            <model>Толстовка McEnroe Young Line</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="130" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/tolstovki_pod_zakaz/tolstovka_sergio_tacchini_nebesno_golubaja/</url>
+            <price>4500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>41</categoryId>
+            <picture>http://www.core.ru/files/product/section/15/46/tolstovka_mughskaja_sergio_tacchini.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>SERGIO TACCHINI</vendor>
+            <model>Толстовка Sergio Tacchini небесно голубая</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="266" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/tolstovki_pod_zakaz/tolstovka_sergio_tacchini_-_belaja_s_gheltym/</url>
+            <price>3700</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>41</categoryId>
+            <picture>http://www.core.ru/files/product/section/47/17/tolstovka_sergio_tacchini_-_belaja_s_gheltym.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>SERGIO TACCHINI</vendor>
+            <model>Толстовка Sergio Tacchini&amp;nbsp;&amp;mdash; белая с&amp;nbsp;желтым</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="267" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/tolstovki_pod_zakaz/tolstovka_sergio_tacchini_-_chernaja_s_sinim/</url>
+            <price>3700</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>41</categoryId>
+            <picture>http://www.core.ru/files/product/section/24/21/tolstovka_sergio_tacchini_-_chernaja_s_sinim.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>SERGIO TACCHINI</vendor>
+            <model>Толстовка Sergio Tacchini&amp;nbsp;&amp;mdash; черная с&amp;nbsp;синим</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="162" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/tolstovki_pod_zakaz/tolstovka_bejsbolnaja_fila_vintage_-_terrinda_svetlo_seraja/</url>
+            <price>5200</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>41</categoryId>
+            <picture>http://www.core.ru/files/product/section/34/30/tolstovka_bejsbolnaja_fila_vintage_-_terrinda_svetlo_seraja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FILA</vendor>
+            <model>Толстовка бейсбольная Fila Vintage - Terrinda светло серая</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="161" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/tolstovki_pod_zakaz/tolstovka_bejsbolnaja_fila_vintage_-_terrinda_temno-sinjaja/</url>
+            <price>5200</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>41</categoryId>
+            <picture>http://www.core.ru/files/product/section/20/2/tolstovka_bejsbolnaja_fila_vintage_-_terrinda_temno-sinjaja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FILA</vendor>
+            <model>Толстовка бейсбольная Fila Vintage - Terrinda темно-синяя</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="106" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mens_hoodies/tolstovka_mughskaja_dolce_gabbana_gym_collection_chernaja/</url>
+            <price>1650</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>31</categoryId>
+            <picture>http://www.core.ru/files/product/section/33/12/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DOLCE &amp; GABBANA</vendor>
+            <model>DOLCE GABBANA GYM COLLECTION черная</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="101" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mens_hoodies/tolstovka_mughskaja_dsquared_brothers_belaja/</url>
+            <price>1650</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>31</categoryId>
+            <picture>http://www.core.ru/files/product/section/42/7/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>DSQUARED BROTHERS белая</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="102" type="vendor.model" available="false">
+            <url>http://www.core.ru//</url>
+            <price>1650</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>31</categoryId>
+            <picture>http://www.core.ru/files/product/section/39/42/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>DSQUARED SINCE 1964 белая</model>
+            <description></description>
+        </offer>
+        <offer id="75" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mens_hoodies/tolstovka_mughskaja_dsquared_gheltaja_university/</url>
+            <price>1400</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>31</categoryId>
+            <picture>http://www.core.ru/files/product/section/23/21/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>DSQUARED желтая (university)</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="76" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mens_hoodies/tolstovka_mughskaja_dsquared_krasnaja_camp-a-lot_1964/</url>
+            <price>1400</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>31</categoryId>
+            <picture>http://www.core.ru/files/product/section/24/23/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>DSQUARED красная (camp-a-lot 1964)</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="103" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mens_hoodies/tolstovka_mughskaja_dsquared_seraja_s_karmashkami/</url>
+            <price>1750</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>31</categoryId>
+            <picture>http://www.core.ru/files/product/section/13/41/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>DSQUARED серая с кармашками</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="104" type="vendor.model" available="false">
+            <url>http://www.core.ru//</url>
+            <price>1750</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>31</categoryId>
+            <picture>http://www.core.ru/files/product/section/42/17/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>DSQUARED черная с кармашками</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="136" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/tolstovki_pod_zakaz/tolstovka_mughskaja_ellesse_golubaja/</url>
+            <price>4700</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>41</categoryId>
+            <picture>http://www.core.ru/files/product/section/27/35/tolstovka_ellesse_heritage.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>ELLESSE</vendor>
+            <model>Толстовка мужская Ellesse голубая</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="151" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/tolstovki_pod_zakaz/tolstovka_mughskaja_fila_settanta/</url>
+            <price>5500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>41</categoryId>
+            <picture>http://www.core.ru/files/product/section/49/20/kasual_tolstovka_fila_settanta.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FILA</vendor>
+            <model>Толстовка мужская Fila Settanta</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="152" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/tolstovki_pod_zakaz/tolstovka_mughskaja_fila/</url>
+            <price>5500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>41</categoryId>
+            <picture>http://www.core.ru/files/product/section/17/23/tolstovka_mughskaja_fila.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FILA</vendor>
+            <model>Толстовка мужская Fila Settanta</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="138" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/tolstovki_pod_zakaz/tolstovka_mughskaja_sergio_tacchini_80s_temno_sinjaja/</url>
+            <price>2800</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>41</categoryId>
+            <picture>http://www.core.ru/files/product/section/39/38/tolstovka_mughskaja_sergio_tacchini.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>SERGIO TACCHINI</vendor>
+            <model>Толстовка мужская Sergio Tacchini 80s темно синяя</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="157" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/tolstovki_pod_zakaz/tolstovka_mughskaja_sinjaja_fila_settanta_mk2/</url>
+            <price>5000</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>41</categoryId>
+            <picture>http://www.core.ru/files/product/section/44/4/tolstovka_mughskaja_sinjaja_fila_settanta_mk2.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FILA</vendor>
+            <model>Толстовка мужская синяя Fila Settanta Mk2</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="185" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/underwear_mens/trusy_dsquared_brothers_gheltye/</url>
+            <price>500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>24</categoryId>
+            <picture>http://www.core.ru/files/product/section/43/38/kupit_gheltye_trusy_dsquared_brothers.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>Трусы DSQUARED BROTHERS желтые</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="186" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/underwear_mens/trusy_dsquared_brothers_chernye/</url>
+            <price>500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>24</categoryId>
+            <picture>http://www.core.ru/files/product/section/27/16/stilnye_trusy_dlja_mughchin.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>Трусы DSQUARED BROTHERS черные</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="183" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/underwear_mens/trusy_dsquared_dean_dan_gheltye/</url>
+            <price>500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>24</categoryId>
+            <picture>http://www.core.ru/files/product/section/34/26/trusy_dsquared_dean__dan_mughskie_gheltye.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>Трусы DSQUARED DEAN &amp; DAN желтые</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="184" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/underwear_mens/trusy_dsquared_dean_dan_krasnye/</url>
+            <price>500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>24</categoryId>
+            <picture>http://www.core.ru/files/product/section/13/38/mughskoe_nighnie_bele_dsquared.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>Трусы DSQUARED DEAN &amp; DAN красные</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="180" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/underwear_mens/trusy_dsquared_basketbolist_belye/</url>
+            <price>500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>24</categoryId>
+            <picture>http://www.core.ru/files/product/section/45/10/belye_mughskie_trusy_dsquared_basketbolist.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>Трусы DSQUARED БАСКЕТБОЛИСТ белые</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="182" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/underwear_mens/trusy_dsquared_basketbolist_krasnye/</url>
+            <price>500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>24</categoryId>
+            <picture>http://www.core.ru/files/product/section/13/31/nighnie_bele_dsquared_basketbolist.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>Трусы DSQUARED БАСКЕТБОЛИСТ красные</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="181" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/underwear_mens/trusy_dsquared_basketbolist_serye/</url>
+            <price>500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>24</categoryId>
+            <picture>http://www.core.ru/files/product/section/7/47/dsquared_basketbolist.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>Трусы DSQUARED БАСКЕТБОЛИСТ серые</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="273" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/t-shirts/futbolka_dsquared2_since_64_belaja_/</url>
+            <price>900</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>25</categoryId>
+            <picture>http://www.core.ru/files/product/section/33/11/futbolka_dsquared2_since_64_belaja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>Футболка «Dsquared2» since 64 (белая)</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="98" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/women_s_t-shirts/futbolka_ghenskaja_birjuzovaja_dsquared_dean_dan/</url>
+            <price>780</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>18</categoryId>
+            <picture>http://www.core.ru/files/product/section/48/49/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>бирюзовая DSQUARED DEAN &amp; DAN</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="54" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/women_s_t-shirts/futbolka_ghenskaja_rozovaja_d_g/</url>
+            <price>2170</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>18</categoryId>
+            <picture>http://www.core.ru/files/product/section/45/20/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DOLCE &amp; GABBANA</vendor>
+            <model>розовая D&amp;G</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="92" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/women_s_t-shirts/futbolka_ghenskaja_s_melkim_risunkom/</url>
+            <price>800</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>18</categoryId>
+            <picture>http://www.core.ru/files/product/section/41/39/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>с мелким рисунком</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="90" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/women_s_t-shirts/futbolka_ghenskaja_s_risunkom_na_grudi/</url>
+            <price>1500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>18</categoryId>
+            <picture>http://www.core.ru/files/product/section/50/11/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>с рисунком на груди</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="41" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/t-shirts/futbolka_dsquared/</url>
+            <price>780</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>25</categoryId>
+            <picture>http://www.core.ru/files/product/section/28/25/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>&amp;laquo;DSQUARED&amp;raquo; белая</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="114" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/t-shirts/futbolka_mughskaja_baby_milo_banana/</url>
+            <price>1000</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>25</categoryId>
+            <picture>http://www.core.ru/files/product/section/46/16/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>BABY MILO</vendor>
+            <model>BABY MILO BANANA</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="187" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/t-shirts/futbolka_mughskaja_baby_milo_fireman/</url>
+            <price>1000</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>25</categoryId>
+            <picture>http://www.core.ru/files/product/section/21/13/futbolka_baby_milo.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>BABY MILO</vendor>
+            <model>BABY MILO FIREMAN</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="115" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/t-shirts/futbolka_mughskaja_bbr_products/</url>
+            <price>1000</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>25</categoryId>
+            <picture>http://www.core.ru/files/product/section/16/7/1.8474.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>BBR PRODUCTS</vendor>
+            <model>BBR PRODUCTS</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="40" type="vendor.model" available="false">
+            <url>http://www.core.ru//</url>
+            <price>780</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>25</categoryId>
+            <picture>http://www.core.ru/files/product/section/36/45/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>DSQUARED &quot;first class&quot; белая</model>
+            <description></description>
+        </offer>
+        <offer id="44" type="vendor.model" available="false">
+            <url>http://www.core.ru//</url>
+            <price>780</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>25</categoryId>
+            <picture>http://www.core.ru/files/product/section/0/3/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>DSQUARED &quot;fricken high class&quot; серая</model>
+            <description></description>
+        </offer>
+        <offer id="47" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/t-shirts/futbolka_d2/</url>
+            <price>780</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>25</categoryId>
+            <picture>http://www.core.ru/files/product/section/11/22/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>DSQUARED &amp;laquo;D2&amp;raquo;</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="45" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/t-shirts/futbolka_for_rent/</url>
+            <price>780</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>25</categoryId>
+            <picture>http://www.core.ru/files/product/section/33/13/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>DSQUARED &amp;laquo;FOR RENT&amp;raquo; розовая</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="46" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/t-shirts/futbolka_milan/</url>
+            <price>780</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>25</categoryId>
+            <picture>http://www.core.ru/files/product/section/36/21/1_22-47-08.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>DSQUARED &amp;laquo;MILAN&amp;raquo;</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="39" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/t-shirts/futbolka_twinphony_co/</url>
+            <price>780</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>25</categoryId>
+            <picture>http://www.core.ru/files/product/section/22/31/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>DSQUARED &amp;laquo;TWINPHONY &amp;amp; CO&amp;raquo;</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="78" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/t-shirts/futbolka_dsquared_twinky/</url>
+            <price>1150</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>25</categoryId>
+            <picture>http://www.core.ru/files/product/section/11/50/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>DSQUARED (TWINKY) синяя</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="48" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/t-shirts/futbolka_milan_chernaja/</url>
+            <price>780</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>25</categoryId>
+            <picture>http://www.core.ru/files/product/section/2/12/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>DSQUARED «MILAN» черная</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="49" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/t-shirts/futbolka_salt_sun_sex/</url>
+            <price>780</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>25</categoryId>
+            <picture>http://www.core.ru/files/product/section/9/27/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>DSQUARED «salt sun &amp;amp; sex» белая</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="43" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/t-shirts/futbolka_rozovaja/</url>
+            <price>780</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>25</categoryId>
+            <picture>http://www.core.ru/files/product/section/42/3/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>DSQUARED розовая</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="56" type="vendor.model" available="false">
+            <url>http://www.core.ru//</url>
+            <price>1650</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>25</categoryId>
+            <picture>http://www.core.ru/files/product/section/46/32/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>EVERLAST</vendor>
+            <model>EVERLAST &quot;BRONX NY&quot; черная</model>
+            <description></description>
+        </offer>
+        <offer id="275" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/t-shirts/futbolka_mughskaja_dsquared2_canada_flavour/</url>
+            <price>900</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>25</categoryId>
+            <picture>http://www.core.ru/files/product/section/50/44/futbolka_mughskaja_dsquared2_canada_flavour.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>«Dsquared2» Canada flavour</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="99" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/t-shirts/futbolka_mughskaja_dsquared_seraja/</url>
+            <price>900</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>25</categoryId>
+            <picture>http://www.core.ru/files/product/section/11/19/futbolka_mughskaja_dsquared2_seraja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>«Dsquared2» серая</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="61" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/t-shirts/futbolka_moncler/</url>
+            <price>1200</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>25</categoryId>
+            <picture>http://www.core.ru/files/product/section/27/10/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>MONCLER</vendor>
+            <model>«MONCLER» белая</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="100" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/t-shirts/futbolka_mughskaja_moncler_seraja/</url>
+            <price>1200</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>25</categoryId>
+            <picture>http://www.core.ru/files/product/section/26/23/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>MONCLER</vendor>
+            <model>«MONCLER» серая</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="58" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/t-shirts/futbolka_tommy_hilfiger/</url>
+            <price>1500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>25</categoryId>
+            <picture>http://www.core.ru/files/product/section/30/29/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>TOMMY HILFIGER</vendor>
+            <model>«TOMMY HILFIGER» серая</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="42" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/t-shirts/futbolka_s_dlinnym_rukavom_dean_dan/</url>
+            <price>1000</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>25</categoryId>
+            <picture>http://www.core.ru/files/product/section/12/48/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>с&amp;nbsp;длинным рукавом DSQUARED &amp;laquo;DEAN &amp;amp; DAN&amp;raquo; синяя</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="57" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/t-shirts/futbolka_ufc_fighter_boxing/</url>
+            <price>1100</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>25</categoryId>
+            <picture>http://www.core.ru/files/product/section/13/18/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FRUIT OF THE LOOM</vendor>
+            <model>черная «UFC FIGHTER BOXING»</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="155" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/polo_pod_zakaz/futbolka-polo_fila_vintage_-_terrinda_belaja/</url>
+            <price>3400</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>42</categoryId>
+            <picture>http://www.core.ru/files/product/section/33/49/futbolka-polo_fila_vintage_-_terrinda_belaja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>FILA</vendor>
+            <model>Футболка-поло Fila Vintage - Terrinda белая</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="135" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/polo_pod_zakaz/futbolka-polo_sergio_tacchini_belaja/</url>
+            <price>3400</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>42</categoryId>
+            <picture>http://www.core.ru/files/product/section/21/36/futbolka-polo_sergio_tacchini_belaja.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>SERGIO TACCHINI</vendor>
+            <model>Футболка-поло Sergio Tacchini белая</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="263" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/polo_pod_zakaz/futbolka-polo_sergio_tacchini_-_belaja_s_golubym/</url>
+            <price>2900</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>42</categoryId>
+            <picture>http://www.core.ru/files/product/section/36/10/futbolka-polo_sergio_tacchini.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>SERGIO TACCHINI</vendor>
+            <model>Футболка-поло Sergio Tacchini&amp;nbsp;&amp;mdash; белая с&amp;nbsp;голубым</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="264" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/polo_pod_zakaz/futbolka-polo_sergio_tacchini_-_belaja_s_krasnym/</url>
+            <price>2900</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>42</categoryId>
+            <picture>http://www.core.ru/files/product/section/3/17/futbolka-polo_sergio_tacchini.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>SERGIO TACCHINI</vendor>
+            <model>Футболка-поло Sergio Tacchini&amp;nbsp;&amp;mdash; белая с&amp;nbsp;красным</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="265" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/polo_pod_zakaz/futbolka-polo_sergio_tacchini_-_belaja_s_chernym/</url>
+            <price>2900</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>42</categoryId>
+            <picture>http://www.core.ru/files/product/section/35/26/futbolka-polo_sergio_tacchini_-_belaja_s_chernym.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>SERGIO TACCHINI</vendor>
+            <model>Футболка-поло Sergio Tacchini&amp;nbsp;&amp;mdash; белая с&amp;nbsp;черным</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="208" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/chernaja_ghenskaja_sumka_iz_koghi_krokodila/</url>
+            <price>29000</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/28/25/chernaja_ghenskaja_sumka_iz_koghi_krokodila.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Черная женская сумка из кожи крокодила</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="198" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/chernaja_sumka_iz_koghi_skata_s_otdelkoj_iz_koghi_pitona/</url>
+            <price>12400</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/32/12/chernaja_sumka_iz_koghi_skata_s_otdelkoj_iz_koghi_pitona.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Черная сумка из кожи ската с отделкой из кожи питона</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="205" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/sumki/chernyj_klatch_iz_koghi_skata/</url>
+            <price>7200</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>49</categoryId>
+            <picture>http://www.core.ru/files/product/section/45/22/chernyj_ghenskij_klatch_iz_koghi_skata.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Черный клатч из кожи ската</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="237" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/womens_wallets/chernyj_koshelek_iz_koghi_skata/</url>
+            <price>2900</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>21</categoryId>
+            <picture>http://www.core.ru/files/product/section/28/31/chernyj_koshelek_iz_koghi_skata.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Черный кошелек из кожи ската</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="95" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mughskie_sharfy/sharf_vintage_70-x_godov_korichnevyj_temno-zelenyj_iz_shersti/</url>
+            <price>1800</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>36</categoryId>
+            <picture>http://www.core.ru/files/product/section/32/3/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Шарф VINTAGE 70-х годов, коричневый темно-зеленый из шерсти</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="111" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mughskie_sharfy/sharf_mughskoj_cherno-bordovyj/</url>
+            <price>900</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>36</categoryId>
+            <picture>http://www.core.ru/files/product/section/43/33/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>черно-бордовый</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="112" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mughskie_sharfy/sharf_mughskoj_cherno-sinij/</url>
+            <price>900</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>36</categoryId>
+            <picture>http://www.core.ru/files/product/section/33/19/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>черно-синий</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="93" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/golovnye_ubory/shljapa_mughskaja/</url>
+            <price>800</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>34</categoryId>
+            <picture>http://www.core.ru/files/product/section/22/30/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Шляпа мужская</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="66" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mens_shorts/shorty_craftsmanship_korotkie/</url>
+            <price>1400</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>29</categoryId>
+            <picture>http://www.core.ru/files/product/section/1/30/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>DSQUARED «CRAFTSMANSHIP» (короткие)</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="60" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mens_shorts/shorty_top_craftsmanship_dlinnye/</url>
+            <price>1500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>29</categoryId>
+            <picture>http://www.core.ru/files/product/section/20/50/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>DSQUARED «TOP CRAFTSMANSHIP» (длинные)</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="81" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mens_shorts/shorty_mughskie_dsquared_belye_dlinnye/</url>
+            <price>1200</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>29</categoryId>
+            <picture>http://www.core.ru/files/product/section/41/4/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>DSQUARED белые длинные</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="71" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mens_shorts/shorty_krasnye/</url>
+            <price>1200</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>29</categoryId>
+            <picture>http://www.core.ru/files/product/section/33/26/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DSQUARED2</vendor>
+            <model>DSQUARED красные длинные</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="142" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/shorty_pod_zakaz/shorty_mughskie_ellesse_retro_classics_golubye/</url>
+            <price>3500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>45</categoryId>
+            <picture>http://www.core.ru/files/product/section/31/12/shorty_mughskie_ellesse_retro_classics_golubye.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>ELLESSE</vendor>
+            <model>Шорты мужские Ellesse Retro Classics голубые</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="86" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mens_shorts/shorty_mughskie_dolce_gabbana_chernye/</url>
+            <price>1050</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>29</categoryId>
+            <picture>http://www.core.ru/files/product/section/45/19/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>DOLCE &amp; GABBANA</vendor>
+            <model>«DOLCE GABBANA» (черные)</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="84" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mens_shorts/shorty_mughskie_moncler_temno-sinii/</url>
+            <price>1050</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>29</categoryId>
+            <picture>http://www.core.ru/files/product/section/19/4/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>MONCLER</vendor>
+            <model>«MONCLER» &lt;nobr&gt;темно-синии&lt;/nobr&gt;</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="85" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/mens_shorts/shorty_mughskie_moncler_belye/</url>
+            <price>1050</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>29</categoryId>
+            <picture>http://www.core.ru/files/product/section/3/1/1.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>MONCLER</vendor>
+            <model>«MONCLER» белые</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="140" type="vendor.model" available="false">
+            <url>http://www.core.ru/mughskaja_odeghda_i_akse/pod_zakaz/shorty_pod_zakaz/shorty_mughskie_belye/</url>
+            <price>3500</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>45</categoryId>
+            <picture>http://www.core.ru/files/product/section/19/29/shorty_mughskie_sergio_tacchini_belye.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>SERGIO TACCHINI</vendor>
+            <model>Шорты мужские белые</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+        <offer id="124" type="vendor.model" available="false">
+            <url>http://www.core.ru/ghenskaja_odeghda_i_akse/platja/shubka_iz_lebjaghego_puxa/</url>
+            <price>4000</price>
+            <currencyId>RUR</currencyId>
+            <categoryId>33</categoryId>
+            <picture>http://www.core.ru/files/product/section/24/11/shubka_iz_lebjaghego_puxa.jpg</picture>
+            <delivery>true</delivery>
+            <vendor>БЕЗ ПРОИЗВОДИТЕЛЯ</vendor>
+            <model>Шубка из лебяжьего пуха</model>
+            <description></description>
+            <sales_notes>в Москве бесплатно</sales_notes>
+        </offer>
+    </offers>
+</shop>
+</yml_catalog>

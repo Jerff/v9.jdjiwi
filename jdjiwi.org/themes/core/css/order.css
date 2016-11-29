@@ -1,0 +1,5 @@
+
+#basketOrder{position:relative;}
+#basketOrder .icon{display:block;position:absolute;overflow:hidden}
+#photos{overflow:hidden}
+#fly{position:absolute;left:-10000px;top:0;z-index:9999;}
