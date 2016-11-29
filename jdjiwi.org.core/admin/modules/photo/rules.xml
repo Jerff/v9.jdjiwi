@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduls package="Информация">
+	<modul id="photo" name="Фоторепортажи">
+		<menu>
+			<link name="/admin/photo/" menu="Фоторепортажи"/>
+			<link name="/admin/photo/edit/" select="photo" submenu="Свойства"/>
+            <link name="/admin/photo/image/" select="photo" submenu="Изображения"/>
+		</menu>
+		<pages>
+			<page name="/admin/photo/" subpath="list"/>
+			<page name="/admin/photo/edit/"/>
+            <page name="/admin/photo/image/" subpath="list"/>
+		</pages>
+		<rules>
+			<rule id="photo">
+				<elements>
+					<element>edit</element>
+					<element>list</element>
+					<element>list/config</element>
+				</elements>
+			</rule>
+			<rule id="photo.image">
+				<elements>
+					<element>image/list</element>
+					<element>image/edit</element>
+					<element>image/multi</element>
+				</elements>
+			</rule>
+		</rules>
+	</modul>
+</moduls>

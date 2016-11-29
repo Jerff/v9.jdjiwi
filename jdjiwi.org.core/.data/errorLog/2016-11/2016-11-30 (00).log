@@ -1,0 +1,23 @@
+2016-11-30 00:03:30 (MSK):  Ошибка: E_WARNING: require_once(application/cApplicationTemplate.php): failed to open stream: Нет такого файла или каталога in /srv/v9.jdjiwi.ru/www/jdjiwi.org.core/_.core/loader/cLoader.php:34
+#0 /srv/v9.jdjiwi.ru/www/jdjiwi.org.core/_.core/loader/cLoader.php(34): cConfig::{closure}(2, &#039;require_once(ap...&#039;, &#039;/srv/v9.jdjiwi....&#039;, 34, Array)
+#1 /srv/v9.jdjiwi.ru/www/jdjiwi.org.core/_.core/loader/cLoader.php(34): require_once()
+#2 /srv/v9.jdjiwi.ru/www/jdjiwi.org.core/_.core/loader/cLoader.php(24): cLoader::file(&#039;application/cAp...&#039;)
+#3 /srv/v9.jdjiwi.ru/www/jdjiwi.org.core/.include.application.php(8): cLoader::library(&#039;application/cAp...&#039;)
+#4 /srv/v9.jdjiwi.ru/www/jdjiwi.org.core/index.php(26): require(&#039;/srv/v9.jdjiwi....&#039;)
+
+
+2016-11-30 00:05:12 (MSK):  Error: Class 'cInit' not found in /srv/v9.jdjiwi.ru/www/jdjiwi.org.core/index.php:36
+Stack trace:
+#0 /srv/v9.jdjiwi.ru/www/jdjiwi.org/index.php(3): require()
+#1 /srv/v9.jdjiwi.ru/www/jdjiwi.org/admin.php(4): require('/srv/v9.jdjiwi....')
+#2 {main}
+
+
+2016-11-30 00:05:20 (MSK):  Ошибка: E_WARNING: require_once(application/cApplicationTemplate.php): failed to open stream: Нет такого файла или каталога in /srv/v9.jdjiwi.ru/www/jdjiwi.org.core/_.core/loader/cLoader.php:34
+#0 /srv/v9.jdjiwi.ru/www/jdjiwi.org.core/_.core/loader/cLoader.php(34): cConfig::{closure}(2, &#039;require_once(ap...&#039;, &#039;/srv/v9.jdjiwi....&#039;, 34, Array)
+#1 /srv/v9.jdjiwi.ru/www/jdjiwi.org.core/_.core/loader/cLoader.php(34): require_once()
+#2 /srv/v9.jdjiwi.ru/www/jdjiwi.org.core/_.core/loader/cLoader.php(24): cLoader::file(&#039;application/cAp...&#039;)
+#3 /srv/v9.jdjiwi.ru/www/jdjiwi.org.core/.include.application.php(8): cLoader::library(&#039;application/cAp...&#039;)
+#4 /srv/v9.jdjiwi.ru/www/jdjiwi.org.core/index.php(26): require(&#039;/srv/v9.jdjiwi....&#039;)
+
+

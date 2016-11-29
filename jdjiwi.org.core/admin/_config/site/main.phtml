@@ -1,0 +1,74 @@
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("edit.postAjax('update');", 'Применить')) ?>
+
+
+<?=$edit->html()->startForm('edit') ?>
+<table class="great_table">
+
+<tr class="header_col">
+<td colspan="2">Новости</td>
+</tr>
+<tr>
+<td class="svet_td">Новостей на страницу</td>
+<td class="svet_td2"><?=$form->html('newsLimit', 'class="width25"') ?></td>
+</tr>
+<tr class="cHide">
+<td class="svet_td">Количество страниц (навигация)</td>
+<td class="svet_td2"><?=$form->html('newsPage', 'class="width25"') ?></td>
+</tr>
+
+
+<tr class="header_col">
+<td colspan="2">Каталог</td>
+</tr>
+<tr>
+<td class="svet_td">Диапозоны показов в каталоге</td>
+<td class="svet_td2"><?=$form->html('productLimit', 'class="width25"') ?></td>
+</tr>
+<tr>
+<td class="svet_td">Количество шагов фильтра цены</td>
+<td class="svet_td2"><?=$form->html('priceStep', 'class="width25"') ?></td>
+</tr>
+
+
+<tr class="header_col">
+<td colspan="2">Анимация</td>
+</tr>
+<tr>
+<td class="svet_td">Спецпредложения на главной</td>
+<td class="svet_td2">Главноe: <div><?=$form->html('showcaseMain', 'class="width25"') ?></div>
+                     Маленькие: <div><?=$form->html('showcaseSmall', 'class="width25"') ?></div>
+</td>
+</tr>
+<tr>
+<td class="svet_td">Спецпредложения в каталоге</td>
+<td class="svet_td2"><?=$form->html('showcaseCatalog', 'class="width25"') ?></td>
+</tr>
+<tr>
+<td class="svet_td">Банеры</td>
+<td class="svet_td2">Главная: <div><?=$form->html('banerMain', 'class="width25"') ?></div>
+                     Каталог: <div><?=$form->html('banerCatalog', 'class="width25"') ?></div>
+</td>
+</tr>
+
+<tr class="header_col">
+<td colspan="2">История заказов</td>
+</tr>
+<tr>
+<td class="svet_td">Показывать первые N заказы</td>
+<td class="svet_td2"><?=$form->html('userLimit', 'class="width25"') ?></td>
+</tr>
+<tr>
+<td class="svet_td">Заказов на страницу</td>
+<td class="svet_td2"><?=$form->html('orderLimit', 'class="width25"') ?></td>
+</tr>
+<tr class="cHide">
+<td class="svet_td">Количество страниц (навигация)</td>
+<td class="svet_td2"><?=$form->html('orderPage', 'class="width25"') ?></td>
+</tr
+
+</table>
+<?=$edit->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("edit.postAjax('update');", 'Применить')) ?>

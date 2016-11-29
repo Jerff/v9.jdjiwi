@@ -1,0 +1,54 @@
+
+<?=$list->html()->startForm('filter') ?>
+<table class="great_table">
+<tr class="header_col">
+<td>
+    Email: <input name="email" id="email" type="text" value="<?=cString::specialchars(urldecode($list->getFilter('email'))) ?>" size="20">
+    <br /><?=cmfAdminView::onclickType1("filter.postAjax('changeFilter');", 'Найти') ?>&nbsp;&nbsp;
+	<?=cmfAdminView::onclickType1("cmf.setValue('email', ''); filter.postAjax('changeFilter');", 'Сброс') ?>
+</td>
+</tr>
+</table>
+<?=$list->html()->endForm() ?>
+
+    <table class="table_position">
+    <tr class="header_col">
+    <td>Разделы: <?=cmfView::selectOncahge($filterType, 'class="width99"') ?></td>
+    </tr>
+	</table>
+
+	<? view_command::viewLimitButton($limitUrl, $linkPage,
+	                   cmfAdminView::buttonType2($list->url->getNew(), 'Добавить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>
+
+
+<?=$list->html()->startForm() ?>
+	<table class="great_table">
+	<tr class="header_col">
+	<td width="200px">Тип рассылки</td>
+	<td width="200px">Пользователь</td>
+	<td>Email</td>
+	<td width="100px">Статус</td>
+	<td width="22px">Рассылка</td>
+	<td width="22px">Уд.</td>
+	</tr>
+
+<?	foreach($list as $key=>$value){
+		list($form, $data) = $value->main;
+
+	 ?>
+	<?=view_list::startTR($list) ?>
+	<td><?=get2($filterType, $data->type, 'name', 'нет') ?></td>
+	<td><? if(isset($listUser[$data->user])) echo cmfAdminView::buttonType3($list->getUserUrl($data->user), $listUser[$data->user]) ?></td>
+	<td><? if($key) echo cmfAdminView::buttonType3($list->getEditUrl(), $data->email) ?></td>
+	<td id="status<?=$key ?>"><?=$list->getStatus($data->visible) ?></td>
+	<td><?=$form->html('subscribe') ?></td>
+    <td><?=$list->viewDelete() ?></tr>
+	</tr>
+<? } ?>
+	</table>
+<?=$list->html()->endForm() ?>
+
+	<? view_command::viewLimitButton($limitUrl, $linkPage,
+	                   cmfAdminView::buttonType2($list->url->getNew(), 'Добавить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>

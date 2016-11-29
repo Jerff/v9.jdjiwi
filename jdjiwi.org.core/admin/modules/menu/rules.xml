@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduls package="Информация">
+	<modul id="menu" name="Меню">
+		<menuList>
+			<menu id="menu">
+				<link name="/admin/menu/" menu="Меню"/>
+			</menu>
+		</menuList>
+		<pages>
+			<page name="/admin/menu/" subpath="list"/>
+		</pages>
+		<rules>
+			<rule id="menu">
+				<elements>
+					<element>list</element>
+				</elements>
+			</rule>
+		</rules>
+	</modul>
+</moduls>

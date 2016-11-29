@@ -1,0 +1,55 @@
+	<? view_command::viewLineMenuButton(
+	                   cmfAdminView::buttonType1("modul.postAjax('updateYandex');", 'Сгенерировать файл'),
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>
+
+<?=$edit->html()->startForm() ?>
+<? list($form) = $edit->current()->main ?>
+<? list($sectionForm) = $edit->current()->section ?>
+<table class="great_table">
+<tr class="header_col">
+<td colspan="2">Настройки для прайса <?=view_siteUrl::viewSiteUrl(cmfCronYandexMarket::getUrlFile()) ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Название магазина:</td>
+<td class="svet_td2"><?=$form->html('name', 'class="width50"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Название Компании:</td>
+<td class="svet_td2"><?=$form->html('company', 'class="width50"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Минимальаня цена:</td>
+<td class="svet_td2"><?=$form->html('price', 'class="width50"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Название Товаров:</td>
+<td class="svet_td2"><?=$form->html('product', 'class="width50"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Описания товаров:</td>
+<td class="svet_td2"><?=$form->html('notice', 'class="width50"') ?></td>
+</tr>
+
+<tr class="header_col">
+<td colspan="2">Каталог</td>
+</tr>
+<tr>
+<td class="svet_td">Экспортировать:</td>
+<td class="svet_td2">
+		<? 	foreach($sectionForm as $key=>$name) {
+        		echo $sectionForm->html($key);
+        		echo '<div class="clearFloat"></div>';
+        	} ?>
+</td>
+</tr>
+
+</table>
+<?=$edit->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>

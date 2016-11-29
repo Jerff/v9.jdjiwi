@@ -1,0 +1,67 @@
+
+<?=$edit->html()->startForm('edit') ?>
+	<table class="table_position">
+    <tr class="header_col">
+    <td colspan="2">Магазин: <?=cmfView::selectOncahge($filterShop, 'class="width99"') ?></td>
+	</tr>
+
+    <tr>
+    <td class="svet_td">Магазин:</td>
+    <td class="svet_td2"><?=$shop['name'] ?></td>
+    </tr>
+    <tr>
+    <td class="svet_td">Адресс:</td>
+    <td class="svet_td2"><?=nl2br($shop['adress']) ?></td>
+    </tr>
+
+<? if($is) { ?>
+    <tr class="header_col">
+    <td colspan="2">Экспорт</td>
+	</tr>
+	<tr>
+    <td class="svet_td">&nbsp;</td>
+    <td class="svet_td2"><?=cmfAdminView::url($edit->exportUrl(), 'Сгенерировать прайс') ?></td>
+    </tr>
+
+    <tr class="header_col">
+    <td colspan="2">Импорт</td>
+	</tr>
+	<tr>
+	<td class="svet_td">&nbsp;</td>
+	<td class="svet_td2">
+
+        <span id="product_image_controller_1_mainimage_file">
+            <input type="file" name="upload" id="upload" type="file" style="width:230px;">
+        </span>
+        <span onclick="edit.postAjax('import');" class="button link">
+        <i><b>(Загрузить)</b></i>
+        </span>
+        </span>
+
+	</td>
+	</tr>
+<? } ?>
+	</table>
+<?=$edit->html()->endForm() ?>
+
+
+<? if($is) { ?>
+	<? view_command::viewLimitButton($limitUrl, $linkPage, '') ?>
+<?=$list->html()->startForm() ?>
+	<table class="great_table">
+	<tr class="header_col">
+	<td width="150px">История</td>
+	</tr>
+
+<?	foreach($list as $key=>$value){
+		list($form, $data) = $value->main;
+		?>
+	<?=view_list::startTR($list) ?>
+	<td><? if($key) echo cmfAdminView::buttonType3($list->getEditUrl(), $data->date) ?></td>
+	</tr>
+<? } ?>
+	</table>
+<?=$list->html()->endForm() ?>
+
+	<? view_command::viewLimitButton($limitUrl, $linkPage, '') ?>
+<? } ?>

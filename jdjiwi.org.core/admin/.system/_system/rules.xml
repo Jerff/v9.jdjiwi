@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduls>
+	<modul name="Системные страницы" authorization="false">
+		<pages>
+			<page name="/admin/index/"			path="_system/" file="index" template="admin.indexStart"/>
+			<page name="/admin/header/"			path="_system/" file="header" system="true"/>
+			<page name="/admin/menu/start/"		path="_system/" file="menu_start" system="true"/>
+			<page name="/admin/menu/sub/"		path="_system/" file="menu_sub" system="true"/>
+			<page name="/admin/menu/end1/"		path="_system/" file="menu_end1" system="true"/>
+			<page name="/admin/menu/end2/"		path="_system/" file="menu_end2" system="true"/>
+			<page name="/admin/footer/"			path="_system/" file="footer" system="true"/>
+		</pages>
+	</modul>
+</moduls>

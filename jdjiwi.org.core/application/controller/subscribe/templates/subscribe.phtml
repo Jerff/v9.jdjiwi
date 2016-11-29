@@ -1,0 +1,41 @@
+<?= $subscribeYes->html()->scroll() ?>
+<?= $subscribeNo->html()->scroll() ?>
+<div id="main" class="basket bcont">
+    <div class="l-block item-info">
+        <div class="order-block order-block_view2">
+            <div class="o2">
+                <div class="o3 o3_password">
+                    <h1>Рассылка</h1>
+                    <?= $contentYes ?>
+                    <?= $subscribeYes->html()->start() ?>
+                    <div class="bcont  ">
+                        <?= $subscribeYes->html()->error() ?>
+                        <?=$subscribeYes->form(1)->get('email')->error() ?>
+                        <div class="block"><b>E-mail</b><span class="input"><i><?= $subscribeYes->form(1)->get('email')->html() ?></i></span></div>
+                    </div>
+                    <div class="clearFloat"></div>
+                    <input type="image" src="/images/save-type2.png" class="reg-btn"/>
+                    <script type="text/javascript">
+                        core.form.error.color.set('<?= $subscribeYes->form(1)->get('email')->id() ?>', core.form.user.login);
+                    </script>
+                    <?= $subscribeYes->html()->end() ?>
+
+
+                    <div class="height-20"></div>
+                    <?= $contentNo ?>
+                    <?= $subscribeNo->html()->start() ?>
+                    <div class="bcont  ">
+                        <?=$subscribeNo->form(1)->get('email')->error() ?>
+                        <div class="block"><b>E-mail</b><span class="input"><i><?= $subscribeNo->form(1)->get('email')->html() ?></i></span></div>
+                    </div>
+                    <div class="clearFloat"></div>
+                    <input type="image" src="/images/save-type2.png" class="reg-btn"/>
+                    <script type="text/javascript">
+                        core.form.error.color.set('<?= $subscribeNo->form(1)->get('email')->id() ?>', core.form.user.login);
+                    </script>
+                    <?= $subscribeNo->html()->end() ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

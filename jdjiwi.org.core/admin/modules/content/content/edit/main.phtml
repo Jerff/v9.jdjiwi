@@ -1,0 +1,77 @@
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjaxSave('update');", 'Сохранить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') .
+	                   cmfAdminView::buttonType2($edit->url()->getCatalog(), 'Вернуться')) ?>
+
+
+
+<?=$edit->html()->startForm() ?>
+<? list($form) = $edit->current()->main ?>
+<table class="great_table">
+<tr class="header_col">
+<td colspan="2"><?=$edit->siteUrl()->item() ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">&nbsp;</td>
+<td class="svet_td2 selectCheckbox">
+    <?=$form->label('visible', 'Отображать') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Каталог:</td>
+<td class="svet_td2"><?=$form->html('parent', 'class="width50"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Адрес:</td>
+<td class="svet_td2"><?=$form->html('uri', 'class="width25"') ?><?=$form->html('url', 'class="width25"') ?>
+    <?=$form->label('isUrl', 'Использовать абсолютный адресс', 'onchange="cmf.pages.isUrl();"') ?>
+<script language="JavaScript">
+cmf.pages.isUrl = function() {
+    if(cmf.isChecked('<?=$form->getId('isUrl') ?>')) {
+        $('#<?=$form->getId('url') ?>').show();
+        $('#<?=$form->getId('uri') ?>').hide();
+    } else {
+        $('#<?=$form->getId('uri') ?>').show();
+        $('#<?=$form->getId('url') ?>').hide();
+    }
+}
+cmf.pages.isUrl();
+</script>
+</td>
+</tr>
+
+<tr>
+<td class="svet_td">Заголовок:<?=cmfWysiwyng::typograf($form->getId('name')) ?></td>
+<td class="svet_td2"><?=$form->html('name', 'class="width99"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Описание:</td>
+<td class="svet_td2"><?=$form->html('content', 400) ?></td>
+</tr>
+
+<tr class="header_col">
+<td colspan="2">Seo</td>
+</tr>
+<tr>
+<td class="svet_td">title:</td>
+<td class="svet_td2"><?=$form->html('title', 'class="width99" rows="3"') ?></td>
+</tr>
+<tr>
+<td class="svet_td">keywords:</td>
+<td class="svet_td2"><?=$form->html('keywords', 'class="width99" rows="3"') ?></td>
+</tr>
+<tr>
+<td class="svet_td">description:</td>
+<td class="svet_td2"><?=$form->html('description', 'class="width99" rows="3"') ?></td>
+</tr>
+
+</table>
+<?=$edit->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjaxSave('update');", 'Сохранить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') .
+	                   cmfAdminView::buttonType2($edit->url()->getCatalog(), 'Вернуться')) ?>

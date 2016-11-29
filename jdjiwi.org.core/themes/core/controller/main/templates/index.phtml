@@ -1,0 +1,21 @@
+                <div id="contentflash" class="div-showcase">
+                    <div style="position: relative; height: 487px;" id="showcases_box">
+                        <div id="showcase-prev" class="showcase-btn sh-prev" style="display: none;"></div>
+                        <div id="showcase-next" class="showcase-btn sh-next" style="display: none;"></div>
+
+                        <? $i = 0; foreach($main as $id=>$list) { ?>
+                        <div class="showcase <?=$i++ ? 'cHide' : '' ?>">
+                            <? if(isset($small[$id])) foreach($small[$id] as $id=>$row) { ?>
+                                <a title="<?=$row['title'] ?>" href="<?=$row['url'] ?>"><span style="top: <?=$row['top'] ?>px; left: <?=$row['left'] ?>px; height: <?=$row['height'] ?>px; width: <?=$row['width'] ?>px;" class="area"></span></a>
+                            <? } ?>
+                            <img class="showcase_img" src="<?=$list['image'] ?>" width="<?=showcaseWidth ?>" height="<?=showcaseHeight ?>" alt="<?=$list['title'] ?>"/>
+                        </div>
+                        <? } ?>
+                    </div>
+                </div>
+<? if(isset($animationTime)) { ?>
+<script type="text/javascript">
+var isAnimation = true;
+var animationInterval = 1000*<?=$animationTime ?>;
+</script>
+<? } ?>

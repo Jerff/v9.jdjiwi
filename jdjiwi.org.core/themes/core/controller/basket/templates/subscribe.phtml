@@ -1,0 +1,43 @@
+                <div id="main" class="basket bcont">
+                    <? cmfBasketView::menu() ?>
+                    <div class="l-block item-info">
+                    <?=$order->startForm() ?>
+                        <div class="order-block order-block_view2"><div class="o2"><div class="o3 o3_password">
+                      
+
+                            <div class="bcont">
+                                <div class="tittle">Хотите получать свежие новости?</div>
+                                <ul class="radio-menu">
+                                <? foreach(cmfSubscribe::typeList() as $k=>$v) { ?>
+                                    <li><?=$formSubscribe->checkbox($k, 'class="styled"') ?><a onclick="cmf.style.checkboxLabel(this);"><?=$v ?></a></li>
+                                <? } ?>
+                                </ul>
+                            </div>
+
+                            <button></button>
+                        </div></div></div>
+                        <?=$order->endForm() ?>
+                    </div>
+                    <div class="r-block item-right">
+                    <div id="basketPrice">
+                        <b>Всего товаров на сумму</b>
+                        <b class="price"><i><?=$priceAll ?></i></b>
+                        <? if($discount) { ?>
+                            <b>Цена со скидкой</b>
+                            <b class="price"><i><?=$priceDiscount ?></i></b>
+                        <? } ?>
+                        <? if(isset($priceDelivery)) { ?>
+                            <b>Цена с доставкой</b>
+                            <b class="price"><i><?=$priceDelivery ?></i></b>
+                        <? } ?>
+                        <? if($discount) { ?>
+                            <b>Скидка</b>
+                            <b class="price"><i><?=$discount ?></i></b>
+                        <? } ?>
+                    </div>
+                    <!--//<a onclick="cmf.basket.setOrder();" class="pey"></a>//-->
+                    <? if(isset($referer)) { ?>
+                        <a href="<?=$referer ?>" class="go-shop">вернуться к шоппингу</a>
+                    <? } ?>
+                    </div>
+                </div>

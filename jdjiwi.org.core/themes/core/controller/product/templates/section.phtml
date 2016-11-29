@@ -1,0 +1,97 @@
+                    <div class="l-block">
+                        <noindex>
+                        <? if(isset($filter)) { ?>
+                            <div class="info bcont websites">
+                                <span class="tittle">Уточнить</span>
+                                <? foreach($filter as $k=>$row) { ?>
+                                    <? if($k==='articul') { ?>
+                                        <div class="filterArticul">
+                                            <div class="search-block">
+                                                <form action="<?=$searchUrl ?>?form" method="post" onsubmit="return cmf.main.searchArticul.start();">
+                                                    <fieldset>
+                                                        <input type="submit" class="seasch-btn" value="" />
+                                                        <input type="text" class="seasch-text" id="searchArticul" name="searchName" value="<?=$searchName ?>" onfocus="cmf.form.text.onFocus(this, '<?=$defaultName ?>');" onblur="cmf.form.text.onBlur(this, '<?=$defaultName ?>');"/>
+                                                    </fieldset>
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                    <? } else { ?>
+                                        <select <?=$row['style'] ?> onchange="cmf.redirect(this.value);">
+                                        <? if(isset($row['value'])) {
+                                            cmfView::optionView($row['value']);
+                                        } ?>
+                                        </select>
+                                    <? } ?>
+                                <? } ?>
+                            </div>
+                        <? } ?>
+                        <div class="info info2 bcont">
+                            <span class="tittle">Выводить по</span>
+                            <div class="quant"><div class="q2"><div class="q3">
+                            <? foreach($limit as $row) { ?>
+                                <a href="<?=$row['url'] ?>" rel="nofollow" <? if(isset($row['sel'])) { ?>class="active"<? } ?>><?=$row['name'] ?></a>
+                            <? } ?>
+                            </div></div></div>
+                            <span class="tittle">на странице</span>
+                            <div class="right websites">
+                                <select style="width:153px; min-width:153px;" onchange="cmf.redirect(this.value);">
+                                <?=cmfView::optionView($sort); ?>
+                                </select>
+                            </div>
+                        </div>
+                        </noindex>
+                        <? if(isset($_product)) { ?>
+                        <ul class="catalog-items">
+                            <? foreach($_product as $id=>$row) { $productCount-- ?>
+                                <li>
+                                    <? if(!$row['isDiscount']) { ?>
+                                        <div class="b-sale-icon"><img src="<?=$row['discount'] ?>"></div>
+                                    <? } ?>
+                                    <div class="catalog-item-img">
+                                        <a href="<?=$row['url'] ?>" class="jTip" id="<?=$id ?>product"><img src="<?=$row['image'] ?>" alt="<?=$row['title'] ?>" width="215" height="280" /></a>
+                                    </div>
+                                    <h4><a href="<?=$row['url'] ?>"><?=$row['name'] ?></a></h4>
+                                    <p><?=$row['bName'] ?></p>
+                                    <div class="catalog-item-price">
+                                        <a href="<?=$row['url'] ?>"><span><?=$row['isOrder'] ? 'заказать' : 'купить' ?></span></a>
+                                        <span>
+                                            <? if(!$row['isDiscount']) { ?><del><?=cmfPrice::view2($row['priceOld']) ?></del><? } ?>
+                                            <?=cmfPrice::view($row) ?> <img src="images/R.png" alt="R" width="11" height="12" />
+                                        </span>
+                                    </div>
+                                </li>
+                            <? } ?>
+                            <? for(;$productCount>0;$productCount--) { ?>
+                                <li>
+                                </li>
+                            <? } ?>
+                        </ul>
+                        <? if(isset($_page_url)) {
+                            cmfPagination::view($_page_url);
+                        } ?>
+                        <? } else { ?>
+                        <div class="notProduct">
+                        Ненайдено товаров по вашему запросу
+                        </div>
+                        <? } ?>
+
+                        <? if(isset($_article)) { ?>
+                            <div class="article-block-section <? if(isset($_page_url)) { ?>article-block-section-top<? } ?>">
+                                <div class="article-block">
+                                    <? foreach($_article as $row) { ?>
+                                    <div class="news-item">
+                                        <h3><a href="<?=$row['url'] ?>"><?=$row['header'] ?></a></h3>
+                                        <? if($row['image']) { ?>
+                                            <a href="<?=$row['url'] ?>"><img class="articleImg" src="<?=$row['image'] ?>" alt="<?=$row['title'] ?>"/></a>
+                                        <? } ?>
+                                        <p><?=$row['notice'] ?></p>
+                                        <p class="news-item-date"><?=$row['date'] ?></p>
+                                    </div>
+                                    <? } ?>
+                                </div>
+                            </div>
+                        <? } ?>
+
+
+                    </div>

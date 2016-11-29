@@ -1,0 +1,191 @@
+
+<? if($id or $new){ ?>
+	<table class="botton_and_radio_container_left">
+	<tr>
+	<td><?=cmfAdminView::path($path); ?></td>
+	<td>
+	<div class="botton_and_radio_container_right">
+	<ul>
+		<?=cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') ?>
+	</ul>
+	</div>
+	</td>
+	</tr>
+	</table>
+
+	<?=$edit->html()->startForm() ?>
+    <? list($form) = $edit->current()->main ?>
+	<table class="great_table">
+	<tr class="header_col">
+	<td colspan="2">&nbsp;</td>
+	</tr>
+
+	<tr>
+	<td class="svet_td">Каталог:</td>
+	<td class="svet_td2"><?=$form->html('parent', 'class="width50"') ?></td>
+	</tr>
+
+	<tr class="header_col">
+	<td colspan="2">&nbsp;</td>
+	</tr>
+
+	<tr>
+	<td class="svet_td">Тип страницы:</td>
+	<td class="svet_td2"><?=$form->html('type', 'class="width50"') ?></td>
+	</tr>
+
+	<tr>
+	<td class="svet_td">Имя шаблона:</td>
+	<td class="svet_td2"><?=$form->html('small_name', 'class="width99"') ?></td>
+	</tr>
+
+	<tr>
+	<td class="svet_td">Название шаблона:</td>
+	<td class="svet_td2"><?=$form->html('name', 'class="width99"') ?></td>
+	</tr>
+
+    <tr>
+    <td class="svet_td">&nbsp;</td>
+    <td class="svet_td2 selectCheckbox"><?=$form->label('visible', 'Включить') ?></td>
+    </tr>
+
+
+<? if($type==='pages') { ?>
+	<tr class="header_col">
+	<td colspan="2">&nbsp;</td>
+	</tr>
+
+	<tr>
+	<td class="svet_td">Шаблон:</td>
+	<td class="svet_td2"><?=$form->html('templates', 'class="width50"') ?></td>
+	</tr>
+
+	<tr>
+	<td class="svet_td">url:</td>
+	<td class="svet_td2"><?=$form->html('url', 'class="width25"') ?></td>
+	</tr>
+
+	<tr>
+	<td class="svet_td">Шаблон для поиска страницы:</td>
+	<td class="svet_td2"><?=$form->html('pattern', 'class="width99"') ?></td>
+	</tr>
+
+	<tr>
+	<td class="svet_td">Физический адресс шаблона:</td>
+	<td class="svet_td2"><?=$form->html('php_path', 'class="width50"') ?></td>
+	</tr>
+
+	<tr>
+	<td class="svet_td">Seo переменные:</td>
+	<td class="svet_td2"><?=$form->html('variables', 'class="width50"') ?></td>
+	</tr>
+
+	<tr class="header_col">
+	<td colspan="2">Кешировать</td>
+	</tr>
+
+	<tr>
+	<td class="svet_td"></td>
+	<td class="svet_td2"><?=$form->html('cacheBrousers') ?></td>
+	</tr>
+
+	<tr class="header_col">
+	<td colspan="2">Кешировать</td>
+	</tr>
+
+	<tr>
+	<td class="svet_td"></td>
+	<td class="svet_td2">	<?=$form->html('cache') ?>
+							<br /><?=$form->html('cacheMain') ?></td>
+	</tr>
+
+	<tr>
+	<td class="svet_td"></td>
+	<td class="svet_td2">	<?=$form->html('cacheUrl') ?>
+							<br /><?=$form->html('cacheRequestUri') ?></td>
+	</tr>
+<? } ?>
+
+	</table>
+	<?=$edit->html()->endForm() ?>
+
+	<table class="botton_and_radio_container_left">
+	<tr>
+	<td>
+	<div class="botton_and_radio_container_right">
+	<ul>
+		<?=cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') ?>
+	</ul>
+	</div>
+	</td>
+	</tr>
+	</table>
+
+<? } ?>
+
+
+
+
+<? if($type!=='pages' and !$new) { ?>
+	<? view_command::viewLineMenuButton(
+	                   !$id ? cmfAdminView::buttonType1("list.postAjax('updatePages');", 'Сгенерировать страницы в файл') : '',
+	                   cmfAdminView::buttonType2($list->getAddChildUrl(), 'Добавить') .
+	                   cmfAdminView::buttonType1("list.postAjax('update');", 'Применить')) ?>
+
+
+	<?=$list->html()->startForm('list') ?>
+		<table class="great_table">
+		<tr class="header_col">
+		<td width="22px">#</td>
+		<td width="150px">Имя шаблона</td>
+		<td>Название</td>
+
+	<? if($type==='list') { ?>
+	    <td>url /<br />путь к php файлу</td>
+	    <td width="150px">шаблон для поиска</td>
+	    <td>Страница</td>
+
+	<? } else { ?>
+		<td width="22px">Страниц</td>
+
+	<? } ?>
+
+		<td width="22px">Вид</td>
+		<td width="22px">Копировать</td>
+		<td width="22px">Уд.</td>
+		</tr>
+
+	<?	$i = false;
+		foreach($list as $key=>$value){
+			list($form, $data) = $value->main;
+
+		 ?>
+		<?=view_list::startTR($list) ?>
+		<?=$list->getPostMove($data) ?>
+		<td><?=cmfAdminView::buttonType3($list->getEditUrl(), $data->small_name) ?></td>
+		<td><?=$data->name ?></td>
+
+	<? if($type!=='list') { ?><td>
+		<?=(int)get($count, $key) ?></td>
+
+	<? } elseif($data->type==='pages') { ?>
+		<td nowrap><?=$data->url ?> <br /><?=$data->php_path ?></td>
+		<td><?=$data->pattern ?></td>
+		<td><?=$data->type ?></td>
+
+	<? } else { ?>
+		<td colspan="3" align="right">страниц <?=(int)get($count, $key) ?></td>
+	<? } ?>
+
+		<td><?=$form->html('visible') ?></td>
+		<td><?=cmfAdminView::onclickType1("list.ajax('copy', '$key');", 'Копировать') ?></td>
+        <td><?=$list->viewDelete() ?></td>
+		</tr>
+	<? } ?>
+		</table>
+	<?=$list->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType2($list->getAddChildUrl(), 'Добавить') .
+	                   cmfAdminView::buttonType1("list.postAjax('update');", 'Применить')) ?>
+<? } ?>

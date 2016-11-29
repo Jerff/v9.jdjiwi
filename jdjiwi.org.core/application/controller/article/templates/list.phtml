@@ -1,0 +1,15 @@
+    <h1>Статьи</h1>
+
+<? while(list(, $v) = each($_news)) { ?>
+	<p class="articleImg"><span class="news-item-date"><?=$v['date'] ?></span>&nbsp;<a href="<?=$v['url'] ?>"><?=$v['header'] ?></a></p>
+    <? if($v['image']) { ?>
+        <a href="<?=$v['url'] ?>"><img class="articleImg2" src="<?=$v['image'] ?>" alt="<?=$v['title'] ?>"/></a>
+    <? } ?>
+    <p><?=$v['notice'] ?></p>
+    <div class="clearFloat"></div>
+<? } ?>
+    <div class="hrEmpty"></div>
+
+<? if(isset($_page_url)) {
+    cmfPagination::view($_page_url);
+} ?>

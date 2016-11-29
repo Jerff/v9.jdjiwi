@@ -1,0 +1,26 @@
+
+	<table class="botton_and_radio_container_left">
+	<tr>
+	<td>
+		<div class="botton_and_radio_container_left2">
+		<ul>
+		<?=cmfAdminView::buttonType1("modul.postAjax('updateCache');", 'Обновить кеш') ?>
+		</ul>
+		</div>
+	</td>
+	</tr>
+
+	<tr>
+	<td>
+		<div class="botton_and_radio_container_left2">
+		<ul>
+		<?=cmfAdminView::buttonType1("modul.postAjax('updateSearch');", 'Обновление поискового индекса') ?>
+		</ul>
+		</div>
+	</td>
+	</tr>
+	</table>
+
+
+<?=$edit->html()->startForm() ?>
+<?=$edit->html()->endForm() ?>

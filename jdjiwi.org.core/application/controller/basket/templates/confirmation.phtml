@@ -1,0 +1,96 @@
+                <div id="main" class="basket bcont">
+                        <? cmfBasketView::menu() ?>
+                        <div class="l-block item-info l-block-order item-info-order">
+                            <!--////-->
+
+
+                            <div class="t-title t-title-order">
+                                <span class="nr1 nr1-order">наименование</span>
+                                <span class="nr2">количество</span>
+                                <span class="nr3 border-none">стоимость</span>
+                            </div>
+<?
+$index = 1;
+foreach($_basket as $k=>$v) {
+    $is = true;
+    foreach($v['param'] as $pId=>$pName) if(isset($v['count'][$pId])) {
+        foreach($v['count'][$pId] as $cId=>$cValue) if(isset($v['color'][$cId]) or !$cId) { ?>
+                            <div class="item item-order <?=$is ? 'itemFirst' : 'itemNext' ?>">
+                                <span class="nr1 nr1-order">
+                                    <? if($is) { ?>
+                                        <div class="img"><img src="<?=$v['image'] ?>" alt="<?=$v['title'] ?>" width="45" /></div>
+                                        <h6><a href="<?=$v['url'] ?>"><?=$v['name'] ?></a>
+                                            <sup id="comment<?=$k ?>_<?=$pId ?>_<?=$cId ?>"><? if(!empty($v['comment'][$pId][$cId])) { ?>(<?=$v['comment'][$pId][$cId] ?>)<? } ?></sup>
+                                        </h6>
+                                    <? } else { ?>
+                                        <div class="imgNone"></div>
+                                        <sup id="comment<?=$k ?>_<?=$pId ?>_<?=$cId ?>"><? if(!empty($v['comment'][$pId][$cId])) { ?>(<?=$v['comment'][$pId][$cId] ?>)<? } ?></sup>
+                                    <? } ?>
+                                    <div class="text">
+                                        <? if($is) { ?>
+                                            <?=$v['bName'] ?><br />
+                                        <? } ?>
+                                        <? if($pId) { ?>
+                                            <?=$v['header'] ?> <?=$pName ?><? if($cId) { echo ';';} ?>
+                                        <? } ?>
+                                        <? if($cId) { ?>
+                                            Цвет: <?=$v['color'][$cId]['name'] ?>
+                                        <? } ?>
+                                    </div>
+                                </span>
+                                <span class="nr2">
+                                    <b><?=$cValue ?></b>
+                                </span>
+                                <span class="nr3 border-none"><?=$v['view'][$pId][$cId] ?><b></b></span>
+                            </div>
+<?  $is = false;
+    } }
+} ?>
+                          </div>
+                          <div class="r-block item-right item-right-order item-right-order-top">
+
+                              <div class="order-block-data"><div class="o2"><div class="o3 o3_order">
+                                <div class="bcont">
+                                    <div class="tittle tittle-top">Данные заказа</div>
+                                    <? foreach($userData as $k=>$v) { ?>
+                                        <b><?=$k ?>: <i><?=is_null($v) ? '' : ''. $v ?></i></b>
+                                    <? } ?>
+                                    <div class="tittle">Доставка</div>
+                                    <? foreach($userDelivery as $k=>$v) { ?>
+                                        <b><?=$k ?>: <i><?=is_null($v) ? '' : ''. $v ?></i></b>
+                                    <? } ?>
+                                    <? foreach($userAdress as $k=>$v) { ?>
+                                        <b><?=$k ?>: <i><?=is_null($v) ? '' : ''. $v ?></i></b>
+                                    <? } ?>
+                                    <? if($userSubscribe) { ?>
+                                    <div class="tittle">Подписка на новости</div>
+                                    <? foreach($userSubscribe as $k=>$v) { ?>
+                                        <b><?=$k ?><?=is_null($v) ? '' : ' '. $v ?></b>
+                                    <? }} ?>
+                                </div>
+                              </div></div></div>
+
+                              <div class="r-block-order2">
+                                  <div id="basketPrice">
+                                        <b>Всего товаров на сумму</b>
+                                        <b class="price"><i><?=$priceAll ?></i></b>
+                                        <? if($discount) { ?>
+                                            <b>Цена со скидкой</b>
+                                            <b class="price"><i><?=$priceDiscount ?></i></b>
+                                        <? } ?>
+                                        <? if(isset($priceDelivery)) { ?>
+                                            <b>Цена с доставкой</b>
+                                            <b class="price"><i><?=$priceDelivery ?></i></b>
+                                        <? } ?>
+                                        <? if($discount) { ?>
+                                            <b>Скидка</b>
+                                            <b class="price"><i><?=$discount ?></i></b>
+                                        <? } ?>
+                                  </div>
+                                  <a onclick="cmf.basket.order();" class="add-order"></a>
+                                  <? if(isset($referer)) { ?>
+                                        <a href="<?=$referer ?>" class="go-shop">или вернуться к шоппингу</a>
+                                  <? } ?>
+                              </div>
+                          </div>
+                </div>

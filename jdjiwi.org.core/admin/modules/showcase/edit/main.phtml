@@ -1,0 +1,190 @@
+	<? isset($menu) ? view_menu::viewMenu($menu) : '' ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjaxSave('update');", 'Сохранить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') .
+	                   cmfAdminView::buttonType2($edit->url()->getCatalog(), 'Вернуться')) ?>
+
+
+<?=$edit->html()->startForm() ?>
+<? list($form) = $edit->current()->main ?>
+<table class="great_table">
+<tr class="header_col">
+<td colspan="2">Информация</td>
+</tr>
+
+<tr>
+<td class="svet_td">&nbsp;</td>
+<td class="svet_td2 selectCheckbox"><?=$showcaseForm->label('visible', 'Включить') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Название:<?=cmfWysiwyng::typograf($showcaseForm->getId('name')) ?></td>
+<td class="svet_td2"><?=$showcaseForm->html('name', 'class="width99"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Изображение:
+<br /><?=showcaseWidth ?>x<?=showcaseHeight ?></td>
+<td class="svet_td2"><?=$edit->getImage('main', 'image') ?></td>
+</tr>
+
+</table>
+<?=$edit->html()->endForm() ?>
+
+
+<? if($edit->id()->get()) { ?>
+    <table class="table_position">
+    <? if($showcaseData->is('image')) { ?>
+    <tr class="header_col">
+    <td>
+    <div style="position: relative; height: <?=showcaseHeight ?>px;" class="cHide1">
+        <div class="showcase" style="width:<?=showcaseWidth ?>px; height:<?=showcaseHeight ?>px">
+            <? $i = 0; foreach($main_image as $key=>$value){
+                    if(!$key) continue;
+                    list($form, $data) = $value->main;
+                    if($data->visible=='no') continue;
+            ?>
+                <span id="<?=$key ?>" style="top: <?=$data->top ?>px; left: <?=$data->left ?>px; height: <?=$data->height ?>px; width: <?=$data->width ?>px; opacity: <?=fmod($i++, 2) ? '0.2' : '0.6' ?>;">
+                    <div class="text"><?=$data->name ?><br /><?=($data->type=='edit') ? $data->url : $data->catalogUrl ?></div>
+                </span>
+            <? } ?>
+            <img class="showcase_img" src="<?=cBaseImgUrl . path_showcase . $showcaseData->image ?>" width="<?=showcaseWidth ?>" height="<?=showcaseHeight ?>" alt=""/>
+        </div>
+    </div>
+    <script type="text/javascript">
+    cmf.pages.showcaseView = function(event, ui) {
+        if(ui.position.left + $(this).width()><?=showcaseWidth ?>) {
+            $(this).width(<?=showcaseWidth ?>-ui.position.left);
+        }
+        if(ui.position.top + $(this).height()><?=showcaseHeight ?>) {
+            $(this).height(<?=showcaseHeight ?>-ui.position.top);
+        }
+        $('#listParam'+ this.id +' .paramLeft').val(ui.position.left);
+        $('#listParam'+ this.id +' .paramTop').val(ui.position.top);
+        $('#listParam'+ this.id +' .paramWidth').val($(this).width());
+        $('#listParam'+ this.id +' .paramHeight').val($(this).height());
+    }
+    cmf.pages.showcaseInit = function(){
+        $(".showcase>span").draggable({
+            containment:'parent',
+            stop: cmf.pages.showcaseView
+        }).resizable({
+            stop: cmf.pages.showcaseView
+        }).corner("fray 20px");//fray
+    }
+    $(document).ready(cmf.pages.showcaseInit);
+    </script>
+
+    <style type="text/css">
+    .showcase{ }
+    .showcase span{position: absolute;  background-color: black; }
+    .showcase span .text{margin: 30px;}
+    </style>
+    </td>
+    </tr>
+    <? } ?>
+    </table>
+
+    <table class="table_position">
+    <tr class="columnn_svet2">
+    <td>
+        <b>Блоки можно либо двигать внутри фонового изображения, либо настроить параметры позиции в списке.</b>
+        <br />Для точного позиционирвания лучше увеличить масштаб в браузере.
+        <br />Для cсылки нужно либо выбрать раздел каталога, либо заполнить адрес.
+    </td>
+    </tr>
+    </table>
+
+    <? view_command::viewLineButton(
+                       cmfAdminView::buttonType1("list.postAjax('newLine');", 'Добавить') .
+                       cmfAdminView::buttonType1("list.postAjax('update');", 'Применить')) ?>
+
+
+    <?=$main_image->html()->startForm('list') ?>
+        <table class="great_table">
+        <tr class="header_col">
+        <td width="22px">#</td>
+        <td></td>
+        <td width="22px">Вид</td>
+        <td width="22px">Уд.</td>
+        </tr>
+
+    <?    foreach($main_image as $key=>$value){
+            if($key) $product = $main_image->loadForm2();
+            else $product = array();
+            list($form, $data) = $value->main;
+
+            $id = $main_image->getIndex();
+
+         ?>
+        <?=view_list::startTR($main_image) ?>
+        <?=$main_image->getPostMove($data) ?>
+        <td valing="top">
+            <table width="100%">
+            <tr>
+            <td width="50%" class="selectCheckbox">
+                <?=$form->html('type', 'onclick="cmf.pages.typeShange('. $key .', this.value);"') ?>
+            <script language="JavaScript">
+            cmf.pages.typeShange = function(key, value) {
+                switch(value) {
+                    case 'product':
+                        $('#typeEdit'+ key).hide();
+                        $('#typeProduct'+ key).show();
+                        break;
+
+                    case 'edit':
+                        $('#typeProduct'+ key).hide();
+                        $('#typeEdit'+ key).show();
+                        break;
+                }
+            };
+            cmf.pages.typeShange('<?=$key ?>', '<?=$data->type ?>');
+            </script>
+            </td>
+            <td rowspan="3">
+                <div id="typeProduct<?=$key ?>" class="cHide">
+                    Раздел: <?=$form->html('section', 'class="width99" onchange="list.postAjax(\'onchangeSection\', '. $key .' ? '. $key .' : this.keyIndex);"') ?>
+        		    Производитель: <?=$form->html('brand', 'class="width99" onchange="list.postAjax(\'onchangeSection\', '. $key .' ? '. $key .' : this.keyIndex);"') ?>
+        		    Товар: <?=$form->html('product', 'class="width99" onchange="list.postAjax(\'onchangeProduct\', '. $key .' ? '. $key .' : this.keyIndex);"') ?>
+    		    </div>
+    			<div id="typeEdit<?=$key ?>" class="cHide">
+    			    Адрес: <?=$form->html('url', 'class="width99"') ?>
+    			</div>
+    		</td>
+            </tr>
+
+    		<tr>
+    		<td width="50%">
+    			Товар: <span id="name<?=$id ?>"><?=get($product, 'name') ?></span>
+    			<?=$form->html('name', 'class="width99"') ?>
+    		</td>
+    		</tr>
+    		<tr>
+    		<td>
+                <table width="100%" id="listParam<?=$key ?>">
+                <tr>
+                    <td width="20%">Координаты блока</td>
+            		<td width="20%">left: <?=$form->html('left', 'class="width99 paramLeft"') ?></td>
+            		<td width="20%">top: <?=$form->html('top', 'class="width99 paramTop"') ?></td>
+            		<td width="20%">width: <?=$form->html('width', 'class="width99 paramWidth"') ?></td>
+                    <td width="20%">height: <?=$form->html('height', 'class="width99 paramHeight"') ?></td>
+        		</tr>
+        		</table>
+    		</td>
+    		</tr>
+    		</table>
+    	</td>
+
+    	<td><?=$form->html('visible') ?></td>
+        <td><?=$main_image->viewDelete() ?></td>
+    	</tr>
+    <? } ?>
+    	</table>
+    <?=$main_image->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("list.postAjax('newLine');", 'Добавить') .
+	                   cmfAdminView::buttonType1("list.postAjax('update');", 'Применить')) ?>
+
+<? } ?>

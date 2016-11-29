@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduls package="Информация">
+	<modul id="content" name="Информация">
+		<menu>
+			<link name="/admin/content/info/" menu="Информация"/>
+			<link name="/admin/content/info/edit/"/>
+			<link name="/admin/content/content/" menu="Контент"/>
+			<link name="/admin/content/content/edit/"/>
+			<link name="/admin/content/pages/" menu="Реклама"/>
+			<link name="/admin/content/pages/edit/"/>
+			<link name="/admin/content/static/" menu="Статический контент"/>
+			<link name="/admin/content/static/edit/"/>
+		</menu>
+		<pages>
+			<page name="/admin/content/info/" subpath="list"/>
+			<page name="/admin/content/info/edit/"/>
+			<page name="/admin/content/pages/" subpath="list"/>
+			<page name="/admin/content/pages/edit/"/>
+			<page name="/admin/content/content/" subpath="list"/>
+			<page name="/admin/content/content/edit/"/>
+			<page name="/admin/content/static/" subpath="list"/>
+			<page name="/admin/content/static/edit/"/>
+		</pages>
+		<rules>
+			<rule id="content.info">
+				<elements>
+					<element>info/edit</element>
+					<element>info/list</element>
+				</elements>
+			</rule>
+			<rule id="content.pages">
+				<elements>
+					<element>pages/edit</element>
+					<element>pages/list</element>
+				</elements>
+			</rule>
+			<rule id="content.content">
+				<elements>
+					<element>content/edit</element>
+					<element>content/list</element>
+				</elements>
+			</rule>
+			<rule id="content.static">
+				<elements>
+					<element>static/edit</element>
+					<element>static/list</element>
+				</elements>
+			</rule>
+		</rules>
+	</modul>
+</moduls>

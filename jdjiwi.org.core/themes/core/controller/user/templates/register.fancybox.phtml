@@ -1,0 +1,56 @@
+
+    <div class="register-page-fancybox">
+	<?=$userRegister->startForm() ?>
+	<?=$userRegister->formError() ?>
+            <div class="form-title">Регистрация</div>
+            <fieldset>
+                <label>Имя</label>
+                <?=$form->html('name', 'class="i-text" title="Пётр"') ?>
+            </fieldset>
+            <fieldset>
+                <label>Фамилия</label>
+                <?=$form->html('family', 'class="i-text" title="Иванов"') ?>
+            </fieldset>
+            <fieldset>
+                <label>Email</label>
+                <?=$form->html('login', 'class="i-text" title="mail@gmail.com"') ?>
+            </fieldset>
+            <fieldset>
+                <label>Пароль</label>
+                <?=$form->html('password', 'class="i-text " title="Минимум 6 символов"') ?>
+            </fieldset>
+            <fieldset>
+                <label>&nbsp;</label>
+                <?=$form->html('password2', 'class="i-text " title="Повторите пароль"') ?>
+            </fieldset>
+            <fieldset>
+                <?=$formAll->viewError('cod') ?>
+                <?=$formAll->viewError('phone') ?>
+                <div class="clearFloat"></div>
+                <label>Телефон</label>
+                <?=$formAll->html('cod', 'class="i-text i-text-short " title="Код"') ?>
+                <?=$formAll->html('phone', 'class="i-text i-text-middle " title="Телефон"') ?>
+            </fieldset>
+            <br />
+            <fieldset>
+                <input type="image" src="images/btn-reg-fancybox.png" class="reg-btn"   />
+            </fieldset>
+        </form>
+        <div class="border-dash"></div>
+        <?=$content ?>
+    <script type="text/javascript">
+    $(function($){
+        $("#<?=$formAll->getId('cod') ?>").mask("+7(999)");
+        $("#<?=$formAll->getId('phone') ?>").mask("999-99-99");
+    }); 
+    cmf.getId('<?=$form->getId('name') ?>').errorView = cmf.main.form.login;
+    cmf.getId('<?=$form->getId('family') ?>').errorView = cmf.main.form.login;
+    cmf.getId('<?=$form->getId('login') ?>').errorView = cmf.main.form.login;
+    cmf.getId('<?=$form->getId('password') ?>').errorView = cmf.main.form.login;
+    cmf.getId('<?=$form->getId('password2') ?>').errorView = cmf.main.form.login;
+
+    cmf.getId('<?=$formAll->getId('cod') ?>').errorView = cmf.main.form.login;
+    cmf.getId('<?=$formAll->getId('phone') ?>').errorView = cmf.main.form.login;
+    </script>
+	<?=$userRegister->endForm() ?>
+    </div>

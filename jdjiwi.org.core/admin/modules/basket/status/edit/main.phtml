@@ -1,0 +1,56 @@
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjaxSave('update');", 'Сохранить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') .
+	                   cmfAdminView::buttonType2($edit->url()->getCatalog(), 'Вернуться')) ?>
+
+
+<?=$edit->html()->startForm() ?>
+<? list($form) = $edit->current()->main ?>
+<table class="great_table">
+<tr class="header_col">
+<td colspan="2">&nbsp;</td>
+</tr>
+
+<tr>
+<td class="svet_td">Название:</td>
+<td class="svet_td2"><?=$form->html('name', 'class="width99"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Статус:</td>
+<td class="svet_td2 selectCheckbox">
+    <div><?=$form->viewError('stop') ?></div>
+    <?=$form->html('stop') ?>
+</td>
+</tr>
+
+<tr>
+<td class="svet_td">Цвет:</td>
+<td class="svet_td2 selectCheckbox">
+    <div><?=$form->viewError('color') ?></div>
+    <?=$form->html('color') ?>
+</td>
+</tr>
+
+<tr>
+<td class="svet_td">Статус оплаты:</td>
+<td class="svet_td2 selectCheckbox"><?=$form->html('pay') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">&nbsp;</td>
+<td class="svet_td2"><?=$form->label('changePay', 'При выставлении статуса, заказ считается оплаченным') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">&nbsp;</td>
+<td class="svet_td2"><?=$form->label('isTime', 'Отправлять сообщение, если статус неменялся больше чем сутки') ?></td>
+</tr>
+
+</table>
+<?=$edit->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjaxSave('update');", 'Сохранить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') .
+	                   cmfAdminView::buttonType2($edit->url()->getCatalog(), 'Вернуться')) ?>

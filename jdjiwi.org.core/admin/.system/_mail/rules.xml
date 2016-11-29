@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduls package="Настройки">
+	<modul id="mail" name="Почта">
+		<menu>
+			<link name="/admin/mail/" menu="Почта"/>
+			<link name="/admin/mail/templates/" menu="Почтовые шаблоны"/>
+			<link name="/admin/mail/templates/edit/"/>
+			<link name="/admin/mail/var/" menu="Почтовые переменные"/>
+		</menu>
+		<pages>
+			<page name="/admin/mail/" subpath="list"/>
+			<page name="/admin/mail/templates/" subpath="list"/>
+			<page name="/admin/mail/templates/edit/"/>
+			<page name="/admin/mail/var/"/>
+		</pages>
+		<rules>
+			<rule id="mail.list">
+				<elements>
+					<element>list</element>
+				</elements>
+			</rule>
+			<rule id="mail.templates">
+				<elements>
+					<element>templates/list</element>
+					<element>templates/edit</element>
+				</elements>
+			</rule>
+			<rule id="mail.config">
+				<elements>
+					<element>var</element>
+					<element>var/config</element>
+				</elements>
+			</rule>
+		</rules>
+	</modul>
+</moduls>

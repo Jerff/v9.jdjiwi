@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduls package="Информация">
+	<modul id="article" name="Статьи">
+		<menu>
+			<link name="/admin/article/" menu="Статьи"></link>
+			<link name="/admin/article/edit/"></link>
+		</menu>
+		<pages>
+			<page name="/admin/article/" subpath="list"></page>
+			<page name="/admin/article/edit/"></page>
+			<page name="/admin/article/attach/" template="admin.productList"/>
+		</pages>
+		<rules>
+			<rule id="article">
+				<elements>
+					<element>edit</element>
+					<element>list</element>
+					<element>list/config</element>
+				</elements>
+				<childs>
+					<child parentId="article">article.attach</child>
+				</childs>
+			</rule>
+			<rule id="article.attach">
+				<elements>
+					<element>attach</element>
+				</elements>
+			</rule>
+		</rules>
+	</modul>
+</moduls>

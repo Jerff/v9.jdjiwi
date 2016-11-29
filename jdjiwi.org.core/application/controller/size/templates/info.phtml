@@ -1,0 +1,33 @@
+<div id="sizeList">
+    <?=$header ?>
+
+    <div class="sizeList-table-header">
+        <table id="sz-table-menu">
+        <tr>
+        <? foreach($_info[0] as $p=>$v) { ?>
+            <th><?=$v['name'] ?></th>
+        <? } ?>
+        </tr>
+        <? for($i=0; $i<$infoCount; $i++) { ?>
+            <tr>
+            <? foreach($_info[0] as $p=>$v) { ?>
+                <td>
+                <? if(isset($_info[$p])) {
+                    $j = 0; foreach($_info[$p] as $id=>$v) if($i==$j++) {   ?>
+                    <span class="sizeHeader" onclick="cmf.main.sizeList.select(this, <?=$id ?>);"><?=$v['name'] ?></span>
+                <? } ?>
+                <? } ?>
+                </td>
+            <? } ?>
+            </tr>
+        <? } ?>
+        </table>
+    </div>
+    <div id="sizeListContent"></div>
+    <?=$footer ?>
+    <? foreach($_info[0] as $p=>$v) {
+        if(isset($_info[$p])) {
+            foreach($_info[$p] as $id=>$v){ ?>
+                <div id="sizeListContent<?=$id ?>" class="cHide"><?=$v['content'] ?></div>
+    <? }}} ?>
+</div>

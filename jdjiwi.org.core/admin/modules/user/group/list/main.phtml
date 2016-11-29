@@ -1,0 +1,29 @@
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>
+
+<?=$list->html()->startForm() ?>
+	<table class="great_table">
+	<tr class="header_col">
+	<td width="22px">#</td>
+	<td>Название</td>
+	<td width="100px">Клиенты</td>
+	<td width="22px">Вид</td>
+	</tr>
+
+<?	foreach($list as $key=>$value){
+		list($form, $data) = $value->main;
+
+	 ?>
+	<?=view_list::startTR($list) ?>
+	<?=$list->getPostMove($data); ?>
+	<td><? if($key) echo cmfAdminView::buttonType3($list->getEditUrl(), $data->name) ?></td>
+	<td><?=cmfAdminView::buttonType3($list->getUserUrl(), 'клиенты') ?></td>
+	<td><?=$list->getHtmlListId(); ?>
+		<?=$form->html('visible') ?></td>
+	</tr>
+<? } ?>
+	</table>
+<?=$list->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>

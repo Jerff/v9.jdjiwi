@@ -1,0 +1,28 @@
+
+<h1><?=$info['header'] ?></h1>
+<?=$info['content'] ?>
+
+<? if(!empty($office['mapYandexCoordinates'])) { ?>
+<div style="margin-top:20px;">
+    <div style="width:600px; height:400px; background:gray;" id="YMapsID"></div>
+    <script type="text/javascript">
+        YMaps.jQuery(function () {
+            var map = new YMaps.Map(YMaps.jQuery("#YMapsID")[0]);
+            map.setCenter(new YMaps.GeoPoint(<?=$office['mapYandexCoordinates'] ?>), 16);
+            map.addControl(new YMaps.Zoom());
+            map.addControl(new YMaps.ToolBar());
+            map.addControl(new YMaps.TypeControl([
+                YMaps.MapType.MAP,
+                YMaps.MapType.SATELLITE,
+                YMaps.MapType.HYBRID,
+                YMaps.MapType.PMAP
+            ], [0, 1, 2, 3]));
+            var placemark = new YMaps.Placemark(new YMaps.GeoPoint(<?=$office['mapYandexCoordinates'] ?>));
+            placemark.name = "<?=$office['mapYandexNotice'] ?>";
+            placemark.description = "<?=$office['mapYandexContent'] ?>";
+            map.addOverlay(placemark);
+            placemark.openBalloon();
+        });
+    </script>
+</div>
+<? } ?>

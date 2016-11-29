@@ -1,0 +1,42 @@
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType2($list->url->getNew(), 'Добавить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>
+
+<?=$list->html()->startForm() ?>
+	<table class="great_table">
+	<tr class="header_col">
+	<td width="22px">#</td>
+	<td width="100px">Заказ</td>
+	<td width="150px">Статус оплаты</td>
+	<td>Название</td>
+	<td width="22px">Уд.</td>
+	</tr>
+
+<?	foreach($list as $key=>$value){
+		list($form, $data) = $value->main;
+
+	 ?>
+	<?=view_list::startTR($list) ?>
+	<?=$list->getPostMove($data); ?>
+	<td><?	switch($data->stop) {
+				case 0:
+					echo '<font color="'. $data->color .'">отменен</font>';
+					break;
+				case 1:
+					echo '<font color="'. $data->color .'">выполняется</font>';
+					break;
+				case 2:
+					echo '<font color="'. $data->color .'">закончен</font>';
+					break;
+			} ?></td>
+	<td><?=$data->pay ?></td>
+	<td><? if($key) echo cmfAdminView::buttonType3($list->getEditUrl(), $data->name) ?></td>
+	<td><?=$list->viewDelete() ?></td>
+	</tr>
+<? } ?>
+	</table>
+<?=$list->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType2($list->url->getNew(), 'Добавить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>

@@ -1,0 +1,49 @@
+	<? isset($menu) ? view_menu::viewMenu($menu) : '' ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjaxSave('update');", 'Сохранить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') .
+	                   cmfAdminView::buttonType2($edit->url()->getCatalog(), 'Вернуться')) ?>
+
+
+<?=$edit->html()->startForm() ?>
+<? list($form) = $edit->current()->main ?>
+<table class="great_table">
+<tr class="header_col">
+<td colspan="2">Информация</td>
+</tr>
+
+<tr>
+<td class="svet_td">&nbsp;</td>
+<td class="svet_td2 selectCheckbox"><?=$form->label('subscribe', 'Включить') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Статус:</td>
+<td class="svet_td2 id="status"><?=$edit->getStatus($data->visible) ?></td>
+</tr>
+
+<? if($is=isset($listUser[$data->user])) { ?>
+<tr>
+<td class="svet_td">Пользователь:</td>
+<td class="svet_td2"><?=cmfAdminView::buttonType3($edit->getUserUrl($data->user), $listUser[$data->user]) ?></td>
+</tr>
+<? } ?>
+
+<tr>
+<td class="svet_td">Тип рассылки:</td>
+<td class="svet_td2" colspan="3"><?=$form->html('type', 'class="width50"'. ($is ? ' disabled="true"' : '')) ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Email:</td>
+<td class="svet_td2"><?=$form->html('email', 'class="width25"'. ($is ? ' disabled="true"' : '')) ?></td>
+</tr>
+
+</table>
+<?=$edit->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjaxSave('update');", 'Сохранить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') .
+	                   cmfAdminView::buttonType2($edit->url()->getCatalog(), 'Вернуться')) ?>

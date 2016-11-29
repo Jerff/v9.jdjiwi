@@ -1,0 +1,74 @@
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>
+
+<?=$edit->html()->startForm() ?>
+<? list($form) = $edit->current()->main ?>
+<table class="great_table">
+<tr class="header_col">
+<td colspan="2">&nbsp;</td>
+</tr>
+
+<tr>
+<td class="svet_td">&nbsp;</td>
+<td class="svet_td2 selectCheckbox"><?=$form->label('enable', 'Включить') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Тип:</td>
+<td class="svet_td2 selectCheckbox"><?=$form->html('type', 'onchange="cmf.pages.typeShange(this.value);"') ?>
+<script language="JavaScript">
+cmf.pages.typeShange = function(value) {
+    switch(value) {
+      case 'file':
+          $('.fileId').each(function() {
+              cmf.admin.showLine(this);
+          });
+          $('.textId').each(function() {
+              cmf.admin.hideLine(this);
+          });
+          break;
+
+      case 'text':
+          $('.fileId').each(function() {
+              cmf.admin.hideLine(this);
+          });
+          $('.textId').each(function() {
+              cmf.admin.showLine(this);
+          });
+          break;
+    }
+};
+cmf.pages.typeShange('<?=$data->type ?>');
+</script>
+</td>
+</tr>
+
+<tr>
+<td class="svet_td">Положение:</td>
+<td class="svet_td2 selectCheckbox"><?=$form->html('place') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td textId">Размер текста:</td>
+<td class="svet_td2 textId"><?=$form->html('size', 'class="width25"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td textId">Текст:</td>
+<td class="svet_td2 textId"><?=$form->html('notice', 'class="width50"') ?>
+  <br /><br />
+  <a href="<?=$logo ?>" target="_blank" class="button fancybox"><?=cImage::logo ?></a>
+</span>
+</td>
+</tr>
+
+<tr>
+<td class="svet_td fileId">Изображение</td>
+<td class="svet_td2 fileId"><?=$edit->getImage('main', 'image') ?></td>
+</tr>
+
+</table>
+<?=$edit->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>

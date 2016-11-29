@@ -1,0 +1,84 @@
+<table class="great_table sectionCommand">
+<tr class="header_col">
+<td colspan="2"><a onclick="$('.sectionCommand').hide(); $('.sectionEdit').show(); ">Показать настройки</a></td>
+</tr>
+</table>
+
+<?=$config->html()->startForm('edit') ?>
+<? list($configForm) = $config->current()->main ?>
+<table class="great_table sectionEdit cHide"">
+<tr class="header_col">
+<td colspan="2"><a onclick="$('.sectionEdit').hide(); $('.sectionCommand').show(); ">Скрыть настройки</a></td>
+</tr>
+<tr>
+<td colspan="2" class="svet_td">
+    <? view_command::viewLineButton(
+                       cmfAdminView::buttonType1("edit.postAjax('update');", 'Сохранить')) ?>
+</td>
+</tr>
+<tr>
+<td class="svet_td">Статей на главной</td>
+<td class="svet_td2"><?=$configForm->html('articleMain', 'class="width25"') ?></td>
+</tr>
+<tr>
+<td class="svet_td">Статей в разделе</td>
+<td class="svet_td2"><?=$configForm->html('articleSection', 'class="width25"') ?></td>
+</tr>
+<tr>
+<td class="svet_td">Статей на страницу</td>
+<td class="svet_td2"><?=$configForm->html('articleLimit', 'class="width25"') ?></td>
+</tr>
+<tr>
+<td class="svet_td">Статей страниц (навигация)</td>
+<td class="svet_td2"><?=$configForm->html('articlePage', 'class="width25"') ?></td>
+</tr>
+</table>
+<?=$config->html()->endForm() ?>
+
+    <table class="table_position">
+    <tr class="header_col">
+    <td>Разделы: <?=cmfView::selectOncahge($filterSection, 'class="width99"') ?></td>
+    </tr>
+	</table>
+
+	<? view_command::viewLimitButton($list->getLimitUrl(), $list->getLinkPage(),
+	                   cmfAdminView::buttonType2($list->url->getNew(), 'Добавить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>
+
+
+<?=$list->html()->startForm() ?>
+	<table class="great_table">
+	<tr class="header_col">
+	<td width="50px">Дата</td>
+	<td width="100px">Раздел</td>
+	<td width="20%">Заголовок</td>
+	<td>Анонс</td>
+	<td width="200px">Постоянная ссылка</td>
+	<td width="50px">Рекомендуем</td>
+	<td width="22px">Вверху списка</td>
+	<td width="22px">Вид</td>
+	<td width="22px">Уд.</td>
+	</tr>
+
+<?	foreach($list as $key=>$value){
+		list($form, $data) = $value->main;
+
+	 ?>
+	<?=view_list::startTR($list) ?>
+	<td><?=$data->date ?></td>
+	<td><?=get2($filterSection, $data->section, 'name', 'нет') ?></td>
+	<td><? if($key) echo cmfAdminView::buttonType3($list->getEditUrl(), $data->header) ?></td>
+	<td><?=$data->notice ?></td>
+	<td><?=$list->viewListSiteUrl($data) ?></td>
+	<td><?=cmfAdminView::buttonType3($list->getProductUrl(), '('. (int)get($attach, $key) .')') ?></td>
+	<td><?=$form->html('isMain') ?></td>
+	<td><?=$form->html('visible') ?></td>
+	<td><?=$list->viewDelete() ?></td>
+	</tr>
+<? } ?>
+	</table>
+<?=$list->html()->endForm() ?>
+
+	<? view_command::viewLimitButton($list->getLimitUrl(), $list->getLinkPage(),
+	                   cmfAdminView::buttonType2($list->url->getNew(), 'Добавить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>

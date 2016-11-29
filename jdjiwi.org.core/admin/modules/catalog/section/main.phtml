@@ -1,0 +1,216 @@
+<? if(!$id and !$new){ ?>
+<table class="great_table sectionCommand">
+<tr class="header_col">
+<td colspan="2"><a onclick="$('.sectionCommand').hide(); $('.sectionEdit').show(); ">Показать настройки</a></td>
+</tr>
+</table>
+
+<?=$config->html()->startForm('edit') ?>
+<? list($configForm) = $config->current()->main ?>
+<table class="great_table sectionEdit cHide">
+<tr class="header_col">
+<td colspan="2"><a onclick="$('.sectionEdit').hide(); $('.sectionCommand').show(); ">Скрыть настройки</a></td>
+</tr>
+<tr>
+<td colspan="2" class="svet_td">
+    <? view_command::viewLineButton(
+                       cmfAdminView::buttonType1("edit.postAjax('update');", 'Сохранить')) ?>
+</td>
+</tr>
+<tr>
+<td class="svet_td">Товаров на странице:</td>
+<td class="svet_td2"><?=$configForm->html('productLimit') ?> <?=$configForm->html('productList', 'class="width25"') ?></td>
+</tr>
+<tr>
+<td class="svet_td">Количество страниц (навигация):</td>
+<td class="svet_td2"><?=$configForm->html('productPage', 'class="width50"') ?></td>
+</tr>
+<tr>
+<td class="svet_td">Новинками считаются товары, добавленные:</td>
+<td class="svet_td2"><?=$configForm->html('novelty') ?>&nbsp;&nbsp;&nbsp;дней назад</td>
+</tr>
+</table>
+<?=$config->html()->endForm() ?>
+<? } ?>
+
+
+<? if($id or $new){ ?>
+    <script language="JavaScript">
+    $(document).ready(function() {
+    <? if(!$new and $isList and !$isEnd) { ?>
+    	$('.sectionEdit').hide(); $('.sectionCommand').show();
+    <? } else { ?>
+        $('.sectionCommand').hide(); $('.sectionEdit').show();
+    <? } ?>
+    });
+    </script>
+
+	<table class="botton_and_radio_container_left">
+	<tr>
+	<td><?=cmfAdminView::path($edit->path()); ?></td>
+	<td>
+	<div class="botton_and_radio_container_right cHide sectionEdit">
+	<ul>
+		<?=cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') ?>
+	</ul>
+	</div>
+	</td>
+	</tr>
+	</table>
+
+	<table class="great_table cHide sectionCommand">
+	<tr class="header_col">
+	<td colspan="2"><a onclick="$('.sectionCommand').hide(); $('.sectionEdit').show(); ">Показать данные</a></td>
+	</tr>
+    <tr class="header_col">
+    <td colspan="2"><?=$edit->viewSiteUrl() ?></td>
+    </tr>
+    </table>
+
+	<?=$edit->html()->startForm() ?>
+    <? list($form) = $edit->current()->main ?>
+	<table class="great_table cHide sectionEdit">
+
+	<tr class="header_col">
+	<td colspan="2"><? if(!$new) { ?><a onclick="$('.sectionEdit').hide(); $('.sectionCommand').show(); ">Скрыть данные</a><? } ?>&nbsp;</td>
+	</tr>
+
+    <tr class="header_col">
+    <td colspan="2"><?=$edit->siteUrl()->item() ?></td>
+    </tr>
+
+    <tr>
+    <td class="svet_td">&nbsp;</td>
+    <td class="svet_td2 selectCheckbox">
+        <?=$form->label('visible', 'Отображать') ?></td>
+    </tr>
+
+	<tr>
+	<td class="svet_td">Каталог:</td>
+	<td class="svet_td2"><?=$form->html('parent', 'class="width50" onchange="cmf.pages.parentShange();"') ?>
+    <script language="JavaScript">
+    cmf.pages.parentShange = function() {
+    	var value = parseInt(cmf.getValue('<?=$form->getId('parent') ?>'));
+    	$('.parentSection').each(function() {
+    		cmf.admin.hideShowLine(this, value);
+    	});
+    };
+    cmf.pages.parentShange();
+    </script>
+	</td>
+	</tr>
+
+	<tr class="header_col">
+	<td colspan="2">Информация</td>
+	</tr>
+
+	<tr>
+	<td class="svet_td">Адрес:</td>
+	<td class="svet_td2"><?=$form->html('uri', 'class="width25"') ?></td>
+	</tr>
+
+	<tr>
+	<td class="svet_td">Название:<?=cmfWysiwyng::typograf($form->getId('name')) ?></td>
+	<td class="svet_td2"><?=$form->html('name', 'class="width99"') ?></td>
+	</tr>
+
+	<tr>
+	<td class="svet_td">Стоп слово для <br />каталога яндекс:</td>
+	<td class="svet_td2"><?=$form->html('stop', 'class="width99"') ?></td>
+	</tr>
+
+	<tr class="cHide">
+	<td class="svet_td">Адрес статьи с размерами:</td>
+	<td class="svet_td2"><?=$form->html('sizeUrl', 'class="width75"') ?></td>
+	</tr>
+
+	<tr class="header_col">
+	<td colspan="2">Seo</td>
+	</tr>
+	<tr>
+	<td class="svet_td">title:</td>
+	<td class="svet_td2"><?=$form->html('title', 'class="width99" rows="3"') ?></td>
+	</tr>
+	<tr>
+	<td class="svet_td">keywords:</td>
+	<td class="svet_td2"><?=$form->html('keywords', 'class="width99" rows="3"') ?></td>
+	</tr>
+	<tr>
+	<td class="svet_td">description:</td>
+	<td class="svet_td2"><?=$form->html('description', 'class="width99" rows="3"') ?></td>
+	</tr>
+
+	</table>
+	<?=$edit->html()->endForm() ?>
+
+	<table class="botton_and_radio_container_left cHide sectionEdit">
+	<tr>
+	<td>
+	<div class="botton_and_radio_container_right">
+	<ul>
+		<?=cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') ?>
+	</ul>
+	</div>
+	</td>
+	</tr>
+	</table>
+
+<? } ?>
+
+
+
+
+<? if(!$new and !$isEnd) { ?>
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType2($list->getAddChildUrl(), 'Добавить') .
+	                   cmfAdminView::buttonType1("list.postAjax('update');", 'Применить')) ?>
+
+
+	<?=$list->html()->startForm('list') ?>
+		<table class="great_table">
+		<tr class="header_col">
+		<td width="22px">#</td>
+		<td>Название</td>
+
+	    <td width="300px">Постоянная ссылка</td>
+		<td width="50px">Разделы / Товары</td>
+
+		<? if(!$id) { ?><td width="50px">Витрина</td><? } ?>
+		<td width="50px">Фильтры</td>
+		<td width="50px">Описание</td>
+
+		<td width="22px">Вид</td>
+		<td width="22px">Уд.</td>
+		</tr>
+
+	<?	$i = false;
+		foreach($list as $key=>$value){
+			list($form, $data) = $value->main;
+
+		 ?>
+		<?=view_list::startTR($list) ?>
+		<?=$list->getPostMove($data) ?>
+		<td><?=cmfAdminView::buttonType3($list->getEditUrl(array('isList'=>null)), $data->name) ?></td>
+
+
+	    <td><?=$list->viewListSiteUrl($data) ?></td>
+	    <td><?=cmfAdminView::buttonType3($list->getEditUrl(array('isList'=>1)), (int)get($child, $key)) ?> /
+		<?=cmfAdminView::buttonType3($list->getProductUrl(), get($product, $key)) ?> </td>
+
+<? if(!$id) { ?>
+		<td><?=cmfAdminView::buttonType3($list->getShopUrl(), 'Витрина') ?></td>
+<? } ?>
+		<td><?=cmfAdminView::buttonType3($list->getSelectUrl(), 'фильтры') ?></td>
+		<td><?=cmfAdminView::buttonType3($list->getNoticeUrl(), 'описание') ?></td>
+
+		<td><?=$form->html('visible') ?></td>
+		<td><?=$list->viewDelete() ?></td>
+		</tr>
+	<? } ?>
+		</table>
+	<?=$list->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType2($list->getAddChildUrl(), 'Добавить') .
+	                   cmfAdminView::buttonType1("list.postAjax('update');", 'Применить')) ?>
+<? } ?>

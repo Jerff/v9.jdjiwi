@@ -1,0 +1,29 @@
+<div class="static">
+    <h1>Оплата заказа № <?=$orderId ?> (<?=$status ?>) <?=$date ?></h1>
+
+        Все варианты оплаты работаю в тестовом режиме
+        <div class="oformit">
+            <div id="priceAll">
+                <br />Итоговая цена: <span><?=$priceAll ?> р.</span>
+                <? if($discount) { ?>
+                    <br />Цена со скидкой: <span><?=$priceDiscount ?> р.</span>
+                    <br />Скидка: <span><?=$discount ?> р.</span>
+                <? } ?>
+            </div>
+        </div>
+
+<? foreach($_list as $v) { ?>
+        <div class="payElement">
+            <a href="<?=$v['url'] ?>">
+                <img src="<?=$v['image'] ?>" alt="<?=$v['title'] ?>">
+                <span><?=$v['name'] ?>
+                    <span class="payNote"><?=$v['notice'] ?></span>
+                </span>
+            </a>
+        </div>
+<? } ?>
+
+
+<br /><br />
+</div>
+

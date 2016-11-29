@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><?= $title ?></title>
+        <meta http-equiv="pragma" content="no-cache" />
+        <meta http-equiv="cache-control" content="no-cache" />
+        <?= cHeader::getHead() ?>
+
+    </head>
+    <body>
+        <noscript>
+        <strong>Системе обязательна поддержка javascript, включите ee и обновите страницу</strong>
+        </noscript>
+        <script language="JavaScript">
+            core.ajax.init({hash: '<?= $this->hash() ?>'});
+        </script>
+        <div id="ajax-content">

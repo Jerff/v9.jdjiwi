@@ -1,0 +1,46 @@
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Сохранить')) ?>
+
+
+<?=$edit->html()->startForm() ?>
+<? list($form) = $edit->current()->main ?>
+<table class="great_table">
+<tr class="header_col">
+<td colspan="2">&nbsp;</td>
+</tr>
+
+<tr>
+<td class="svet_td">&nbsp;</td>
+<td class="svet_td2"><?=$form->label('isIp', 'Привязывать сессию к ip') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Имя:</td>
+<td class="svet_td2"><?=$form->html('name', 'class="width99"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Почта:</td>
+<td class="svet_td2"><?=$form->html('email', 'class="width50"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Текущий пароль:</td>
+<td class="svet_td2"><?=$form->html('main', 'class="width50"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Пароль:</td>
+<td class="svet_td2"><?=$form->html('password', 'class="width50"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Подтвердите пароль:</td>
+<td class="svet_td2"><?=$form->html('password2', 'class="width50"') ?></td>
+</tr>
+
+</table>
+<?=$edit->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Сохранить')) ?>

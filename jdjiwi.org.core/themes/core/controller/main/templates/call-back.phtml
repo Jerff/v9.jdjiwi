@@ -1,0 +1,50 @@
+
+    <h1>Перезвоните мне</h1>
+    <?=$content ?>
+
+    <div class="register-page">
+	<?=$callBack->startForm() ?>
+	<?=$callBack->formError() ?>
+            <fieldset>
+                <label>Имя</label>
+                <?=$form->html('name', 'class="i-text"') ?>
+            </fieldset>
+            <fieldset>
+                <label>Тема</label>
+                <?=$form->html('title', 'class="i-textarea"') ?>                            
+            </fieldset>
+            <fieldset>
+                <?=$form->viewError('cod') ?>
+                <?=$form->viewError('phone') ?>
+                <div class="clearFloat"></div>
+                <label>Телефон</label>
+                <?=$form->html('cod', 'class="i-text i-text-short " title="Код"') ?>
+                <?=$form->html('phone', 'class="i-text i-text-middle " title="Телефон"') ?>
+            </fieldset>   
+            <? if($callBack->isCaptcha()) { ?>
+            <fieldset>
+                <label>Введите текст</label>
+                <?=$form->get('captcha')->image('class="i-captcha"') ?>                            
+            </fieldset>
+            <fieldset>
+                <label>&nbsp;</label>
+                <?=$form->html('captcha', 'class="i-text"') ?>                            
+            </fieldset>
+            <? } ?>
+            <br />
+            <fieldset>
+                <input type="image" src="images/send.png" class="reg-btn"   />
+            </fieldset>
+    <script type="text/javascript">
+    $(function($){
+        $("#<?=$form->getId('cod') ?>").mask("+7(999)");
+        $("#<?=$form->getId('phone') ?>").mask("999-99-99");
+    });         
+    cmf.getId('<?=$form->getId('name') ?>').errorView = cmf.main.form.login;
+    cmf.getId('<?=$form->getId('notice') ?>').errorView = cmf.main.form.login;
+    cmf.getId('<?=$form->getId('cod') ?>').errorView = cmf.main.form.login;
+    cmf.getId('<?=$form->getId('phone') ?>').errorView = cmf.main.form.login;
+    cmf.getId('<?=$form->getId('captcha') ?>').errorView = cmf.main.form.login;
+    </script>
+	<?=$callBack->endForm() ?>
+	</div>

@@ -1,0 +1,51 @@
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjaxSave('update');", 'Сохранить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') .
+	                   cmfAdminView::buttonType2($edit->url()->getCatalog(), 'Вернуться')) ?>
+
+
+<?=$edit->html()->startForm() ?>
+<? list($form) = $edit->current()->main ?>
+<table class="great_table">
+<tr class="header_col">
+<td colspan="2">&nbsp;</td>
+</tr>
+
+<tr>
+<td class="svet_td">&nbsp;</td>
+<td class="svet_td2 selectCheckbox">
+    <?=$form->label('visible', 'Отображать') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Название:</td>
+<td class="svet_td2"><?=$form->html('name', 'class="width99"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Комиссия платежной <br />системы в %:</td>
+<td class="svet_td2"><?=$form->html('commission', 'class="width99"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Модуль:</td>
+<td class="svet_td2"><?=$form->html('modul', 'class="width25"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Анонс:</td>
+<td class="svet_td2"><?=$form->html('notice', 'class="width99" rows="5"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Логотип:</td>
+<td class="svet_td2" colspan="3"><?=$edit->getImage('main', 'image') ?></td>
+</tr>
+
+</table>
+<?=$edit->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjaxSave('update');", 'Сохранить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') .
+	                   cmfAdminView::buttonType2($edit->url()->getCatalog(), 'Вернуться')) ?>

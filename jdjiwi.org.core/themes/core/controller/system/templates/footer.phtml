@@ -1,0 +1,49 @@
+<div class="footer-menu">
+    <ul>
+        <? foreach ($_menu as $row) { ?>
+            <li class="sep"></li>
+            <li><a href="<?= $row['url'] ?>"><?= $row['name'] ?></a></li>
+        <? } ?>
+        <li class="sep"></li>
+    </ul>
+</div>
+<div class="footer-contacts">
+    <div class="subscribe">
+        <?= $subscribeYes->html()->start() ?>
+        <fieldset>
+            <input type="submit" class="subscribe-btn" value="" />
+            <?= $form->get('email')->html('class="subscribe-text"') ?>
+            <label>Подпишитесь на новости: </label>
+        </fieldset>
+        <?= $subscribeYes->html()->end() ?>
+    </div>
+    <div class="email"><a href="mailto:<?= $email ?>"><?= $email ?></a></div>
+    <div class="social">
+        <span>Следуйте за нами:</span>
+        <?= $network ?>
+    </div>
+</div>
+</div>
+</div>
+
+<div class="footer-cart">
+    <div class="main-content">
+        <div class="alfa-links footer-cart-content colorFon">
+            <div class="main-content-cart">
+                <div class="left"><?= $cart['notice'] ?></div>
+                <div class="left image"><?= $cart['payment'] ?></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer-text">
+    <div class="main-content">
+        <p><?= $copyright ?></p>
+        <?= $counters ?>
+    </div>
+</div>
+</div>
+<div class="milestone"></div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<h1>Вход в личный кабинет</h1>
+<div class="register-page">
+
+    <?= $userEnter->html()->start() ?>
+    <?= $userEnter->html()->error() ?>
+    <div class="clearFloat"></div>
+    <fieldset>
+        <?=$userEnter->form(1)->get('login')->error() ?>
+        <label>Email</label>
+        <?= $userEnter->form(1)->get('login')->html('class="i-text"') ?>
+        <script type="text/javascript">
+            core.form.error.color.set('<?= $userEnter->form(1)->get('login')->id() ?>', core.form.user.login);
+        </script>
+    </fieldset>
+    <fieldset>
+        <?=$userEnter->form(1)->get('password')->error() ?>
+        <label>Пароль</label>
+        <?= $userEnter->form(1)->get('password')->html('class="i-text"') ?>
+        <script type="text/javascript">
+            core.form.error.color.set('<?= $userEnter->form(1)->get('password')->id() ?>', core.form.user.login);
+        </script>
+    </fieldset>
+    <br />
+    <fieldset>
+        <a href="<?= $passwordUrl ?>">Восстановить пароль</a>
+        <input type="image" src="/images/enter.png" class="reg-btn"   />
+    </fieldset>
+    <?= $userEnter->html()->end() ?>
+</div>
+

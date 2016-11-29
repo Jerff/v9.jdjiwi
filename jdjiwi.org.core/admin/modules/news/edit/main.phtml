@@ -1,0 +1,71 @@
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjaxSave('update');", 'Сохранить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') .
+	                   cmfAdminView::buttonType2($edit->url()->getCatalog(), 'Вернуться')) ?>
+
+
+<?=$edit->html()->startForm() ?>
+<? list($form) = $edit->current()->main ?>
+<table class="great_table">
+<tr class="header_col">
+<td colspan="2"><?=$edit->siteUrl()->item() ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">&nbsp;</td>
+<td class="svet_td2 selectCheckbox"><?=$form->label('visible', 'Включить') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Дата:</td>
+<td class="svet_td2" id="f_date3">
+<?=$form->html('date', 'class="width25" onfocus="cmf.admin.calendar.focus(this);"') ?>
+</td>
+</tr>
+
+<tr>
+<td class="svet_td">Адрес:</td>
+<td class="svet_td2" id="datePopup"><?=$form->html('uri', 'class="width50"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Заголовок:<?=cmfWysiwyng::typograf($form->getId('header')) ?></td>
+<td class="svet_td2"><?=$form->html('header', 'class="width99"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Анонс:</td>
+<td class="svet_td2"><?=$form->html('notice', 200) ?></td>
+</tr>
+
+<tr>
+<td class="svet_td" nowrap>Подробный текст:</td>
+<td class="svet_td2"><?=$form->html('content', 400) ?></td>
+</tr>
+
+<tr class="header_col">
+<td colspan="2">Seo</td>
+</tr>
+<tr>
+<td class="svet_td">title:</td>
+<td class="svet_td2">
+<?=$form->html('title', 'class="width99" rows="3"') ?></td>
+</tr>
+<tr>
+<td class="svet_td">keywords:</td>
+<td class="svet_td2">
+<?=$form->html('keywords', 'class="width99" rows="3"') ?></td>
+</tr>
+<tr>
+<td class="svet_td">description:</td>
+<td class="svet_td2">
+<?=$form->html('description', 'class="width99" rows="3"') ?></td>
+</tr>
+
+</table>
+<?=$edit->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjaxSave('update');", 'Сохранить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') .
+	                   cmfAdminView::buttonType2($edit->url()->getCatalog(), 'Вернуться')) ?>

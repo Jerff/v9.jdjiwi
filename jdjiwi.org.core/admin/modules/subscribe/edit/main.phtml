@@ -1,0 +1,110 @@
+	<? isset($menu) ? view_menu::viewMenu($menu) : '' ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjaxSave('update');", 'Сохранить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') .
+	                   cmfAdminView::buttonType2($edit->url()->getCatalog(), 'Вернуться')) ?>
+
+
+<?=$edit->html()->startForm() ?>
+<? list($form) = $edit->current()->main ?>
+<table class="great_table">
+<tr class="header_col">
+<td colspan="2">Информация</td>
+</tr>
+
+<tr>
+<td class="svet_td">&nbsp;</td>
+<td class="svet_td2 selectCheckbox"><?=$form->label('visible', 'Включить') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Дата старта рассылки:</td>
+<td class="svet_td2" id="f_date3">
+<?=$form->html('dateStart', 'class="width25" onfocus="cmf.admin.calendar.focus(this);"') ?></td>
+</tr>
+
+<? if($edit->id()->get()) { ?>
+<tr>
+<td class="svet_td">Статус:</td>
+<td class="svet_td2" id="status">
+        <?=$edit->getStatus($data->status) ?>
+        <br /><br /><?=cmfAdminView::onclickType1("if(confirm('Тестовая отправка?')) modul.postAjax('mailTest');", 'Тестирование рассылки') ?>
+</td>
+</tr>
+<? } ?>
+
+<tr>
+<td class="svet_td">Названание рассылки:</td>
+<td class="svet_td2"><?=$form->html('name', 'class="width99"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Тип рассылки:</td>
+<td class="svet_td2" colspan="3"><?=$form->html('type', 'class="width50" onChange="cmf.pages.changeType();"') ?>
+<script language="JavaScript">
+cmf.pages.changeType = function(v) {
+    if(cmf.getValue('<?=$form->getId('type') ?>')=='user') {
+    	$('.userSubscribe').show();
+    } else {
+        $('.userSubscribe').hide();
+    }
+}
+cmf.pages.changeType();
+</script>
+</td>
+</tr>
+
+<tr>
+<td class="svet_td userSubscribe">Пользователи:</td>
+<td class="svet_td2 userSubscribe">
+    <?=$form->html('user', 'class="width30"') ?>
+    <?=cmfAdminView::onclickType1("cmf.pages.addUser();", 'Добавить пользователя') ?>
+<script language="JavaScript">
+cmf.pages.addUser = function(v) {
+    var email = cmf.getValue('<?=$form->getId('user') ?>');
+    if(email==0) {
+    	alert('Выберите пользователя');
+        return;
+    }
+    var list = cmf.getValue('<?=$form->getId('email') ?>');
+    if(list=='') {
+        cmf.setValue('<?=$form->getId('email') ?>', email);
+    } else {
+        if(list.indexOf(email)!=-1) {
+            alert('Пользователя уже добавлен');
+        } else {
+            cmf.setValue('<?=$form->getId('email') ?>', list +', '+ email);
+        }
+    }
+}
+</script>
+</td>
+</tr>
+
+<tr>
+<td class="svet_td userSubscribe">Список рассылки:</td>
+<td class="svet_td2 userSubscribe"><?=$form->html('email', 'class="width99" rows="3"') ?></td>
+</tr>
+
+<tr class="header_col">
+<td colspan="2">Рассылка</td>
+</tr>
+
+<tr>
+<td class="svet_td">Заголовок:</td>
+<td class="svet_td2"><?=$form->html('header', 'class="width99"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Письмо:</td>
+<td class="svet_td2"><?=$form->html('content', 400) ?></td>
+</tr>
+
+</table>
+<?=$edit->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjaxSave('update');", 'Сохранить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') .
+	                   cmfAdminView::buttonType2($edit->url()->getCatalog(), 'Вернуться')) ?>

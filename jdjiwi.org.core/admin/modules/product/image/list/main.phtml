@@ -1,0 +1,137 @@
+
+<table class="great_table">
+<tr class="header_col">
+<td colspan="2"><?=$urlView ?></td>
+</tr>
+</table>
+
+<div class="imageOne <?=$isMultiImage ? 'cHide' : '' ?>">
+    <table class="great_table">
+    <tr class="header_col">
+    <td colspan="2"><a onclick="$('.imageOne').hide(); $('.imageMulti').show(); ">Мультизагрузка</a></td>
+    </tr>
+    </table>
+
+    <? view_command::viewLineMenuButton(
+                       $id ?    cmfAdminView::buttonType1("cmf.redirect('". $edit->url()->getCatalog() ."');", 'Новая запись') : '',
+                       cmfAdminView::buttonType1("edit.postAjax('update');", $id ? 'Сохранить' : 'Добавить')) ?>
+
+
+<?=$edit->html()->startForm('edit') ?>
+<table class="great_table">
+
+<tr class="header_col">
+<td colspan="2"><?=($id ? 'Информация' : 'Новая запись') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">&nbsp;</td>
+<td class="svet_td2"><?=$form->label('visible', 'Отображать') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Цвет:</td>
+<td class="svet_td2 selectCheckbox" colspan="3"><?=$form->html('color', '&nbsp;') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Изображение:</td>
+<td class="svet_td2">
+    <?=$form->html('name', 'class="width50"') ?>
+    <br /><br /><?=$edit->getImage('main', 'image') ?></td>
+</tr>
+
+<? if($edit->id()->get()) { ?>
+<tr>
+<td class="svet_td"><span id="previewMain" class="cursor">Показать превью</span></td>
+<td class="svet_td2">
+    <div id="previewContent" class="cHide">
+        <? view_gallery::preview($edit, 'edit', $data) ?>
+    </div>
+<script language="JavaScript">
+cmf.admin.gallery.hideShow('#previewMain', '#previewContent');
+</script>
+</td>
+</tr>
+<? } ?>
+
+</table>
+<?=$edit->html()->endForm() ?>
+</div>
+
+
+<div class="imageMulti <?=$isMultiImage ? '' : 'cHide' ?>">
+    <table class="great_table">
+    <tr class="header_col">
+    <td colspan="2"><a onclick="$('.imageMulti').hide(); $('.imageOne').show(); ">Обычная загрузка</a></td>
+    </tr>
+    </table>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("multi.postAjax('newLine');", 'Добавить') .
+	                   cmfAdminView::buttonType1("multi.postAjax('update');", 'Применить')) ?>
+
+
+<?=$main_multi->html()->startForm('multi') ?>
+	<table class="great_table">
+	<tr class="header_col">
+	<td>Цвета</td>
+	<td width="30%">Изображение</td>
+	<td width="22px">Вид</td>
+	<td width="22px">Удалить</td>
+	</tr>
+
+<?	foreach($main_multi as $key=>$value){
+		list($form, $data) = $value->main;
+	 ?>
+	<?=view_list::startTR($main_multi) ?>
+	<td class="selectCheckbox"><?=$form->html('color', '&nbsp;') ?></td>
+	<td><?=$form->html('name', 'class="width99"') ?>
+    <br /><br /><?=$main_multi->getImage('main', 'image') ?></td>
+	<td><?=$form->html('visible') ?></td>
+	<td><?=$main_multi->viewDelete() ?></td>
+	</tr>
+<? } ?>
+	</table>
+<?=$main_multi->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("multi.postAjax('newLine');", 'Добавить') .
+	                   cmfAdminView::buttonType1("multi.postAjax('update');", 'Применить')) ?>
+</div>
+
+	<? view_command::viewLimitButton($limitUrl, $linkPage, '') ?>
+
+<?=$list->html()->startForm() ?>
+<?	foreach($list as $key=>$value) if($key){
+		list($form, $data) = $value->main;
+
+	 ?>
+    <div id="<?=$list->getHtmlIdDel() ?>" class="galleryView productImageWidth">
+	<div>
+    	<div>
+        	<? if($data->notEmpty('color')) { ?>
+                <? foreach($list->getColor($data->color) as $color) { ?>
+                    <div class="colorbox" style="background:#<?=$color ?>;"></div>
+                <? } ?>
+        	<? } ?>
+    	</div>
+        <div class="clearFloat"></div>
+    	<div><?=$list->getPostMove($data) ?></div>
+    	<div><?=cmfAdminView::buttonType3($list->getEditUrl(), $data->header) ?></div>
+	    <div style="float:right">
+    	    <div><?=$form->html('visible', 'onchange="modul.postAjax(\'update\');"') ?></div>
+    	    <div><?=$list->viewDelete() ?></div>
+    	</div>
+	</div>
+	<div class="clearFloat"></div>
+	<div>
+	    <? if($data->get('image_main')) { ?>
+	        <a href="<?=$data->get('image_main') ?>" class="fancybox img" rel="group"><img class="preview" id="preview<?=$key ?>" src="<?=$data->get('image_section') ?>?<?=time() ?>" alt="<?=htmlspecialchars($data->get('name')) ?>"></a>
+	    <? }?>
+    </div>
+	</div>
+<? } ?>
+<?=$list->html()->endForm() ?>
+
+	<? view_command::viewLimitButton($limitUrl, $linkPage, '') ?>

@@ -1,0 +1,53 @@
+	<table class="great_table">
+	<tr class="header_col">
+	<td colspan="2">Раздел: <?=$name ?></td>
+	</tr>
+ 	<tr class="columnn_svet2">
+	<td colspan="2">
+		Списки для фильтров берутся или от родительского элемента, или переопределяются в текущем элементе
+	</td>
+	</tr>
+<?	if($param)
+	foreach($param as $id=>$list) { ?>
+	<tr class="columnn_svet2">
+	<td width="20%">Раздел: <a href="<?=$list->getSelectUrl($id) ?>"><?=$list['name'] ?></a></td>
+	<td><?=implode('<br />', $list['list']) ?></td>
+	</tr>
+<? } ?>
+ 	<tr class="columnn_svet2">
+	<td colspan="2">
+		После изменения параметров, необходимо обновить поисковый индекс
+	</td>
+	</tr>
+	</table>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjax('newLine');", 'Добавить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>
+
+
+<?=$list->html()->startForm() ?>
+	<table class="great_table">
+	<tr class="header_col">
+	<td width="22px">#</td>
+	<td>Параметр</td>
+	<td width="22px">Вид</td>
+	<td width="22px">Уд.</td>
+	</tr>
+
+<?	foreach($list as $key=>$value){
+		list($form, $data) = $value->main;
+	 ?>
+	<?=view_list::startTR($list) ?>
+	<?=$list->getPostMove($data) ?>
+	<td><?=$form->html('param', 'class="width50"') ?></td>
+	<td><?=$form->html('visible') ?></td>
+	<td><?=$list->viewDelete() ?></td>
+	</tr>
+<? } ?>
+	</table>
+<?=$list->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjax('newLine');", 'Добавить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>

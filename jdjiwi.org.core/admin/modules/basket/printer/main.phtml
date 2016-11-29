@@ -1,0 +1,141 @@
+
+	<table class="great_table">
+	<tr class="header_col">
+	<td>№</td>
+	<td>Статус</td>
+	<td>Операции</td>
+	<td width="1000px" colspan="2">Дата создания заказа</td>
+	</tr>
+
+<?        $key = $edit->id()->get();
+        list($header, $_basket) = unserialize($data->product);
+		list(, $email, $userData, $userAdress, $userSubscribe) = unserialize($data->data);
+		list($countAll, $priceAll, $priceDiscount, $priceDelivery, $discount) = unserialize($data->price);
+
+	 ?>
+	<tr class="columnn_svet2">
+	<td><?=$key ?></td>
+	<td nowrap id="register_<?=$key ?>"><?=$data->isPay=='yes' ? 'оплачено' : 'не оплачено' ?>
+	                                    <br /><?=$listStatus[$data->status] ?>
+	                                    <br /><?=$data->changeDate ?></td>
+	<td nowrap id="register2_<?=$key ?>"> </td>
+
+	<td><?=$data->registerDate ?></td>
+	<td> </td>
+	</tr>
+
+
+	<tr class="columnn_svet">
+	<td colspan="5">
+
+
+<? if(isset($listUser[$data->user])) { ?>
+		<table border="1" cellspacing="0" cellpadding="4">
+		<tr>
+		<td class="svet_td">Профайл пользователя</td>
+		<td class="svet_td2"><?=cmfAdminView::buttonType3($edit->getUserUrl($data->user), $listUser[$data->user]) ?></td>
+		</tr>
+		</table>
+		<br>
+<? } ?>
+
+		<table border="1" cellspacing="0" cellpadding="4">
+<? foreach($userData as $k=>$v) { ?>
+		<tr>
+		<td class="svet_td"><?=$k ?>:</td>
+		<td class="svet_td2"><?=$v ?></td>
+		</tr>
+<? } ?>
+<? foreach($userAdress as $k=>$v) { ?>
+		<tr>
+		<td class="svet_td"><?=$k ?>:</td>
+		<td class="svet_td2"><?=$v ?></td>
+		</tr>
+<? } ?>
+<? if($userSubscribe) { ?>
+		<tr>
+		<td class="svet_td">Рассылка:</td>
+		<td class="svet_td2"><?=implode('<br />', array_keys($userSubscribe)) ?>
+		</td>
+		</tr>
+<? } ?>
+
+
+		<tr>
+		<td class="svet_td">Сумма:
+		<? if($discount) { ?>
+		    <br />Со скидкой:
+		<? } ?>
+		<? if($data->isDelivery==='yes') { ?>
+		    <br />C доставкой:
+		<? } ?>
+		<? if($discount) { ?>
+		    <br />Скидка:
+		<? } ?>
+		</td>
+		<td class="svet_td2"><?=$priceAll ?> руб.
+		<? if($discount) { ?>
+		    <br /><?=$priceDiscount ?> руб.
+		<? } ?>
+		<? if($data->isDelivery==='yes') { ?>
+		    <br /><?=$priceDelivery ?> руб.
+		<? } ?>
+		<? if($discount) { ?>
+		    <br /><?=$discount ?> руб.
+		<? } ?>
+		</td>
+		</tr>
+
+		</table>
+
+
+		<table border="1" cellspacing="0" cellpadding="4" width="100%" id="productList">
+
+		<tr class="columnn_svet">
+        <td class="left_text" colspan="2">Наименование товара</th>
+        <td width="100px">Код</th>
+        <td width="200px"></th>
+        <td width="100px">Количество</th>
+        <td width="100px">Цена</th>
+		</tr>
+<? foreach($_basket as $k=>$v) {
+    $is = true;
+    $rowspan = 0;
+    foreach($v['param'] as $pId=>$pName) if(isset($v['count'][$pId])) {
+        foreach($v['count'][$pId] as $cId=>$cValue) if(isset($v['color'][$cId]) or !$cId) {
+            $rowspan++;
+        }
+    }
+
+    foreach($v['param'] as $pId=>$pName) if(isset($v['count'][$pId])) {
+		foreach($v['count'][$pId] as $cId=>$cValue) if(isset($v['color'][$cId]) or !$cId) { ?>
+		<tr class="columnn_svet2">
+        <? if($is) {
+            $is = false; ?>
+            <td class="c1" rowspan="<?=$rowspan ?>" valign="top" width="90px">
+                <a href="<?=$v['url'] ?>" target="product"><img src="<?=$v['image'] ?>" width="82" alt="<?=$v['title'] ?>" /></a>
+            </td>
+            <td class="c2" rowspan="<?=$rowspan ?>" valign="top">
+                <a href="<?=$v['url'] ?>" target="product"><?=$v['name'] ?></a>
+                <br /><?=$v['bName'] ?>
+            </td>
+        <td class="c3" rowspan="<?=$rowspan ?>" valign="top"><?=$v['articul'] ?></td>
+        <? } ?>
+        <td class="c4">
+            <? if($pId) { ?>
+                <?=$v['header'] ?> <?=$pName ?>
+            <? } ?>
+            <? if($cId) { ?>
+                <br />Цвет: <?=$v['color'][$cId]['name'] ?>
+            <? } ?>
+        </td>
+        <td class="c4"><?=$cValue ?> шт.</td>
+        <td class="c6" id="price<?=$k ?>_<?=$pId ?>_<?=$cId ?>"><?=$v['view'][$pId][$cId] ?> р.</td>
+		</tr>
+	<? }}} ?>
+
+		</table>
+
+	</td>
+	</tr>
+	</table>

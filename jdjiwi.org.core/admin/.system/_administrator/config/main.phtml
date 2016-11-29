@@ -1,0 +1,44 @@
+	<table class="table_position">
+	<tr class="header_col">
+	<td>Группы: <?=cmfView::selectOncahge($filterGroup) ?></td>
+	</tr>
+	</table>
+
+	<? view_command::viewLimitButton($limitUrl, $linkPage,
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>
+
+
+<?=$list->html()->startForm() ?>
+	<table class="great_table">
+	<tr class="header_col">
+	<td width="100px">Имя</td>
+	<td width="700px">Логин</td>
+	<td width="22px">debugError</td>
+	<td width="22px">debugSql</td>
+	<td width="22px">debugExplain</td>
+	<td width="22px">debugCache</td>
+	</tr>
+
+<?	foreach($list as $key=>$value){
+		list($form, $data) = $value->main;
+
+	 ?>
+	<?=view_list::startTR($list) ?>
+
+	<td><?=$data->name ?></td>
+	<td><?=$data->login ?></td>
+
+
+	<td><?=$form->html('debugError') ?></td>
+	<td><?=$form->html('debugSql') ?></td>
+	<td><?=$form->html('debugExplain') ?></td>
+	<td><?=$form->html('debugCache') ?>
+		<?=$list->viewListId(); ?>
+	</td>
+	</tr>
+<? } ?>
+	</table>
+<?=$list->html()->endForm() ?>
+
+	<? view_command::viewLimitButton($limitUrl, $linkPage,
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>

@@ -1,0 +1,75 @@
+	<table class="table_position">
+	<tr class="header_col">
+	<td nowrap>
+		Группа: <?=cmfView::selectOncahge($_group) ?>
+	</td>
+	</tr>
+	</table>
+
+
+<script language="JavaScript">
+function changeReadWrite(read, write, del) {
+    var checked = !cmf.getId(read).checked;
+    cmf.getId(read).checked = checked;
+    cmf.getId(write).checked = checked;
+    cmf.getId(del).checked = checked;
+}
+</script>
+
+	<? view_command::viewLineMenuButton(
+	                   cmfAdminView::buttonType1("modul.postAjax('updatePageAccess');", 'Применить разделение доступа'),
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>
+
+<?=$list->html()->startForm() ?>
+	<table class="great_table">
+	<tr class="header_col">
+	<td colspan="3">Страницы</td>
+	<td width="22px">Чтение</td>
+	<td width="22px">Запись</td>
+	<td width="22px">Удаление</td>
+	</tr>
+
+
+<?	$i = false;
+	foreach($list as $key=>$value){
+		list($form, $data) = $value->main;
+
+		list($read) = $value->read;
+		list($write) = $value->write;
+		list($delete) = $value->delete;
+		 ?>
+
+<? if($data->get('isPack')) { ?>
+	<tr class="header_col">
+	<td colspan="6"><b><?=$data->name ?></b></td>
+	</tr>
+<? } else { ?>
+
+	<?=view_list::startTR($list) ?>
+	<td width="22px">&nbsp;</td>
+<? if($data->get('child')) { ?>
+
+	<td width="22px">&nbsp;</td>
+	<td onclick="changeReadWrite('<?=$read->getId('visible') ?>', '<?=$write->getId('visible') ?>');"><i><?=$data->name ?></i></td>
+
+<? } else { ?>
+
+	<td colspan="2" onclick="changeReadWrite('<?=$read->getId('visible') ?>', '<?=$write->getId('visible') ?>', '<?=$delete->getId('visible') ?>');"><?=$data->name ?></td>
+
+<? } ?>
+
+
+	<td><?=$read->html('visible') ?></td>
+	<td><?=$write->html('visible') ?></td>
+	<td>
+		<?=$list->viewListId(); ?>
+		<?=$delete->html('visible') ?></td>
+	</tr>
+<? } ?>
+<? } ?>
+	</table>
+<?=$list->html()->endForm() ?>
+
+	<? view_command::viewLineMenuButton(
+	                   cmfAdminView::buttonType1("modul.postAjax('updatePageAccess');", 'Применить разделение доступа'),
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>

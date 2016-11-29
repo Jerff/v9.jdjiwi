@@ -1,0 +1,73 @@
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("edit.postAjax('update');", 'Применить')) ?>
+
+<?=$edit->html()->startForm('edit') ?>
+<table class="great_table">
+<tr class="header_col">
+<td colspan="2">Почтовый аккурант</td>
+</tr>
+
+<tr>
+<td class="svet_td">Логин:</td>
+<td class="svet_td2"><?=$form->html('login', 'class="width50"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Пароль:</td>
+<td class="svet_td2"><?=$form->html('password', 'class="width50"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Подтверждение пароля:</td>
+<td class="svet_td2"><?=$form->html('password2', 'class="width50"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Хост:</td>
+<td class="svet_td2"><?=$form->html('host', 'class="width50"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Тип соединения:</td>
+<td class="svet_td2"><?=$form->html('secure', 'class="width50"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Порт:</td>
+<td class="svet_td2"><?=$form->html('port', 'class="width50"') ?></td>
+</tr>
+
+</table>
+<?=$edit->html()->endForm() ?>
+
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjax('newLine');", 'Добавить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>
+
+
+<?=$list->html()->startForm() ?>
+	<table class="great_table">
+	<tr class="header_col">
+	<td width="200px">Переменная</td>
+	<td width="200px">Название</td>
+	<td>Значение</td>
+	<td width="22px">Уд.</td>
+	</tr>
+
+<?	foreach($list as $key=>$value){
+		list($form, $data) = $value->main;
+	 ?>
+	<?=view_list::startTR($list) ?>
+	<td><?=$form->html('var', 'style="width:90%"') ?></td>
+	<td><?=$form->html('name', 'style="width:90%"') ?></td>
+	<td><?=$form->html('value', 'style="width:90%"') ?></td>
+    <td><?=$list->viewDelete() ?></td>
+	</tr>
+<? } ?>
+	</table>
+<?=$list->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjax('newLine');", 'Добавить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>

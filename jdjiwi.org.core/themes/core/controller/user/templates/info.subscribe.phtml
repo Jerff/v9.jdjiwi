@@ -1,0 +1,18 @@
+                        <div class="order-block order-block_view2"><div class="o2"><div class="o3 o3_subscribe">
+                            <div class="bcont">
+                                <h1>Рассылка</h1>
+                                <?=$content ?>
+	<?=$subscribe->startForm() ?>
+	<?=$subscribe->formError() ?>
+	<?=$subscribe->formSave() ?>
+                                <ul class="radio-menu">
+                                <? foreach(cmfSubscribe::typeList() as $k=>$v) { ?>
+                                    <li><?=$form->checkbox($k, 'class="styled"') ?><a onclick="cmf.style.checkboxLabel(this);"><?=$v ?></a></li>
+                                <? } ?>
+                                </ul>
+                            </div>
+                            <div class="clearFloat"></div>
+                            <input type="image" src="images/save-type2.png" class="reg-btn"   />
+                            </div>
+     <?=$subscribe->endForm() ?>
+                        </div>

@@ -1,0 +1,33 @@
+<div class="news-item-date"><?=$news['date'] ?></div>
+<h1><?=$news['header'] ?></h1>
+
+<?=$news['content'] ?>
+    <? if(isset($_image)) { ?>
+        <div id="gallery-container">
+            <div id="gallery" class="ad-gallery">
+                <div class="ad-image-wrapper">
+                </div>
+                <div class="ad-controls">
+                </div>
+                <div class="ad-nav">
+                    <div class="ad-thumbs">
+                        <ul class="ad-thumb-list">
+                            <? foreach($_image as $row) { ?>
+                            <li>
+                                <a href="<?=$row['main'] ?>">
+                                    <img src="<?=$row['section'] ?>" title="<?=$row['title'] ?>" alt2="">
+                                </a>
+                            </li>
+                            <? } ?>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <? } ?>
+
+        <script type="text/javascript">
+            $(function() {
+                $('.ad-gallery').adGallery();
+            });
+        </script>

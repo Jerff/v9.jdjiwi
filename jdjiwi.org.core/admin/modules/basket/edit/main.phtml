@@ -1,0 +1,420 @@
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType2($edit->url()->getCatalog(), 'Вернуться')) ?>
+
+
+<?=$edit->html()->startForm() ?>
+<? list($form) = $edit->current()->main ?>
+	<table class="great_table">
+	<tr class="header_col">
+	<td width="22px">№</td>
+	<td width="150px">Статус</td>
+	<td width="150px">Операции</td>
+	<td colspan="3">Дата создания заказа</td>
+	</tr>
+
+<?		$key = $edit->id()->get();
+		list($header, $_basket) = unserialize($data->product);
+		list(, $email, $userData, $userAdress, $userSubscribe) = unserialize($data->data);
+		list($countAll, $priceAll, $priceDiscount, $priceDelivery, $discount) = unserialize($data->price);
+
+        $deliveryDesc = cString::unserialize($data->deliveryDesc);
+        if($deliveryDesc) {
+            $deliveryDesc = $deliveryDesc['content'];
+        }
+
+        $isEMS = strlen($data->get('EMS'));
+        $isEMSSend = $data->EMSSend==='yes';
+        $isDeliverySend = $data->deliverySend==='yes';
+	 ?>
+	<tr class="columnn_svet2">
+	<td><?=$key ?></td>
+	<td nowrap><?=$edit->getStatus($data) ?></td>
+	<td nowrap><?=$edit->getCommand($key, $data) ?></td>
+
+	<td><?=$data->registerDate ?></td>
+	<td><?=cmfAdminView::buttonType3($edit->getPrintUrl(), 'печать') ?></td>
+	<td width="22px"><?=cmfAdminView::onclickType1("if(confirm('Удалить?')) modul.postAjax('deleteBasket');", '<img src="/sourseImage/admin/delete.gif">') ?></td>
+	</tr>
+
+	<tr class="columnn_svet">
+	<td colspan="6">
+
+<? if($data->isPay=='yes' and $data->is('payData')) { ?>
+		<table border="1" cellspacing="0" cellpadding="4">
+		<tr>
+		<td class="svet_td">Детали оплаты</td>
+		<td class="svet_td2">
+            <span id="isPayData" class="cursor">Показать подробности</span>
+		    <pre id="payData" class="cHide"><br /><?=$data->payData ?></pre>
+		    <script type="text/javascript">
+		    $('#isPayData').click(function() {
+		        if(cmf.style.hideShow('#payData')) {
+                    $('#isPayData').html('Скрыть подробности');
+		        } else {
+                    $('#isPayData').html('Показать подробности');
+		        }
+		    });
+		    </script>
+		</td>
+		</tr>
+		</table>
+		<br />
+<? } ?>
+
+<? if(isset($listUser[$data->user])) { ?>
+		<table border="1" cellspacing="0" cellpadding="4">
+		<tr>
+		<td class="svet_td">Профайл пользователя</td>
+		<td class="svet_td2"><?=cmfAdminView::buttonType3($edit->getUserUrl($data->user), $listUser[$data->user]) ?></td>
+		</tr>
+		</table>
+		<br>
+<? } ?>
+
+		<table border="1" cellspacing="0" cellpadding="4" width="100%">
+<? $i = 0;
+    foreach($userData as $k=>$v) { ?>
+		<tr>
+		<td class="svet_td"><?=$k ?>:</td>
+		<td class="svet_td2"><?=$v ?>
+		<div class="cHide adressView"><input name="text[<?=$i++ ?>]" type="text" value="<?=cString::specialchars($v) ?>" class="width50"></div>
+		</td>
+		</tr>
+<? } ?>
+<? foreach($userAdress as $k=>$v) { ?>
+		<tr>
+		<td class="svet_td"><?=$k ?>:</td>
+		<td class="svet_td2"><?=nl2br($v) ?>
+		<div class="cHide adressView"><textarea name="text[<?=$i++ ?>]" rows=3  class="width50"><?=cString::specialchars($v) ?></textarea></div>
+		</td>
+		</tr>
+<? } ?>
+		<tr>
+		<td class="svet_td">&nbsp;</td>
+		<td class="svet_td2">
+    		<?=cmfAdminView::onclickType1("cmf.style.hideShow('.adressView');", 'редактировать контакты') ?>
+		</td>
+		</tr>
+
+<? if($userSubscribe) { ?>
+		<tr>
+		<td class="svet_td">Рассылка:</td>
+		<td class="svet_td2"><?=implode('<br />', array_keys($userSubscribe)) ?>
+		</td>
+		</tr>
+<? } ?>
+
+		<tr>
+		<td class="svet_td">Сумма:
+		<? if($discount) { ?>
+		    <br />Со скидкой:
+		<? } ?>
+		<? if($data->isDelivery==='yes') { ?>
+		    <br />C доставкой:
+		<? } ?>
+		<? if($discount) { ?>
+		    <br />Скидка:
+		<? } ?>
+		</td>
+		<td class="svet_td2"><?=$priceAll ?> руб.
+		<? if($discount) { ?>
+		    <br /><?=$priceDiscount ?> руб.
+		<? } ?>
+		<? if($data->isDelivery==='yes') { ?>
+		    <br /><?=$priceDelivery ?> руб.
+		<? } ?>
+		<? if($discount) { ?>
+		    <br /><?=$discount ?> руб.
+		<? } ?>
+		</td>
+		</tr>
+
+<? if($edit) { ?>
+		<tr>
+		<td class="svet_td">&nbsp;</td>
+		<td class="svet_td2">
+		    <?=$form->label('isDelivery', 'Доставка', 'onclick="cmf.pages.shangeDelivery();"') ?>
+
+
+
+        <? if(!empty($deliveryDesc)) { ?>
+            <div class="isDelivery cursor"><br><div  id="deliveryDesc">Показать статус:</div></div>
+            <div class="isDelivery">
+                <div class="deliveryDesc cHide">
+                <br>
+                <?=$deliveryDesc ?>
+                </div>
+            </div>
+		    <script type="text/javascript">
+		    $('#deliveryDesc').click(function() {
+		        if(cmf.style.hideShow('.deliveryDesc')) {
+                    $(this).html('Скрыть статус');
+		        } else {
+                    $(this).html('Показать статус');
+		        }
+		    });
+            function Wind(ID) {
+                var link = "http://www.russianpost.ru/resp_engine.aspx?Path=RP/SERVISE/RU/Home/postuslug/SearchOPS/SearchOPSPortalExtended&NEWSID=" + ID;
+                window.open(link, "", "menubar=no,scrollbars=1,resizable=no,width=750, height=500");
+            }
+		    </script>
+        <? } ?>
+
+
+
+		</td>
+		</tr>
+
+        <tr>
+		<td class="svet_td"><div class="isDelivery">Тип доставки:</div></td>
+		<td class="svet_td2"><div class="isDelivery">
+		    <?=$form->html('deliveryType', 'class="width25" onchange="cmf.pages.shangeDelivery();"') ?>
+            </div>
+		</td>
+		</tr>
+
+		<tr>
+        <td class="svet_td"><div class="deliveryRussianPost">Номер отправления:</div>
+		<td class="svet_td2"><div class="deliveryRussianPost">
+		    <? if($data->notEmpty('deliveryCod')) { ?>
+                <?=$data->deliveryCod ?><br>
+                <? if($isDeliverySend) { ?>
+                    Письмо отправлено<br>
+                <? } ?>
+		        <?=$form->html('deliveryCod', 'class="cHide width25"') ?>
+                <span>
+                    <?=cmfAdminView::onclickType1("$('#". $form->getId('deliveryCod') ."').show(); $(this).parent().parent().hide();", 'Сменить номер') ?>
+                    &nbsp; &nbsp; &nbsp;<?=cmfAdminView::onclickType1("modul.postAjax('updateDeliveryTypeStatus');", 'Обновить состояние посылки') ?>
+                    <? if(!$isDeliverySend) { ?>
+                        &nbsp; &nbsp; &nbsp;<?=cmfAdminView::onclickType1("if(confirm('Отправить?')) modul.postAjax('sendDeliveryStatusMail');", 'Отправить письмо c номером') ?>
+                    <? } ?>
+                </span>
+
+		    <? } else { ?>
+                <?=$form->html('deliveryCod', 'class="width25"') ?>
+		    <? } ?>
+            </div>
+		</td>
+		</tr>
+
+		<tr>
+		<td class="svet_td"><div class="deliveryEMS">Номер отправления:</div>
+		<td class="svet_td2"><div class="deliveryEMS">
+		    <? if($data->notEmpty('EMS')) { ?>
+                <?=$data->EMS ?><br>
+                <? if($isEMSSend) { ?>
+                    Письмо отправлено<br>
+                <? } ?>
+                <?=$form->html('EMS', 'class="cHide width25"') ?>
+                <span>
+                    <?=cmfAdminView::onclickType1("$('#". $form->getId('EMS') ."').show(); $(this).parent().parent().hide();", 'Сменить номер') ?>
+                    <? if(!$isEMSSend) { ?>
+                        &nbsp; &nbsp; &nbsp;<?=cmfAdminView::onclickType1("if(confirm('Отправить?')) modul.postAjax('sendEMSMail');", 'Отправить письмо c номером') ?>
+                    <? } ?>
+                </span>
+
+            <? } else { ?>
+                <?=$form->html('EMS', 'class="width25"') ?>
+		    <? } ?>
+
+            </div>
+		</td>
+		</tr>
+
+		<tr>
+		<td class="svet_td"><div class="isDelivery">Цена доставка:</div></td>
+		<td class="svet_td2"><div class="isDelivery"><?=$form->html('deliveryPrice') ?>
+		    <script language="JavaScript">
+            cmf.pages.shangeDelivery = function() {
+//                pre('shangeDelivery');
+                var value = cmf.isChecked('<?=$form->getId('isDelivery') ?>');
+            	$('.isDelivery').each(function() {
+            		cmf.admin.hideShowLineNew(this, value);
+            	});
+                var type = cmf.getValue('<?=$form->getId('deliveryType') ?>');
+//                pre('russian-post', value, type=='russian-post', value & type=='russian-post');
+                $('.deliveryRussianPost').each(function() {
+                    cmf.admin.hideShowLineNew(this, (value && type=='russian-post'));
+                });
+//                pre('ems', type=='ems', value && type=='ems');
+                $('.deliveryEMS').each(function() {
+                    cmf.admin.hideShowLineNew(this, (value && type=='ems'));
+                });
+            }
+            cmf.pages.shangeDelivery();
+            </script>
+            </div>
+        </td>
+		</tr>
+<? } ?>
+		<tr>
+		<td class="svet_td"> </td>
+		<td class="svet_td2"><?=cmfAdminView::onclickType1("modul.postAjax('updateDelivery');", 'сохранить') ?></td>
+		</tr>
+		</table>
+
+
+
+		<table border="1" cellspacing="0" cellpadding="4" width="100%" id="productList" <?=$isEdit ? 'class="cHide"' : '' ?>>
+<? if($edit) { ?>
+		<tr>
+		<td colspan="6"><?=cmfAdminView::onclickType1("cmf.style.hide('#productList'); cmf.style.show('#productEdit');", 'Редактировать') ?></td>
+		</tr>
+<? } ?>
+		<tr class="columnn_svet">
+        <td class="left_text" colspan="2">Наименование товара</th>
+        <td width="100px">Код</th>
+        <td width="200px"></th>
+        <td width="100px">Количество</th>
+        <td width="100px">Цена</th>
+		</tr>
+<? foreach($_basket as $k=>$v) {
+    $is = true;
+    $rowspan = 0;
+    foreach($v['param'] as $pId=>$pName) if(isset($v['count'][$pId])) {
+        foreach($v['count'][$pId] as $cId=>$cValue) if(isset($v['color'][$cId]) or !$cId) {
+            $rowspan++;
+        }
+    }
+
+    foreach($v['param'] as $pId=>$pName) if(isset($v['count'][$pId])) {
+		foreach($v['count'][$pId] as $cId=>$cValue) if(isset($v['color'][$cId]) or !$cId) { ?>
+		<tr class="columnn_svet2">
+        <? if($is) {
+            $is = false; ?>
+            <td class="c1" rowspan="<?=$rowspan ?>" valign="top" width="90px">
+                <a href="<?=$v['url'] ?>" target="product"><img src="<?=$v['image'] ?>" width="82" alt="<?=$v['title'] ?>" /></a>
+            </td>
+            <td class="c2" rowspan="<?=$rowspan ?>" valign="top">
+                <a href="<?=$v['url'] ?>" target="product"><?=$v['name'] ?></a>
+                <br /><?=$v['bName'] ?><? if($v['isOrder']) { ?><sup>(под заказ)</sup><? } ?>
+            </td>
+        <td class="c3" rowspan="<?=$rowspan ?>" valign="top"><?=$v['articul'] ?></td>
+        <? } ?>
+        <td class="c4">
+            <? if($pId) { ?>
+                <?=$v['header'] ?> <?=$pName ?>
+            <? } ?>
+            <? if($cId) { ?>
+                <br />Цвет: <?=$v['color'][$cId]['name'] ?>
+            <? } ?>
+        </td>
+        <td class="c4"><?=$cValue ?> шт.</td>
+        <td class="c6" id="price<?=$k ?>_<?=$pId ?>_<?=$cId ?>"><?=$v['view'][$pId][$cId] ?> р.</td>
+		</tr>
+	<? }}} ?>
+		</table>
+
+<? if($edit) { ?>
+		<table border="1" cellspacing="0" cellpadding="4" width="100%" id="productEdit" <?=$isEdit ? '' : 'class="cHide"' ?>>
+		<tr>
+		<td colspan="7"><?=cmfAdminView::onclickType1("cmf.style.hide('#productEdit'); cmf.style.show('#productList');", 'Отмена') ?></td>
+		</tr>
+
+		<tr class="columnn_svet">
+        <td class="left_text" colspan="2">Наименование товара</th>
+        <td width="100px">Код</th>
+        <td width="200px"></th>
+        <td width="100px">Количество</th>
+        <td width="100px">Цена</th>
+        <td width="100px">Удалить</th>
+
+<? foreach($_basket as $k=>$v) {
+    $is = true;
+    $rowspan = 0;
+    foreach($v['param'] as $pId=>$pName) if(isset($v['count'][$pId])) {
+        foreach($v['count'][$pId] as $cId=>$cValue) if(isset($v['color'][$cId]) or !$cId) {
+            $rowspan++;
+        }
+    }
+
+    foreach($v['param'] as $pId=>$pName) if(isset($v['count'][$pId])) {
+		foreach($v['count'][$pId] as $cId=>$cValue) if(isset($v['color'][$cId]) or !$cId) { ?>
+		<tr class="columnn_svet2">
+        <? if($is) {
+            $is = false; ?>
+            <td class="c1" rowspan="<?=$rowspan ?>" valign="top" width="90px">
+                <a href="<?=$v['url'] ?>" target="product"><img src="<?=$v['image'] ?>" width="82" alt="<?=$v['title'] ?>" /></a>
+            </td>
+            <td class="c2" rowspan="<?=$rowspan ?>" valign="top">
+                <a href="<?=$v['url'] ?>" target="product"><?=$v['name'] ?></a>
+                <br /><?=$v['bName'] ?><? if($v['isOrder']) { ?><sup>(под заказ)</sup><? } ?>
+            </td>
+        <td class="c3" rowspan="<?=$rowspan ?>" valign="top"><?=$v['articul'] ?></td>
+        <? } ?>
+        <td class="c4">
+            <?=$v['header'] ?> <?=$pName ?>
+            <? if($cId) { ?>
+                <br />Цвет: <?=$v['color'][$cId]['name'] ?>
+            <? } ?>
+        </td>
+        <td class="c4"><input size="5" type="text" name="productList[<?=$k ?>][<?=$pId ?>][<?=$cId ?>]" id="product[<?=$k ?>][<?=$pId ?>][<?=$cId ?>]" value="<?=$cValue ?>"/> шт.</td>
+        <td class="c6" id="price<?=$k ?>_<?=$pId ?>_<?=$cId ?>"><?=$v['view'][$pId][$cId] ?> р.</td>
+		<td nowrap><input name="deleteList[<?=$k ?>][<?=$pId ?>][<?=$cId ?>]" type="checkbox"></td>
+		</tr>
+	<? }}} ?>
+
+		<tr class="columnn_svet">
+		<td colspan="7">
+		<?=cmfAdminView::onclickType1("cmf.pages.addProduct();", 'Добавить товар') ?>
+		<div id="productAdd" class="cHide">
+		    <input name="isAddProduct" id="isAddProduct" type="hidden" value="0">
+<script language="JavaScript">
+cmf.pages.addProduct = function(v) {
+    if(cmf.style.hideShow('#productAdd')) {
+    	cmf.setValue('isAddProduct', 1);
+    } else {
+        cmf.setValue('isAddProduct', 0);
+    }
+}
+</script>
+<? list($_section, $_brand) = $edit->initProduct(); ?>
+			<table style="width:60%">
+			<tr>
+			<td style="25px">Раздел:</td>
+			<td style="width:80%"><select name="section" onchange="modul.postAjax('changeSection');" style="width:99%">
+	  		<option>Выберите</option>
+			<? foreach($_section as $k2=>$v2) { ?>
+            <option value="<?=$k2 ?>"><?=$v2['name'] ?></option>
+			<? } ?>
+			</select></td>
+			</tr>
+
+			<tr><td>Бренд:</td>
+			<td><select name="brand" onchange="modul.postAjax('changeSection');" style="width:99%">
+			<option>Выберите</option>
+			<? foreach($_brand as $k2=>$v2) { ?>
+            <option value="<?=$k2 ?>"><?=$v2['name'] ?></option>
+			<? } ?></select></td>
+			</tr>
+
+			<tr><td>Товар:</td>
+			<td id="productId"></td>
+			</tr>
+
+			<tr><td>Параметры:</td>
+			<td id="paramId" class="selectCheckbox"> </td>
+			</tr>
+
+			<tr><td>Цвет:</td>
+			<td id="colorId" class="selectCheckbox"> </td>
+			</tr>
+
+			</table>
+        </div>
+		</td>
+		</tr>
+
+		<tr>
+		<td colspan="7"><?=cmfAdminView::onclickType1("modul.postAjax('updatePrice');", 'Сохранить') ?></td>
+		</tr>
+		</table>
+<? } ?>
+
+	</td>
+	</tr>
+	</table>
+<?=$edit->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType2($edit->url()->getCatalog(), 'Вернуться')) ?>

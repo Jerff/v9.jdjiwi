@@ -1,0 +1,59 @@
+	<table class="botton_and_radio_container_left">
+	<tr>
+	<td>
+		<div class="botton_and_radio_container_left2">
+		<ul>
+		<?=cmfAdminView::buttonType1("modul.postAjax('optimize');", 'Оптимизировать базу данных') ?>
+		</ul>
+		</div>
+	</td>
+	</tr>
+	</table>
+
+    <br>
+	<table class="botton_and_radio_container_left">
+	<tr>
+	<td>
+		<div class="botton_and_radio_container_left2">
+		<ul>
+		<?=cmfAdminView::buttonType1("modul.postAjax('exportDump');", 'Создать дамп данных') ?>
+		</ul>
+		</div>
+	</td>
+	</tr>
+	<tr>
+	<td>
+		<div class="botton_and_radio_container_left2">
+		<ul>
+		<?=cmfAdminView::buttonType1("if(confirm('Вы уверены?')) modul.postAjax('importDump');", 'Восстановить данные из дампа') ?>
+		</ul>
+		</div>
+	</td>
+	</table>
+
+
+	<br>
+	<table class="botton_and_radio_container_left">
+	<tr>
+	<td>
+		<div class="botton_and_radio_container_left2">
+		<ul>
+		<?=cmfAdminView::buttonType1("modul.postAjax('exportDumpPages');", 'Создать дамп страницы') ?>
+		</ul>
+		</div>
+	</td>
+	</tr>
+	<tr>
+	<td>
+		<div class="botton_and_radio_container_left2">
+		<ul>
+		<?=cmfAdminView::buttonType1("if(confirm('Вы уверены?')) modul.postAjax('importDumpPages');", 'Восстановить страницы из дампа') ?>
+		</ul>
+		</div>
+	</td>
+	</tr>
+	</table>
+
+
+<?=$edit->html()->startForm() ?>
+<?=$edit->html()->endForm() ?>

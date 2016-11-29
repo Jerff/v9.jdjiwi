@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduls package="Система">
+	<modul id="administrator" name="Администраторы">
+		<menu>
+			<link name="/admin/administrator/" menu="Администраторы"/>
+			<link name="/admin/administrator/edit/"/>
+			<link name="/admin/administrator/group/" menu="Группы"/>
+			<link name="/admin/administrator/group/edit/"/>
+			<link name="/admin/administrator/config/" menu="Настройки админов"/>
+		</menu>
+		<pages>
+			<page name="/admin/administrator/" subpath="list"/>
+			<page name="/admin/administrator/edit/"/>
+			<page name="/admin/administrator/group/" subpath="list"/>
+			<page name="/admin/administrator/group/edit/"/>
+			<page name="/admin/administrator/config/"/>
+		</pages>
+		<rules>
+			<rule id="administrator">
+				<elements>
+					<element>list</element>
+					<element>edit</element>
+				</elements>
+			</rule>
+			<rule id="administrator.group">
+				<elements>
+					<element>group/list</element>
+					<element>group/edit</element>
+				</elements>
+			</rule>
+			<rule id="administrator.config">
+				<elements>
+					<element>config</element>
+				</elements>
+			</rule>
+		</rules>
+	</modul>
+</moduls>

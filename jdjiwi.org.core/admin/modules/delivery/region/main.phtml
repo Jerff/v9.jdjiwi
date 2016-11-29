@@ -1,0 +1,100 @@
+<? if($id or $new){ ?>
+
+	<table class="botton_and_radio_container_left">
+	<tr>
+	<td><?=cmfAdminView::path($edit->path()); ?></td>
+	<td>
+	<div class="botton_and_radio_container_right">
+	<ul>
+		<?=cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') ?>
+	</ul>
+	</div>
+	</td>
+	</tr>
+	</table>
+
+	<?=$edit->html()->startForm() ?>
+    <? list($form) = $edit->current()->main ?>
+	<table class="great_table">
+
+    <tr class="header_col">
+    <td colspan="2"><?=$edit->viewSiteUrl() ?></td>
+    </tr>
+
+    <tr>
+    <td class="svet_td">&nbsp;</td>
+    <td class="svet_td2 selectCheckbox">
+        <?=$form->label('visible', 'Отображать') ?></td>
+    </tr>
+
+	<tr>
+	<td class="svet_td">Каталог:</td>
+	<td class="svet_td2"><?=$form->html('parent', 'class="width50"') ?>
+	</td>
+	</tr>
+
+	<tr class="header_col">
+	<td colspan="2">Информация</td>
+	</tr>
+
+	<tr>
+	<td class="svet_td">Название:</td>
+	<td class="svet_td2"><?=$form->html('name', 'class="width99"') ?></td>
+	</tr>
+
+	</table>
+	<?=$edit->html()->endForm() ?>
+
+	<table class="botton_and_radio_container_left">
+	<tr>
+	<td>
+	<div class="botton_and_radio_container_right">
+	<ul>
+		<?=cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') ?>
+	</ul>
+	</div>
+	</td>
+	</tr>
+	</table>
+
+<? } ?>
+
+
+
+
+<? if(!$new and !$isEnd) { ?>
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType2($list->getAddChildUrl(), 'Добавить') .
+	                   cmfAdminView::buttonType1("list.postAjax('update');", 'Применить')) ?>
+
+
+	<?=$list->html()->startForm('list') ?>
+		<table class="great_table">
+		<tr class="header_col">
+		<td width="22px">#</td>
+		<td>Название</td>
+		<td width="100px">Подразделы</td>
+		<td width="22px">Вид</td>
+		<td width="22px">Уд.</td>
+		</tr>
+
+	<?	$i = false;
+		foreach($list as $key=>$value){
+			list($form, $data) = $value->main;
+
+		 ?>
+		<?=view_list::startTR($list) ?>
+		<?=$list->getPostMove($data) ?>
+		<td><?=cmfAdminView::buttonType3($list->getEditUrl(array('isList'=>null)), $data->name) ?></td>
+		<td><? if($data->level<3 and get($child, $key)) echo (int)get($child, $key) ?></td>
+		<td><?=$form->html('visible') ?></td>
+		<td><?=$list->viewDelete() ?></td>
+		</tr>
+	<? } ?>
+		</table>
+	<?=$list->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType2($list->getAddChildUrl(), 'Добавить') .
+	                   cmfAdminView::buttonType1("list.postAjax('update');", 'Применить')) ?>
+<? } ?>

@@ -1,0 +1,63 @@
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>
+
+
+<?=$edit->html()->startForm() ?>
+<? list($form) = $edit->current()->main ?>
+<? list($editForm) = $edit->current()->edit ?>
+<table class="great_table">
+
+<tr class="header_col">
+<td colspan="2">Информация</td>
+</tr>
+
+<? switch($modul) {
+        case 'Sberbank':
+?>
+<tr>
+<td class="svet_td">Название:</td>
+<td class="svet_td2"><?=$form->html('name', 'class="width50"') ?></td>
+</tr>
+<tr>
+<td class="svet_td">Факс:</td>
+<td class="svet_td2"><?=$form->html('fax', 'class="width50"') ?></td>
+</tr>
+<tr>
+<td class="svet_td">Почта:</td>
+<td class="svet_td2"><?=$form->html('email', 'class="width50"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Примичание:</td>
+<td class="svet_td2"><?=$form->html('notice', 'class="width99"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Расчетный счет:</td>
+<td class="svet_td2"><?=$form->html('currentAccount', 'class="width50"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Банк:</td>
+<td class="svet_td2"><?=$form->html('bank', 'class="width50"') ?></td>
+</tr>
+<tr>
+<td class="svet_td">БИК:</td>
+<td class="svet_td2"><?=$form->html('bik', 'class="width50"') ?></td>
+</tr>
+<tr>
+<td class="svet_td">к/с:</td>
+<td class="svet_td2"><?=$form->html('ks', 'class="width50"') ?></td>
+</tr>
+<tr>
+<td class="svet_td">ИНН/КПП:</td>
+<td class="svet_td2"><?=$form->html('inn', 'class="width50"') ?></td>
+</tr>
+<?
+            break;
+    } ?>
+</table>
+<?=$edit->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>

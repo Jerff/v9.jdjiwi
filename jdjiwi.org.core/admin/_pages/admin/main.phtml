@@ -1,0 +1,140 @@
+
+<? if ($id or $new) { ?>
+    <table class="botton_and_radio_container_left">
+        <tr>
+            <td><?= cmfAdminView::path($path); ?></td>
+            <td>
+                <div class="botton_and_radio_container_right">
+                    <ul>
+                        <?= cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') ?>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <?= $edit->html()->startForm() ?>
+    <? list($form) = $edit->current()->main ?>
+    <table class="great_table">
+        <tr class="header_col">
+            <td colspan="2">&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td class="svet_td">Каталог:</td>
+            <td class="svet_td2"><?= $form->html('parent', 'class="width50"') ?></td>
+        </tr>
+
+        <tr class="header_col">
+            <td colspan="2">&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td class="svet_td">Тип страницы:</td>
+            <td class="svet_td2"><?= $form->html('type', 'class="width50"') ?></td>
+        </tr>
+
+        <tr>
+            <td class="svet_td">Название:</td>
+            <td class="svet_td2"><?= $form->html('name', 'class="width99"') ?></td>
+        </tr>
+
+        <tr>
+            <td class="svet_td">&nbsp;</td>
+            <td class="svet_td2 selectRadio">
+                <?= $form->label('visible', 'Отображать') ?>
+                <?= $form->label('isView', 'Раскрывать раздел в меню') ?>
+            </td>
+        </tr>
+
+
+        <? if ($type === 'list') { ?>
+            <tr class="header_col">
+                <td colspan="2">&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td class="svet_td">Модуль:</td>
+                <td class="svet_td2"><?= $form->html('modul', 'class="width50" onchange="modul.postAjax(\'onchangeModul\')"') ?></td>
+            </tr>
+
+            <tr>
+                <td class="svet_td">Меню:</td>
+                <td class="svet_td2"><?= $form->html('modulMenu', 'class="width50" onchange="cmf.pages.onchangeSubModul(this)"') ?>
+                    <script language="JavaScript">
+                        cmf.pages.onchangeSubModul = function(el) {
+                            $('option', el).each(function() {
+                                if(this.value==el.value) {
+                                    cmf.setValue('<?= $form->getId('name') ?>', $(this).text());
+                                }
+                            });
+                        };
+                    </script>
+                </td>
+            </tr>
+        <? } ?>
+
+    </table>
+    <?= $edit->html()->endForm() ?>
+
+    <table class="botton_and_radio_container_left">
+        <tr>
+            <td>
+                <div class="botton_and_radio_container_right">
+                    <ul>
+                        <?= cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') ?>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+<? } ?>
+
+
+
+
+<? if ($type !== 'list' and !$new) { ?>
+    <?
+    view_command::viewLineMenuButton(
+            !$id ? cmfAdminView::buttonType1("list.postAjax('updatePages');", 'Сгенерировать страницы в файл') .
+                    cmfAdminView::buttonType1("list.postAjax('updateCache');", 'Обновить кеш меню') : '', cmfAdminView::buttonType2($list->getAddChildUrl(), 'Добавить') .
+            cmfAdminView::buttonType1("list.postAjax('update');", 'Применить'))
+    ?>
+
+    <?= $list->html()->startForm('list') ?>
+    <table class="great_table">
+        <tr class="header_col">
+            <td width="22px">#</td>
+            <td width="150px">Название</td>
+            <td>Модуль</td>
+
+            <td width="22px">Вид</td>
+            <td width="22px">Копировать</td>
+            <td width="22px">Уд.</td>
+        </tr>
+
+        <?
+        $i = false;
+        foreach ($list as $key => $value) {
+            list($form, $data) = $value->main;
+            ?>
+            <?= view_list::startTR($list) ?>
+            <?= $list->getPostMove($data) ?>
+            <td><?= cmfAdminView::buttonType3($list->getEditUrl(), $data->name ? $data->name : $data->modulName) ?></td>
+            <td><?= $data->get('modul') ?><? if ($data->get('modulMenu')) echo ' / ' . $data->get('modulMenu') ?></td>
+
+            <td><?= $form->html('visible') ?></td>
+            <td><?= cmfAdminView::onclickType1("list.ajax('copy', '$key');", 'Копировать') ?></td>
+            <td><?= $list->viewDelete() ?></td>
+        </tr>
+    <? } ?>
+    </table>
+    <?= $list->html()->endForm() ?>
+
+    <?
+    view_command::viewLineButton(
+            cmfAdminView::buttonType2($list->getAddChildUrl(), 'Добавить') .
+            cmfAdminView::buttonType1("list.postAjax('update');", 'Применить'))
+    ?>
+<? } ?>

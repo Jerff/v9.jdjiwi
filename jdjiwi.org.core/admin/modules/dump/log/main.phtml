@@ -1,0 +1,23 @@
+	<? view_command::viewLimitButton($list->getLimitUrl(), $list->getLinkPage()) ?>
+
+
+<?=$list->html()->startForm() ?>
+	<table class="great_table">
+	<tr class="header_col">
+	<td width="150px">Дата</td>
+	<td>Результат</td>
+	</tr>
+
+<?	foreach($list as $key=>$value){
+		list($form, $data) = $value->main;
+        $color = $data->important==='yes' ? ' class="red"' : '';
+	 ?>
+	<?=view_list::startTR($list) ?>
+	<td <?=$color ?>><?=$data->date ?></td>
+	<td <?=$color ?>><?=$data->content ?></td>
+	</tr>
+<? } ?>
+	</table>
+<?=$list->html()->endForm() ?>
+
+	<? view_command::viewLimitButton($list->getLimitUrl(), $list->getLinkPage()) ?>

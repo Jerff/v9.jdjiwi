@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduls package="Клиенты">
+	<modul id="user" name="Клиенты">
+		<menu>
+			<link name="/admin/user/" menu="Клиенты"/>
+			<link name="/admin/user/edit/" select="param" submenu="Свойства"/>
+			<link name="/admin/user/param/" select="param" submenu="Параметры"/>
+		</menu>
+		<pages>
+			<page name="/admin/user/" subpath="list"/>
+			<page name="/admin/user/edit/"/>
+			<page name="/admin/user/param/"/>
+		</pages>
+		<rules>
+			<rule id="user">
+				<elements>
+					<element>config</element>
+					<element>edit</element>
+					<element>list</element>
+					<element>param</element>
+				</elements>
+			</rule>
+		</rules>
+	</modul>
+</moduls>
