@@ -1,0 +1,114 @@
+    <? view_command::viewLineButton(
+                       cmfAdminView::buttonType1("edit.postAjax('update');", 'Сохранить')) ?>
+
+
+<?=$config->html()->startForm('edit') ?>
+<? list($configForm) = $config->current()->main ?>
+<table class="great_table">
+<tr class="header_col">
+<td colspan="2">Настройки</td>
+</tr>
+<tr>
+<td class="svet_td">Время сменя банеров:</td>
+<td class="svet_td2"><?=$configForm->html('time', 'class="width50"') ?></td>
+</tr>
+</table>
+<?=$config->html()->endForm() ?>
+
+	<table class="table_position">
+	<tr class="header_col">
+	<td width="50%">Раздел: <?=cmfView::selectOncahge($filterSection, 'class="width99"') ?></td>
+	<td width="50%">Проиводитель: <?=cmfView::selectOncahge($filterBrand, 'class="width99"') ?></td>
+	</tr>
+	</table>
+
+    <table class="table_position">
+    <tr class="columnn_svet2">
+    <td>
+        Для cсылки нужно либо выбрать раздел каталога, либо заполнить адрес.
+        <br />На сайте показываются банеры, либо самого раздела и родительских разделов.
+    </td>
+    </tr>
+    </table>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjax('newLine');", 'Добавить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>
+
+
+<?=$list->html()->startForm() ?>
+	<table class="great_table">
+	<tr class="header_col">
+	<td width="22px">#</td>
+	<td></td>
+	<td width="22px">Вид</td>
+	<td width="22px">Уд.</td>
+	</tr>
+
+<?	foreach($list as $key=>$value){
+		if($key) $product = $list->loadForm2();
+		else $product = array();
+		list($form, $data) = $value->main;
+
+		$id = $list->getIndex();
+
+	 ?>
+	<?=view_list::startTR($list) ?>
+	<?=$list->getPostMove($data) ?>
+	<td valing="top">
+		<table width="100%">
+		<tr>
+		<td width="50%" class="selectCheckbox">
+			<?=$form->html('type', 'onclick="cmf.pages.typeShange('. $key .', this.value);"') ?>
+<script language="JavaScript">
+cmf.pages.typeShange = function(key, value) {
+    switch(value) {
+        case 'product':
+            $('#typeEdit'+ key).hide();
+            $('#typeProduct'+ key).show();
+            break;
+
+        case 'edit':
+            $('#typeProduct'+ key).hide();
+            $('#typeEdit'+ key).show();
+            break;
+    }
+};
+cmf.pages.typeShange('<?=$key ?>', '<?=$data->type ?>');
+</script>
+		</td>
+		<td rowspan="3">
+		    <div id="typeProduct<?=$key ?>" class="cHide">
+    		    Раздел: <?=$form->html('section', 'class="width99" onchange="modul.postAjax(\'onchangeSection\', '. $key .' ? '. $key .' : this.keyIndex);"') ?>
+    		    Производитель: <?=$form->html('brand', 'class="width99" onchange="modul.postAjax(\'onchangeSection\', '. $key .' ? '. $key .' : this.keyIndex);"') ?>
+    		    Товар: <?=$form->html('product', 'class="width99" onchange="modul.postAjax(\'onchangeProduct\', '. $key .' ? '. $key .' : this.keyIndex);"') ?>
+		    </div>
+			<div id="typeEdit<?=$key ?>" class="cHide">
+			    Адрес: <?=$form->html('url', 'class="width99"') ?>
+			</div>
+		</td>
+        </tr>
+
+		<tr>
+		<td width="50%">
+			Товар: <span id="name<?=$id ?>"><?=get($product, 'name') ?></span>
+			<?=$form->html('name', 'class="width99"') ?>
+		</td>
+		</tr>
+
+		<tr>
+		<td>изображение <?=banerWidth ?>x<?=banerHeight ?>: <?=$list->getImage('main', 'image') ?></td>
+		</tr>
+		</table>
+	</td>
+
+	<td><?=$form->html('visible') ?></td>
+    <td><?=$list->viewDelete() ?></td>
+	</tr>
+<? } ?>
+	</table>
+<?=$list->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjax('newLine');", 'Добавить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>

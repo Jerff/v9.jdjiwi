@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduls package="Каталог">
+	<modul id="catalog.param" name="Группы товаров">
+		<menu>
+
+		</menu>
+		<pages>
+			<page name="/admin/param/group/" subpath="list"/>
+			<page name="/admin/param/group/edit/"/>
+			<page name="/admin/param/group/select/"/>
+			<page name="/admin/param/group/notice/"/>
+			<page name="/admin/param/" subpath="list"/>
+			<page name="/admin/param/edit/"/>
+			<page name="/admin/param/color/" subpath="list"/>
+			<page name="/admin/param/color/edit/"/>
+			<page name="/admin/param/group/filter/"/>
+			<page name="/admin/param/discount/" subpath="list"/>
+			<page name="/admin/param/discount/edit/"/>
+		</pages>
+		<rules>
+			<rule id="catalog.group">
+				<elements>
+					<element>group/edit</element>
+					<element>group/list</element>
+					<element>group/select</element>
+					<element>group/notice</element>
+					<element>group/notice/section</element>
+					<element>group/filter</element>
+				</elements>
+				<childs>
+					<child parentId="group">param</child>
+				</childs>
+			</rule>
+			<rule id="catalog.group.param">
+				<elements>
+					<element>edit</element>
+					<element>list</element>
+					<element>config</element>
+				</elements>
+			</rule>
+			<rule id="catalog.group.color">
+				<elements>
+					<element>color/edit</element>
+					<element>color/list</element>
+				</elements>
+			</rule>
+			<rule id="catalog.group.discount">
+				<elements>
+					<element>discount/edit</element>
+					<element>discount/list</element>
+				</elements>
+			</rule>
+		</rules>
+	</modul>
+</moduls>

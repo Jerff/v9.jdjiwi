@@ -1,0 +1,34 @@
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjax('newLine');", 'Добавить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>
+
+
+<?=$list->html()->startForm() ?>
+	<table class="great_table">
+	<tr class="header_col">
+	<td width="100px">Пользователи</td>
+	<td width="100px">Заказы</td>
+	<td width="100px">Обратная связь</td>
+	<td width="30%">ФИО</td>
+	<td>Почта</td>
+	<td width="22px">Уд.</td>
+	</tr>
+
+<?	foreach($list as $key=>$value){
+		list($form, $data) = $value->main;
+	 ?>
+	<?=view_list::startTR($list) ?>
+	<td><?=$form->html('userNew') ?></td>
+	<td><?=$form->html('basket') ?></td>
+	<td><?=$form->html('callback') ?></td>
+	<td><?=$form->html('name', 'style="width:90%"') ?></td>
+	<td><?=$form->html('email', 'style="width:90%"') ?></td>
+    <td><?=$list->viewDelete() ?></td>
+	</tr>
+<? } ?>
+	</table>
+<?=$list->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjax('newLine');", 'Добавить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>

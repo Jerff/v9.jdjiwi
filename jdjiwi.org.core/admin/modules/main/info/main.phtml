@@ -1,0 +1,117 @@
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("edit.postAjax('update');", 'Применить')) ?>
+
+
+<?=$edit->html()->startForm('edit') ?>
+<table class="great_table">
+
+<? if($isContact) { ?>
+<tr class="header_col">
+<td colspan="2">Контакты</td>
+</tr>
+
+<tr>
+<td class="svet_td">Время работы:</td>
+<td class="svet_td2"><?=$form->html('time', 'class="width50"') ?></td>
+</tr>
+<tr>
+<td class="svet_td">Телефон:</td>
+<td class="svet_td2"><?=$form->html('phone', 'class="width50"') ?></td>
+</tr>
+<? } ?>
+
+<? if($isContent) { ?>
+<tr class="header_col">
+<td colspan="2">Контент</td>
+</tr>
+
+<tr>
+<td class="svet_td">Заголовок:</td>
+<td class="svet_td2"><?=$form->html('header', 'class="width50"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Контент:</td>
+<td class="svet_td2"><?=$form->html('content', 400) ?></td>
+</tr>
+<? } ?>
+
+
+<? if($isTitle) { ?>
+<tr class="header_col">
+<td colspan="2">Seo</td>
+</tr>
+<tr>
+<td class="svet_td">title:</td>
+<td class="svet_td2">
+<?=$form->html('title', 'class="width99" rows="3"') ?></td>
+</tr>
+<tr>
+<td class="svet_td">keywords:</td>
+<td class="svet_td2">
+<?=$form->html('keywords', 'class="width99" rows="3"') ?></td>
+</tr>
+<tr>
+<td class="svet_td">description:</td>
+<td class="svet_td2">
+<?=$form->html('description', 'class="width99" rows="3"') ?></td>
+</tr>
+<? } ?>
+
+
+<? if($isCoogleMap) { ?>
+<tr class="header_col">
+<td colspan="2">Карта гугля<br />Карта появится внутри &lt;div id="Gmap"&gt;&nbsp;&lt;/div&gt;</td>
+</tr>
+<tr>
+<td class="svet_td">api google для сайта:</td>
+<td class="svet_td2">
+<?=$form->html('mapGoogleApi', 'class="width99" rows="7"') ?></td>
+</tr>
+<tr>
+<td class="svet_td">Координаты:</td>
+<td class="svet_td2">
+<?=$form->html('mapGoogleCoordinates', 'class="width50"') ?></td>
+</tr>
+<tr>
+<td class="svet_td">Сообщение на карте:</td>
+<td class="svet_td2">
+<?=$form->html('mapGoogleContent', 'class="width99" rows="7"') ?></td>
+</tr>
+<? } ?>
+
+
+<? if($isYandexMap) { ?>
+<tr class="header_col">
+<td colspan="2">Яндекс карты<br />Карта появится внутри &lt;div id="YMapsID"&gt;&nbsp;&lt;/div&gt;</td>
+</tr>
+<tr>
+<td class="svet_td">ключ api:</td>
+<td class="svet_td2">
+<?=$form->html('mapYandexApi', 'class="width99" rows="7"') ?></td>
+</tr>
+<tr>
+<td class="svet_td">Координаты:</td>
+<td class="svet_td2">
+<?=$form->html('mapYandexCoordinates', 'class="width50"') ?></td>
+</tr>
+<tr>
+<td class="svet_td">Заголовок сообщения:</td>
+<td class="svet_td2">
+<?=$form->html('mapYandexNotice', 'class="width99" rows="2"') ?></td>
+</tr>
+<tr>
+<td class="svet_td">Сообщение на карте:</td>
+<td class="svet_td2">
+<?=$form->html('mapYandexContent', 'class="width99" rows="7"') ?></td>
+</tr>
+<? } ?>
+
+
+
+
+</table>
+<?=$edit->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("edit.postAjax('update');", 'Применить')) ?>

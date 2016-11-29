@@ -1,0 +1,17 @@
+<div class="news-item-date"><?=$news['date'] ?></div>
+<h1><?=$news['header'] ?></h1>
+
+<?=$news['content'] ?>
+
+                    <? if(isset($attach)) { ?>
+                    <div class="r-block item-right r-block-article">
+                        <div class="tittle">Рекомендуем:</div>
+                        <div class="div-showcase">
+                            <div class="showcase">
+                            <? foreach($attach as $row) { ?>
+                                <a title="<?=$row['title'] ?>" href="<?=$row['url'] ?>"><img src="<?=$row['image'] ?>" alt="<?=$row['title'] ?>"/><span class="area"></span></a>
+                            <? } ?>
+                            </div>
+                        </div>
+                    </div>
+                    <? } ?>

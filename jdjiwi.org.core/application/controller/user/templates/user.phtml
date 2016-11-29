@@ -1,0 +1,44 @@
+
+    <h1>Личный кабинет</h1>
+    <p><?=$content ?></p>
+
+        <div class="infoList">
+            <div class="infoSubList"><a href="<?=$infoUrl ?>">Личные данные</a></div>
+            <div class="infoSubList"><a href="<?=$subscribeUrl ?>">Рассылка</a></div>
+            <div class="infoSubList"><a href="<?=$passwordUrl ?>">Изменить пароль</a></div>
+            <? if(isset($orderUrl)) { ?>
+                <div class="infoSubList"><a href="<?=$orderUrl ?>">История заказов</a></div>
+            <? } ?>
+            <div class="infoSubList"><a href="<?=$exitUrl ?>">Выход</a></div>
+        </div>
+
+    <? if(isset($_basket)) { ?>
+
+        <div class="basket bcont">
+            <div class="l-block item-info item-info-history">
+                <div class="t-title">
+                    <span class="nr10">Заказ №</span>
+                    <span class="nr20">Дата заказа</span>
+                    <span class="nr30">Сумма</span>
+                    <span class="nr30">Оплата</span>
+                    <span class="nr20 border-none">Статус</span>
+                </div>
+
+                <? foreach($_basket as $k=>$v) { ?>
+                <div class="item item-history">
+                    <span class="nr10"><a href="<?=$v['url'] ?>"><?=$k ?></a></span>
+                    <span class="nr20"><?=$v['date'] ?></span>
+                    <span class="nr3 nr30">
+                        <?=$v['price'] ?><b></b>
+                    </span>
+                    <span class="nr30"><?=$v['pay'] ?></span>
+                    <span class="nr20 border-none"><?=$v['status'] ?></span>
+                </div>
+                <? } ?>
+            </div>
+        </div>
+        <? if(isset($_page_url)) {
+                cmfPagination::viewHistoty($_page_url);
+            } ?>
+    <? } ?>
+

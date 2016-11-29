@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduls package="Каталог">
+	<modul id="catalog.baner" name="Банеры">
+		<menu>
+			<link name="/admin/baner/" menu="Каталог"/>
+		</menu>
+		<pages>
+			<page name="/admin/baner/" subpath="catalog"/>
+		</pages>
+		<rules>
+			<rule id="catalog.baner">
+				<elements>
+					<element>catalog</element>
+					<element>config</element>
+				</elements>
+			</rule>
+		</rules>
+	</modul>
+</moduls>

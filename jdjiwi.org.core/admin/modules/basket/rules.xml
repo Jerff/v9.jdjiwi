@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduls package="Клиенты">
+    <modul id="user.basket" name="Корзина">
+        <menu>
+            <link name="/admin/basket/" menu="Заказы"/>
+            <link name="/admin/basket/edit/"/>
+            <link name="/admin/sms/inform/" menu="SMS оповещение"/>
+			<link name="/admin/basket/stat/" menu="Статистика"/>
+            <link name="/admin/basket/printer/"/>
+            <link name="/admin/basket/status/" menu="Статусы"/>
+            <link name="/admin/basket/status/edit/"/>
+        </menu>
+        <pages>
+            <page name="/admin/basket/" subpath="list"/>
+            <page name="/admin/basket/edit/"/>
+			<page name="/admin/basket/stat/"/>
+            <page name="/admin/basket/printer/" template="admin.productList"/>
+            <page name="/admin/basket/status/" subpath="list"/>
+            <page name="/admin/basket/status/edit/"/>
+        </pages>
+        <rules>
+            <rule id="basket.status">
+                <elements>
+                    <element>status/edit</element>
+                    <element>status/list</element>
+                </elements>
+            </rule>
+            <rule id="basket.pay">
+                <elements>
+                    <element>pay/edit</element>
+                    <element>pay/list</element>
+                    <element>pay/param</element>
+                    <element>pay/param/edit</element>
+                </elements>
+            </rule>
+            <rule id="basket">
+                <elements>
+                    <element>edit</element>
+                    <element>list</element>
+					<element>stat</element>
+				</elements>
+			</rule>
+		</rules>
+	</modul>
+	<modul id="user.discount" name="Скидки">
+		<menu>
+			<link name="/admin/basket/discount/" menu="Скидки"/>
+		</menu>
+		<pages>
+			<page name="/admin/basket/discount/"/>
+		</pages>
+		<rules>
+			<rule id="basket.discount">
+				<elements>
+					<element>discount</element>
+				</elements>
+			</rule>
+		</rules>
+	</modul>
+</moduls>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduls package="Система">
+	<modul id="access" name="Разделение доступа">
+		<menu>
+			<link name="/admin/pages/access/" menu="Разделение доступа"/>
+		</menu>
+		<pages>
+			<page name="/admin/pages/access/"/>
+		</pages>
+		<rules>
+			<rule id="pages.access">
+				<elements>
+					<element>access</element>
+					<element>access/read</element>
+					<element>access/write</element>
+				</elements>
+			</rule>
+		</rules>
+	</modul>
+	<modul id="pages.main" name="Страницы пользовательской части">
+		<menu>
+			<link name="/admin/pages/main/" menu="Страницы"/>
+		</menu>
+		<pages>
+			<page name="/admin/pages/main/"/>
+		</pages>
+		<rules>
+			<rule id="pages.main">
+				<elements>
+					<element>main/edit</element>
+					<element>main/list</element>
+				</elements>
+			</rule>
+		</rules>
+	</modul>
+	<modul id="pages.admin" name="Страницы системы администрирования">
+		<menu>
+			<link name="/admin/pages/admin/" menu="Страницы"/>
+		</menu>
+		<pages>
+			<page name="/admin/pages/admin/"/>
+		</pages>
+		<rules>
+			<rule id="pages.admin">
+				<elements>
+					<element>admin/edit</element>
+					<element>admin/list</element>
+				</elements>
+			</rule>
+		</rules>
+	</modul>
+</moduls>

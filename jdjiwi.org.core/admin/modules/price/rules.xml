@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduls package="Каталог">
+	<modul id="catalog.price" name="Прайсы">
+		<menu id="yandex">
+    		<link name="/admin/price/yandex/" menu="Яндекс маркет"/>
+    	</menu>
+		<pages>
+			<page name="/admin/price/yandex/"/>
+		</pages>
+		<rules>
+			<rule id="product.price">
+				<elements>
+					<element>yandex/config</element>
+				</elements>
+			</rule>
+		</rules>
+	</modul>
+	<modul id="catalog.import" name="Экспорт, Импорт">
+    	<menu id="import">
+    		<link name="/admin/price/import/" menu="Экспорт, Импорт"/>
+    	</menu>
+		<pages>
+			<page name="/admin/price/import/"/>
+			<page name="/admin/price/import/edit/"/>
+		</pages>
+		<rules>
+			<rule id="product.import">
+				<elements>
+					<element>import</element>
+					<element>import/list</element>
+					<element>import/edit</element>
+				</elements>
+			</rule>
+		</rules>
+	</modul>
+</moduls>

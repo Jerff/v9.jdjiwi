@@ -1,0 +1,67 @@
+<table class="great_table sectionCommand">
+    <tr class="header_col">
+        <td colspan="2"><a onclick="$('.sectionCommand').hide(); $('.sectionEdit').show(); ">Показать настройки</a></td>
+    </tr>
+</table>
+
+<?= $config->html()->startForm('edit') ?>
+<? list($configForm) = $config->current()->main ?>
+<table class="great_table sectionEdit cHide">
+    <tr class="header_col">
+        <td colspan="2"><a onclick="$('.sectionEdit').hide(); $('.sectionCommand').show(); ">Скрыть настройки</a></td>
+    </tr>
+    <tr>
+        <td colspan="2" class="svet_td">
+            <?
+            view_command::viewLineButton(
+                    cmfAdminView::buttonType1("edit.postAjax('update');", 'Сохранить'))
+            ?>
+        </td>
+    </tr>
+</table>
+<?= $config->html()->endForm() ?>
+
+<?
+view_command::viewLineButton(
+        cmfAdminView::buttonType1("modul.postAjax('newLine');", 'Добавить') .
+        cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить'))
+?>
+
+
+<?= $list->html()->startForm() ?>
+<table width="1000px" class="great_table">
+    <tr class="header_col">
+        <td width="22px">#</td>
+        <td>Модуль</td>
+        <td width="150px">Обновлять</td>
+        <td width="150px">Статус</td>
+        <td width="22px">Вид</td>
+        <td width="22px">Уд.</td>
+    </tr>
+
+    <?
+    $i = false;
+    foreach ($list as $key => $value) {
+        list($form, $data) = $value->main;
+        ?>
+        <?= view_list::startTR($list) ?>
+    <?= $list->getPostMove($data); ?>
+
+        <td><?= $form->html('name', 'style="width:75%"') ?></td>
+        <td><?= $form->html('changefreq', 'class="width99"') ?></td>
+        <td nowrap><? if ($data->status == 'start' or $data->status == 'end') { ?>
+                <?= $data->status == 'start' ? 'Старт' : 'Выполнен' ?><br /><?= $data->date ?>
+    <? } ?>
+        </td>
+        <td><?= $form->html('visible') ?></td>
+        <td><?= $list->viewDelete() ?></td>
+    </tr>
+<? } ?>
+</table>
+<?= $list->html()->endForm() ?>
+
+<?
+view_command::viewLineButton(
+        cmfAdminView::buttonType1("modul.postAjax('newLine');", 'Добавить') .
+        cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить'))
+?>

@@ -1,0 +1,45 @@
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjax('newLine');", 'Добавить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>
+
+
+<?=$list->html()->startForm() ?>
+	<table class="great_table">
+	<tr class="header_col">
+	<td width="22px">#</td>
+	<td width="30%">Меню</td>
+	<td>Название</td>
+	<td width="22px">Вид</td>
+	<td width="22px">Уд.</td>
+	</tr>
+
+<?	foreach($list as $key=>$value){
+		list($form, $data) = $value->main;
+	 ?>
+	<?=view_list::startTR($list) ?>
+	<?=$list->getPostMove($data) ?>
+	<td><?=$form->html('menu', 'class="width99" onchange="cmf.pages.adress'. $key .'();"') ?></td>
+	<td><?=$form->html('name', 'class="width99"') ?>
+	    <div id="adress<?=$key ?>"><?=$form->html('url', 'class="width99"') ?></div>
+<script language="JavaScript">
+cmf.pages.adress<?=$key ?> = function() {
+	var value = cmf.getValue('<?=$form->getId('menu') ?>');
+	if(value=='adress') {
+		$('#adress<?=$key ?>').show();
+	} else {
+	    $('#adress<?=$key ?>').hide();
+	}
+};
+cmf.pages.adress<?=$key ?>();
+</script>
+	</td>
+	<td><?=$form->html('visible') ?></td>
+	<td><?=$list->viewDelete() ?></td>
+	</tr>
+<? } ?>
+	</table>
+<?=$list->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjax('newLine');", 'Добавить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>

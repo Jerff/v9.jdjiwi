@@ -1,0 +1,69 @@
+<link href="<?= cAppUrl ?>/core-admin/base-admin/login.css" rel="stylesheet" type="text/css" />
+<? list($form) = $edit->result()->main ?>
+<div class="container">
+    <form class="form-signin">
+        <h2 class="form-signin-heading">Доступ закрыт</h2>
+        <?= $form->get('loginMain')->html('class="input-block-level"') ?>
+        <?= $form->get('passwordMain')->html('class="input-block-level"') ?>
+        <label class="checkbox">
+            <input type="checkbox" value="remember-me"> Запомнить
+        </label>
+        <script>
+            if(document.location.host!='<?= cDomen ?>') {
+                core.redirect(document.location.href.replace(document.location.host, '<?= cDomen ?>'));
+            }
+            $('#<?= $form->get('loginMain')->id() ?>').val('test');
+            $('#<?= $form->get('passwordMain')->id() ?>').val('test');
+        </script>
+        <button class="btn btn-large btn-primary" type="submit">Войти в систему</button>
+    </form>
+</div>
+
+<? return ?>
+
+
+<script language="JavaScript">
+    isNotStart = true;
+</script>
+
+<div>
+    <script type="text/javascript" src="<?= cAppUrl ?>/sourseJs/оы/loadBrowser.js"></script>
+    <noscript>
+    <b>Системе обязательна поддержка javascript, включите ee и обновите страницу</b>
+    </noscript>
+    <br /><br />
+    <h2>Доступ закрыт</h2>
+
+    <?= $enter->html()->start() ?>
+    <table width="30%">
+        <tr>
+            <td>
+                <input name="oldAjaxUrl" type="hidden" value="<?= $ajaxUrl ?>" />
+                <table class="great_table">
+                    <tr class="header_col">
+                        <td>Логин:</td>
+                        <td><?= $form->html('loginMain', 'width="100px"') ?></td>
+                    </tr>
+
+                    <tr class="header_col">
+                        <td>Пароль:</td>
+                        <td><?= $form->html('passwordMain', 'width="100px"') ?></td>
+                    </tr>
+
+                    <tr class="header_col">
+                        <td width="100px">&nbsp;</td>
+                        <td width="150px"><input type="submit" value="Войти в систему" /></td>
+                    </tr>
+                </table>
+                <script language="JavaScript">
+                    if(document.location.host!='<?= cDomen ?>') {
+                        cmf.redirect(document.location.href.replace(document.location.host, '<?= cDomen ?>'));
+                    }
+                    $('#<?= $form->getId('loginMain') ?>').val('test');
+                    $('#<?= $form->getId('passwordMain') ?>').val('test');
+                </script>
+            </td>
+        </tr>
+    </table>
+    <?= $enter->html()->end() ?>
+</div>

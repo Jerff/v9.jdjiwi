@@ -1,0 +1,77 @@
+<?=$import->html()->startForm('edit') ?>
+<table class="great_table">
+<tr class="header_col">
+<td width="50%">
+    <select size="10" name="backup" id="backup" class="width99" onchange="edit.postAjax('selectBackup');">
+    <? foreach($fileList as $k=>$v) { ?>
+        <option value="<?=$k ?>"><?=$v['name'] ?></option>
+    <? } ?>
+    </select>
+</td>
+<td width="50%" class="selectCheckbox" id="selectDump">
+</td>
+</tr>
+
+</table>
+<?=$import->html()->endForm() ?>
+
+
+
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjax('newLine');", 'Добавить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>
+
+
+<?=$list->html()->startForm() ?>
+	<table class="great_table">
+	<tr class="header_col">
+	<td width="150px">Название</td>
+	<td>Модели</td>
+	<td width="100px">Обновлять</td>
+	<td width="100px">Статус</td>
+	<td width="22px">Вид</td>
+	<td width="22px">Уд.</td>
+	</tr>
+
+<?	foreach($list as $key=>$value){
+		list($form, $data) = $value->main;
+	 ?>
+	<?=view_list::startTR($list) ?>
+	<td>
+	    <div id="name<?=$key ?>"></div>
+	    <div id="input<?=$key ?>"><?=$form->html('name', 'class="width99"') ?></div>
+<? if($key) { ?>
+<script language="JavaScript">
+var name = '#name<?=$key ?>';
+var input = '#input<?=$key ?>';
+style.hide(input);
+$(name).text($('input', $(input)).attr('value'));
+$(name).parent().bind("mouseleave", function(){
+    $('#input<?=$key ?>').hide();
+    $('#name<?=$key ?>').show();
+    $('#name<?=$key ?>').text($('input', $('#input<?=$key ?>')).attr('value'));
+}).bind("mouseenter", function(){
+    $('#name<?=$key ?>').hide();
+    $('#input<?=$key ?>').show();
+});
+</script>
+<? } ?>
+	</td>
+	<td class="selectCheckbox"><?=$form->html('backup') ?></td>
+	<td><?=$form->html('time', 'class="width99"') ?></td>
+	<td nowrap id="status<?=$key ?>"><? if($data->status=='start' or $data->status=='end') { ?>
+			<?=$data->status=='start' ? 'Старт': 'Выполнен' ?><br /><?=$data->date ?>
+			<br /><?=cmfAdminView::onclickType1("if(confirm('Обновить?')) modul.postAjax('resetDump', $key);", 'Обновить') ?>
+		<? } ?>
+	</td>
+	<td><?=$form->html('visible') ?></td>
+    <td><?=$list->viewDelete() ?></td>
+	</tr>
+<? } ?>
+	</table>
+<?=$list->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjax('newLine');", 'Добавить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>

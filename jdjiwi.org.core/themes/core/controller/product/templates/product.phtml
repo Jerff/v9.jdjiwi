@@ -1,0 +1,181 @@
+<a class="img-popup-small">Нажмите для увеличения</a>
+<script type="text/javascript">
+$(document).ready(function() {
+    cmf.main.product.preview.message();
+})
+</script>
+
+                <? cmfMenu::viewSubMenu() ?>
+                <div id="mainImage" class="bcont cHide">
+                    <? if(isset($color)) { ?>
+                    <div class="r-block_color">
+                        <div class="bcont color" id="colorList">
+                        <? foreach($color as $k=>$v) { ?>
+                            <a><div class="colorbox colorView<?=$k ?>" style="background:#<?=$v ?>;" onclick="cmf.main.product.colorSelect(<?=$k ?>)"></div></a>
+                        <? } ?>
+                        </div>
+                    </div>
+                    <? } ?>
+                    <div class="clearFloat"></div>
+                    <div class="content">
+                        <div class="item-block2">
+                            <div class="img-block2">
+                                <div class="large2 galleryList" id="productBig">
+                                    <ul>
+                                    <? $i = 0; foreach($image as $id=>$v) { ?>
+                                        <li <?= $i++ ? '' : 'class="active"' ?> id="big<?=$id ?>">
+                                            <a onclick="cmf.main.product.preview.select(<?=$id ?>);"><img src="<?=$v['main'] ?>" alt="<?=$title ?>" width="839"/></a>
+                                        </li>
+                                    <? } ?>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="r-block item-right">
+                        <div class="div-showcase">
+                            <div class="showcase" id="productImageList2">
+                            <? foreach($image as $id=>$row) { ?>
+                                <a id="2small<?=$id ?>" title="<?=$row['title'] ?>" onclick="cmf.main.product.preview.shange(<?=$id ?>);"><img src="<?=$row['small'] ?>" alt="<?=$row['title'] ?>"/><span class="area"></span></a>
+                            <? } ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="main" class="bcont">
+                    <div class="l-block item-info">
+                        <div class="item-block bcont">
+                            <div class="img-block">
+                                <div class="large galleryList" id="productMain">
+                                    <ul>
+                                    <? $i = 0; foreach($image as $id=>$v) { ?>
+                                        <li <?= $i++ ? '' : 'class="active"' ?> id="main<?=$id ?>">
+                                            <a onclick="cmf.main.product.preview.select(<?=$id ?>);">
+                                                <img src="<?=$v['product'] ?>" alt="<?=$title ?>" />
+                                            </a>
+                	                    </li>
+            						<? } ?>
+            						</ul>
+                                </div>
+                                <div class="bcont small-img">
+                                    <div class="div-showcase">
+                                        <div style="position: relative; min-height: <?=$imageHeight *84 ?>px;" id="showcases_box">
+                                            <div class="showcase" id="productImageList">
+                                            <? foreach($image as $id=>$row) { ?>
+                                                <a title="<?=$row['title'] ?>" id="small<?=$id ?>" color="<?=$row['color'] ?>" onclick="cmf.main.product.preview.shange(<?=$id ?>);"><img src="<?=$row['small'] ?>" alt="<?=$row['title'] ?>"/><span class="area"></span></a>
+                                            <? } ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-info-b">
+
+                                <form onsubmit="return false;" id="productData" enctype="multipart/form-data" method="post">
+                                <input name="productId" type="hidden" value="<?=$productId ?>">
+                                <h1><?=$name ?></h1>
+
+                                <? if(!empty($articul)) { ?>
+                                    <div class="articul"><span><b>Артикул: <?=$articul ?></b></span></div>
+                                <? } ?>
+                                <? foreach($notice as $k=>$v) { ?>
+                                    <div class="bcont"><b><?=$k ?>:</b> <?=$v ?></div>
+                                <? } ?>
+                                <? if(isset($color)) { ?>
+                                <div class="bcont color" id="colorList"><b>Цвет:</b>
+                                    <? foreach($color as $k=>$v) { ?>
+										<a><div class="colorbox colorView<?=$k ?> colorItem" style="background:#<?=$v ?>;" onclick="cmf.main.product.colorSelect(<?=$k ?>)">
+    										<input name="color[<?=$k ?>]" id="color[<?=$k ?>]" type="checkbox" class="cHide colorInputList">
+										</div></a>
+									<? } ?>
+                                </div>
+                                <? } ?>
+
+                                <? if($basket['value']) { ?>
+                                    <select name="param" id="websites4" style="width:158px;" onchange="cmf.basket.sizeSelect(<?=$notPrice ?>, this, <?=$isDiscount ?>);">
+                                        <option selected="selected">Выберете <?=$basketName ?></option>
+                                        <? foreach($basket['value'] as $k=>$row) { ?>
+                                            <option value="<?=$k ?>" dump="<?=$row['dump'] ?>" price="<?=cmfPrice::view2($row['price'], $isDiscount) ?>" priceOld="<?=cmfPrice::view2($row['priceOld']) ?>"><?=$row['name'] ?></option>
+                                        <? } ?>
+                                    </select>
+                                    <a class="more terms-of-use" href="<?=$sizeUrl ?>"><?=$basket['header'] ?> ></a>
+                                <? } else { ?>
+                                    <a class="more terms-of-use" href="<?=$sizeUrl ?>">подробно о размерах ></a>
+                                <? } ?>
+
+                                <? if(isset($basket['isOrder'])) { ?>
+                                    <div class="isOrder <? if(empty($basket['isFirstOrder'])) { ?>cHide<? } ?>"><?=$isOrder ?></div>
+                                <? } ?>
+
+                                <? if(isset($isNotOrder)) { ?>
+                                    <div class="isOrder"><?=$isNotOrder ?></div>
+                                <? } ?>
+
+                                <div id="basket<?=$productId ?>" class="basketView"><div class="basketView2">товар добавлен в корзину</div></div>
+                                <div class="footer-contacts bcont">
+                                    <? if(isset($priceOld)) { ?>
+                                        <div class="price" id="priceView">
+                                            <del><?=cmfPrice::view2($priceOld) ?></del> <?=cmfPrice::view2($price, $isDiscount) ?>
+                                        </div>
+                                        <? if(empty($isNotOrder)) { ?>
+                                            <a class="isOrderButton <?=empty($basket['isFirstOrder']) ? 'bay' : 'order' ?>" onclick="cmf.basket.add();">
+                                                <span><?=empty($basket['isFirstOrder']) ? 'купить' : 'заказать' ?></span></a>
+                                        <? } ?>
+                                    <? } else { ?>
+                                        <div class="price" id="priceView">
+                                            <?=cmfPrice::view2($price, $isDiscount) ?>
+                                        </div>
+                                        <? if(empty($isNotOrder)) { ?>
+                                            <a class="isOrderButton <?=empty($basket['isFirstOrder']) ? 'bay' : 'order' ?>" onclick="cmf.basket.add();">
+                                                <span><?=empty($basket['isFirstOrder']) ? 'купить' : 'заказать' ?></span></a>
+                                        <? } ?>
+                                    <? } ?>
+                                </div>
+                                </form>
+
+                                <div id="tabs">
+                                    <div class="about">
+                                        <ul class="tabs-head">
+                                            <li><a>описание</a></li>
+                                            <li><a>Задать вопрос</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="tabs-content">
+                                        <div id="tabs-1" class="text tab">
+                                            <?=$content ?>
+                                        </div>
+                                        <div id="tabs-2" class="text tab cHide">
+                                            <?=$feedbackContent ?>
+                                            <?=$feedback->startForm() ?>
+                                            <?=$feedback->formError() ?>
+                                                <div class="bcont"><b>Ваше имя</b><?=$feedbackForm->html('name', 'class="input"') ?></div>
+                                                <div class="bcont"><b>Email</b><?=$feedbackForm->html('email', 'class="input"') ?></div>
+                                                <div class="bcont"><b>Вопрос</b><?=$feedbackForm->html('notice') ?></div>
+                                                <div class="bcont"><input type="submit" class="submit" value="" /></div>
+                                            <?=$feedback->endForm() ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <? if(isset($attach)) { ?>
+                    <div class="r-block item-right">
+                        <div class="tittle">Также рекомендуем:</div>
+                        <div class="div-showcase">
+                            <div class="showcase">
+                            <? foreach($attach as $row) { ?>
+                                <a title="<?=$row['title'] ?>" href="<?=$row['url'] ?>"><img src="<?=$row['image'] ?>" alt="<?=$row['title'] ?>"/><span class="area"></span></a>
+                            <? } ?>
+                            </div>
+                        </div>
+                    </div>
+                    <? } ?>
+                </div>
+<script type="text/javascript">
+ready(function() {
+    cmf.basket.viewProduct(<?=$productId ?>);
+});
+</script>

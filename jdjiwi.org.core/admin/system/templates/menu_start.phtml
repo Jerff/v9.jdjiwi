@@ -1,0 +1,84 @@
+<div class="main">
+
+	<a href="<?=cAdminUrl ?>/"><img src="<?=cAppUrl ?>/sourseImage/admin/logo.png" border="0" title="логотип" alt="логотип" align="left" class="logo" /></a>
+
+	<div class="shapka_container">
+
+		<div class="botton_vyhod">
+			<div class="botton_vyhod_edit" onclick="cmf.redirect('<?=$profilUrl ?>');"><a>Профиль</a></div>
+			<br />
+			<div class="botton_vyhod_text" onclick="cmf.admin.exit();"><a>выход</a></div>
+		</div>
+
+		<div class="shapka_right_text">
+			<p><a onclick="cmf.ajax.command('<?=$updateUrl ?>&command=updateCache', 'Обновлние кеша');"><img src="<?=cAppUrl ?>/sourseImage/admin/kesh.gif" width="10" height="10" border="0" align="left" class="shapka_right_pic" alt="обновить кэш" title="обновить кэш" /> Обновить кеш</a></p>
+			<p><a onclick="cmf.ajax.command('<?=$updateUrl ?>&command=updateSearch', 'Обновление поискового индекса');"><img src="<?=cAppUrl ?>/sourseImage/admin/seach.gif" width="11" height="10" border="0" align="left" class="shapka_right_pic" alt="Обновить поисковый индекс" title="Обновить поисковый индекс" /> Обновить поисковый индекс</a></p>
+		</div>
+
+		<p span class="color1">Агент:<span class="color2" id="mainSiteName">Интернет магазин</span></p>
+		<p span class="color1">Персона:<span class="color3" id="mainUserName"><?=$name ?></span></p>
+
+		<br /><br />
+	</div>
+
+
+	 <div class="line"></div>
+
+<div class="border_text_container">
+
+
+	<div class="left_container" id="mainMenu1">
+<?	reset($_menu[0]);
+	while(list($k, $v) = each($_menu[0])) {
+		$is = isset($v['sel']);
+	?>
+<? if($is) { ?>
+		<div class="botton_tem1" id="mainMenu<?=$k ?>">
+<? } else { ?>
+		<div class="botton_very_tem" id="mainMenu<?=$k ?>">
+<? } ?>
+			<a onclick="cmf.admin.menu.open('menu<?=$k ?>');" id=""> <?=$v['name'] ?></a>
+		</div>
+		<div id="menu<?=$k ?>" <?= ($is or isset($v['view'])) ? '' : 'class="cHide"' ?>>
+
+<?	if(isset($_menu[$k])) {
+		reset($_menu[$k]);
+		while(list($k2, $v2) = each($_menu[$k])) { ?>
+<? if(isset($v2['sel']) and $v2['sel']==2) { ?>
+			<div id="<?=$k2 ?>" rel="<?=$k ?>" class="botton_tem_bottom1">
+			<span class="znak_plus">+</span><a href="<?=$v2['url'] ?>" onclick="return cmf.ajax.menuOpen(this.href);"><?=$v2['name'] ?></a>
+			</div>
+<? } else { ?>
+			<div id="<?=$k2 ?>" rel="<?=$k ?>" class="botton_tem">
+			<span class="znak_plus cHide">+</span><a href="<?=$v2['url'] ?>" onclick="return cmf.ajax.menuOpen(this.href);"><?=$v2['name'] ?></a>
+			</div>
+<? } ?>
+
+
+<?	if(isset($_menu[$k2])) { ?>
+				<div id="menu<?=$k2 ?>">
+<?		reset($_menu[$k2]);
+		while(list($k3, $v3) = each($_menu[$k2])) { ?>
+<? if(isset($v3['sel'])) { ?>
+				<div class="botton_tem_bottom2" id="<?=$k3 ?>">
+				<span class="znak_plus">+</span><a href="<?=$v3['url'] ?>" onclick="return cmf.ajax.menuOpen(this.href);"><?=$v3['name'] ?></a>
+				</div>
+<? } else { ?>
+				<div class="botton_svetlo" id="<?=$k3 ?>">
+				<span class="znak_plus cHide">+</span><a href="<?=$v3['url'] ?>" onclick="return cmf.ajax.menuOpen(this.href);"><?=$v3['name'] ?></a>
+				</div>
+<? } ?>
+
+<? } ?>
+				</div>
+<? } ?>
+
+<? } }  ?>
+		</div>
+<? } ?>
+
+		<br /><br /><br /><br /><br /><br />
+
+
+</div>
+<div class="right_container" id="mainContent">

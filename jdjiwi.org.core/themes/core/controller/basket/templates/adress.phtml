@@ -1,0 +1,119 @@
+                <div id="main" class="basket bcont">
+                    <? cmfBasketView::menu() ?>
+                    <div class="l-block item-info">
+                    <?=$order->startForm() ?>
+                        <div class="order-block order-block_view2"><div class="o2"><div class="o3 o3_password">
+                            <div class="bcont">
+                                <?=$order->formError() ?>
+                                <div class="left">
+                                    <div class="tittle">Укажите данные для доставки</div>
+
+                                    <div class="clearFloat"></div>
+                                    <?=$form->viewError('name') ?>
+                                    <div class="clearFloat"></div>
+                                    <div class="block"><b>Имя</b><span class="input"><i><?=$form->html('name') ?></i></span></div>
+
+                                    <div class="clearFloat"></div>
+                                    <?=$form->viewError('family') ?>
+                                    <div class="clearFloat"></div>
+                                    <div class="block"><b>Фамилия</b><span class="input"><i><?=$form->html('family') ?></i></span></div>
+
+                                    <div class="clearFloat"></div>
+                                    <?=$form->viewError('email') ?>
+                                    <div class="clearFloat"></div>
+                                    <div class="block"><b>Email</b><span class="input"><i><?=$form->html('email') ?></i></span></div>
+
+                                    <div class="clearFloat"></div>
+                                    <?=$form->viewError('cod') ?>
+                                    <div class="clearFloat"></div>
+                                    <?=$form->viewError('phone') ?>
+                                    <div class="block i-small"><b>Телефон</b>
+                                        <span class="input"><i><?=$form->html('cod') ?></i></span>
+                                        <span class="input input2"><i><?=$form->html('phone') ?></i></span>
+                                    </div>     
+                                    
+                                </div>
+                                <div class="right">
+                                    <?=$userInfo ?>
+                                </div>
+                            </div>
+                            <div class="line"></div>
+                            <div class="bcont">                                
+                                <? $isDelivery = $order->get('$isDelivery') ? '' : 'cHide' ?>
+                                <? $isContact = $order->get('$isContact') ? '' : 'cHide' ?>
+                                    <li class="isDelivery <?=$isDelivery ?>"><div class="tittle"><br />Заполните адрес</div></li>
+                                    <li class="isContact <?=$isContact ?>">
+                                        <div class="left">
+                                        
+                                            <div class="clearFloat"></div>
+                                            <?=$formContact->viewError('gorod') ?>
+                                            <div class="clearFloat"></div>
+                                            <div class="block"><b>Город</b><span class="input"><i><?=$formContact->html('gorod') ?></i></span></div>
+                                    
+                                            <div class="clearFloat"></div>
+                                            <?=$formContact->viewError('index') ?>
+                                            <div class="clearFloat"></div>
+                                            <div class="block"><b>Индекс</b><span class="input"><i><?=$formContact->html('index') ?></i></span></div>
+
+                                        </div>
+                                    </li>
+                                    <li class="isDelivery <?=$isDelivery ?>"><div class="clearFloat"></div><?=$formAdress->html('adress') ?></li>
+                                </ul>
+                                <div class="right2">
+                                    <?=$deliveryInfo ?>
+                                </div>
+                            </div>
+
+                            <div class="line"></div>
+                            <div class="bcont">
+                            	<div class="tittle">Пожелания</div>
+                                <?=$formNotice->html('notice') ?>
+                                <div class="right2">
+                                	Выскажите дополнительные пожелания к заказу.
+                                </div>
+                            </div>
+
+
+                            <button <? if(!$isUser) { ?>class="button-subscribe"<? } ?>></button>
+                        </div></div></div>
+                        <script type="text/javascript">
+                        $(function($){
+                            $("#<?=$form->getId('cod') ?>").mask("+7(999)");
+                            $("#<?=$form->getId('phone') ?>").mask("999-99-99");
+                        });                              
+                            
+                        cmf.getId('<?=$form->getId('name') ?>').errorView = cmf.main.form.login;
+                        cmf.getId('<?=$form->getId('family') ?>').errorView = cmf.main.form.login;
+                        cmf.getId('<?=$form->getId('email') ?>').errorView = cmf.main.form.login;
+                        cmf.getId('<?=$form->getId('cod') ?>').errorView = cmf.main.form.login;
+                        cmf.getId('<?=$form->getId('phone') ?>').errorView = cmf.main.form.login;
+                        cmf.getId('<?=$formAdress->getId('adress') ?>').errorView = cmf.main.form.login;
+                        cmf.getId('<?=$formNotice->getId('notice') ?>').errorView = cmf.main.form.login;
+                        cmf.getId('<?=$formNotice->getId('gorod') ?>').errorView = cmf.main.form.login;
+                        cmf.getId('<?=$formNotice->getId('index') ?>').errorView = cmf.main.form.login;
+                        </script>
+                        <?=$order->endForm() ?>
+                    </div>
+                    <div class="r-block item-right">
+                    <div id="basketPrice">
+                        <b>Всего товаров на сумму</b>
+                        <b class="price"><i><?=$priceAll ?></i></b>
+                        <? if($discount) { ?>
+                            <b>Цена со скидкой</b>
+                            <b class="price"><i><?=$priceDiscount ?></i></b>
+                        <? } ?>
+                        <? if(isset($priceDelivery)) { ?>
+                            <b>Цена с доставкой</b>
+                            <b class="price"><i><?=$priceDelivery ?></i></b>
+                        <? } ?>
+                        <? if($discount) { ?>
+                            <b>Скидка</b>
+                            <b class="price"><i><?=$discount ?></i></b>
+                        <? } ?>
+                    </div>
+                    <!--//<a onclick="cmf.basket.setOrder();" class="pey"></a>//-->
+                    <? if(isset($referer)) { ?>
+                        <a href="<?=$referer ?>" class="go-shop">вернуться к шоппингу</a>
+                    <? } ?>
+                    </div>
+                </div>

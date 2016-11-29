@@ -1,0 +1,82 @@
+    <div class="r-block ">
+        <div class="catalog">
+            <div id="tabs">
+                <ul class="tabs-head">
+                    <li class="active"><span><a>Разделы</a></span></li>
+                    <li><span><a>Брэнды</a></span></li>
+                </ul>
+
+                <div class="tabs-content">
+                    <div id="tabs-1" class="tab">
+                        <div class="tittle"><?=$sectionName ?></div>
+                        <? if(isset($newUrl) or isset($saleUrl)) { ?>
+                        <ul class="menu">
+                            <? if(isset($newUrl)) { ?>
+                                <li <? if($isNew) { ?>class="active"<? } ?>><a href="<?=$newUrl ?>">НОВИНКИ</a></li>
+                            <? } ?>
+                            <? if(isset($saleUrl)) { ?>
+                                <li <? if($isSale) { ?>class="active"<? } ?>><a href="<?=$saleUrl ?>">SALE</a></li>
+                            <? } ?>
+                        </ul>
+                        <? } ?>
+                        <div class="vote <? if(!isset($newUrl) and !isset($saleUrl)) { ?>voteTop<? } ?>">
+                        <? if(isset($_catalog[$sectionId]))
+                            foreach($_catalog[$sectionId] as $parent=>$row) {
+                                $is = isset($_catalog[$parent]) and empty($row['sel']);
+                                ?>
+                                <div class="<?=$row['sel'] ? 'tittle selected' : 'tittle' ?>"><b><a <? if($is) { ?>onclick="cmf.style.hideShow('#list<?=$parent ?>')"<? } else { ?>href="<?=$row['url'] ?>"<? } ?>><?=$row['name'] ?></a></b></div>
+                                <? if(isset($_catalog[$parent])) { ?>
+                                    <ul class="<?=$row['sel'] ? '' : 'cHide' ?>" id="list<?=$parent ?>">
+                                    <? foreach($_catalog[$parent] as $id=>$row) { ?>
+                                        <li <? if($row['sel']) { ?>class="active"<? } ?>><a href="<?=$row['url'] ?>"><?=$row['name'] ?></a>
+                                        <? if(isset($_catalog[$id])) { ?>
+                                            <ul>
+                                            <? foreach($_catalog[$id] as $k=>$row) { ?>
+                                                <li <? if($row['sel']) { ?>class="active"<? } ?>><a href="<?=$row['url'] ?>"><?=$row['name'] ?></a>
+                                                <? if(isset($_catalog[$k])) { ?>
+                                                    <ul>
+                                                    <? foreach($_catalog[$k] as $row) { ?>
+                                                        <li <? if($row['sel']) { ?>class="active"<? } ?>><a href="<?=$row['url'] ?>"><?=$row['name'] ?></a></li>
+                                                    <? } ?>
+                                                    </ul>
+                                                <? } ?>
+                                                </li>
+                                            <? } ?>
+                                            </ul>
+                                        <? } ?>
+                                        </li>
+                                    <? } ?>
+                                    </ul>
+                                <? } ?>
+                        <? } ?>
+                        </div>
+
+                    </div>
+                    <div id="tabs-2" class="tab cHide">
+                        <div class="tittle"><?=$sectionName ?></div>
+                        <div class="vote voteTop">
+                            <? foreach($_brand as $row) { ?>
+                                <div class="tittle <?= isset($row['sel']) ? 'selected' : 'tittle' ?>"><b><a href="<?=$row['url'] ?>"><?=$row['name'] ?><? if($row['isNew']){ ?> <span class="new">NEW</span><? } ?></a></b></div>
+                            <? } ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <? if(isset($baner)) { ?>
+            <div class="banner galleryList">
+                <ul>
+                <? foreach($baner as $id=>$v) { ?>
+                    <li <? if(!$id) { ?>class="active"<? } else { ?>class="none"<? } ?>>
+                        <a href="<?=$v['url'] ?>"><img src="<?=$v['image'] ?>" alt="<?=$v['title'] ?>" /></a>
+                    </li>
+                <? } ?>
+                </ul>
+            </div>
+            <script type="text/javascript">
+            cmf.main.gallery.init({select: '.banner', time: 1000, interval: <?=$banerTime ?>, rand: true});
+            </script>
+        <? } ?>
+    </div>
+</div>

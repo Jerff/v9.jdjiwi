@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduls package="Система">
+	<modul id="profil" name="Профиль пользователя">
+		<menu>
+			<link name="/admin/profil/" menu="Профиль пользователя"/>
+		</menu>
+		<pages>
+			<page name="/admin/profil/" subpath="edit"/>
+		</pages>
+		<rules>
+			<rule id="profil">
+				<elements>
+					<element>edit</element>
+				</elements>
+			</rule>
+		</rules>
+	</modul>
+</moduls>

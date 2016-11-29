@@ -1,0 +1,36 @@
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjaxSave('update');", 'Сохранить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') .
+	                   cmfAdminView::buttonType2($edit->url()->getCatalog(), 'Вернуться')) ?>
+
+
+
+<?=$edit->html()->startForm() ?>
+<? list($form) = $edit->current()->main ?>
+<table class="great_table">
+<tr class="header_col">
+<td colspan="2">&nbsp;</td>
+</tr>
+
+<tr>
+<td class="svet_td">Название:<?=cmfWysiwyng::typograf($form->getId('name')) ?></td>
+<td class="svet_td2"><?=$form->html('name', 'class="width99"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Описание:<?=cmfWysiwyng::typograf($form->getId('notice')) ?></td>
+<td class="svet_td2"><?=$form->html('notice', 'class="width99" rows="5"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Контент:</td>
+<td class="svet_td2"><?=$form->html('content', 400) ?></td>
+</tr>
+
+</table>
+<?=$edit->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjaxSave('update');", 'Сохранить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') .
+	                   cmfAdminView::buttonType2($edit->url()->getCatalog(), 'Вернуться')) ?>

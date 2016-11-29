@@ -1,0 +1,39 @@
+<div style="width:75%">
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjax('newLine');", 'Добавить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>
+
+	<table class="great_table">
+	<tr class="header_col">
+	<td>Считается текущий заказ + успешно заверщенные заказы</td>
+	</tr>
+	<tr class="header_col">
+	<td>от первой до второй цены - действует первая скидка
+	<br />от последнй цены и до макс - действует последния скидка</td>
+	</tr>
+	</table>
+
+<?=$list->html()->startForm() ?>
+	<table class="great_table">
+	<tr class="header_col">
+	<td width="200px">Сумма покупок</td>
+	<td>Скидка %</td>
+	<td width="22px">Уд.</td>
+	</tr>
+
+<?	foreach($list as $key=>$value){
+		list($form, $data) = $value->main;
+	 ?>
+	<?=view_list::startTR($list) ?>
+	<td><?=$form->html('price', 'style="width:90%"') ?></td>
+	<td><?=$form->html('discount', 'style="width:90%"') ?></td>
+    <td><?=$list->viewDelete() ?></td>
+	</tr>
+<? } ?>
+	</table>
+<?=$list->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjax('newLine');", 'Добавить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>
+</div>

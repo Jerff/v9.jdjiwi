@@ -1,0 +1,161 @@
+	<? isset($menu) ? view_menu::viewMenu($menu) : '' ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjaxSave('update');", 'Сохранить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') .
+	                   cmfAdminView::buttonType2($edit->url()->getCatalog(), 'Вернуться')) ?>
+
+
+<?=$edit->html()->startForm() ?>
+<? list($form) = $edit->current()->edit ?>
+<table class="great_table">
+<tr class="header_col">
+<td colspan="4"><?=$edit->siteUrl()->item() ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Каталог:</td>
+<td class="svet_td2" colspan="3"><?=$form->html('section', 'class="width50"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Производитель:</td>
+<td class="svet_td2" colspan="3"><?=$form->html('brand', 'class="width50"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">&nbsp;</td>
+<td class="svet_td2 selectCheckbox">
+    <?=$form->label('visible', 'Отображать') ?>
+</td>
+</tr>
+
+<tr class="header_col">
+<td colspan="4">Информация</td>
+</tr>
+
+<tr>
+<td class="svet_td">Адрес:</td>
+<td class="svet_td2" colspan="3"><?=$form->html('uri', 'class="width50"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Артикул:</td>
+<td class="svet_td2" colspan="3"><?=$form->html('articul', 'class="width50"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Название:<?=cmfWysiwyng::typograf($form->getId('name')) ?></td>
+<td class="svet_td2" colspan="3"><?=$form->html('name', 'class="width99"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Описание:</td>
+<td class="svet_td2" colspan="3"><?=$form->html('notice', 200) ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Цвет:</td>
+<td class="svet_td2 selectCheckbox" colspan="3"><?=$form->html('color', '&nbsp;') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Рекомендуемые товары:</td>
+<td class="svet_td2" colspan="3"><?=cmfAdminView::buttonType3($edit->getProductUrl(), '('. $attach .')') ?>
+</td>
+</tr>
+
+<tr class="header_col">
+<td colspan="4">Цены (зависит от изменяемого параметра либо фиксирована)</td>
+</tr>
+
+<tr>
+<td class="svet_td">Скидка:</td>
+<td class="svet_td2 selectCheckbox" colspan="3">
+<?=$form->html('type', 'onchange="cmf.pages.typeShange(this.value);"') ?>
+<script language="JavaScript">
+cmf.pages.typeShange = function(v) {
+    if(v=='sale') {
+    	$('.priceDiscount').hide();
+    } else {
+        $('.priceDiscount').show();
+    }
+}
+cmf.pages.typeShange('<?=$data->type ?>');
+</script>
+<div class="clearFloat"></div>
+<?=$form->html('discount', 'class="width25 priceDiscount"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Цена:</td>
+<td class="svet_td2" colspan="3"><?=$form->html('price1', 'class="width25" onblur="cmf.pages.priceShange()"') ?>
+<script language="JavaScript">
+cmf.pages.priceShange = function() {
+    if(!parseInt(cmf.getValue('<?=$form->getId('price1') ?>'))) {
+        $('.paramPrice').show();
+    } else {
+    	$('.paramPrice').hide();
+    }
+}
+cmf.pages.priceShange();
+</script>
+</td>
+</tr>
+
+<?=$edit->paramView(true) ?>
+
+<tr>
+<td class="svet_td">&nbsp;</td>
+<td class="svet_td2 selectCheckbox">
+    <label>На складе <?=$form->html('count', 'class="width25"') ?></label>
+    <?=$form->label('isOrder', 'Под заказ', 'onchange="cmf.pages.isOrderShange()"') ?>
+<script language="JavaScript">
+cmf.pages.isOrderShange = function() {
+    if(cmf.isChecked('<?=$form->getId('isOrder') ?>')) {
+    	$('.dumpUrl').show();
+    } else {
+        $('.dumpUrl').hide();
+    }
+}
+cmf.pages.isOrderShange();
+</script>
+</td>
+</tr>
+
+<tr>
+<td class="svet_td dumpUrl">Адрес для грабинга <br />наличия размеров:</td>
+<td class="svet_td2 dumpUrl" colspan="3"><?=$form->html('dumpUrl', 'class="width99"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">yandex.market<br />&lt;sales_notes&gt;:</td>
+<td class="svet_td2" colspan="3"><?=$form->html('salesNotes', 'class="width50"') ?></td>
+</tr>
+
+<tr class="header_col">
+<td colspan="4">Seo</td>
+</tr>
+<tr>
+<td class="svet_td">title:</td>
+<td class="svet_td2" colspan="3">
+<?=$form->html('title', 'class="width99" rows="3"') ?></td>
+</tr>
+<tr>
+<td class="svet_td">keywords:</td>
+<td class="svet_td2" colspan="3">
+<?=$form->html('keywords', 'class="width99" rows="3"') ?></td>
+</tr>
+<tr>
+<td class="svet_td">description:</td>
+<td class="svet_td2" colspan="3">
+<?=$form->html('description', 'class="width99" rows="3"') ?></td>
+</tr>
+
+</table>
+<?=$edit->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjaxSave('update');", 'Сохранить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') .
+	                   cmfAdminView::buttonType2($edit->url()->getCatalog(), 'Вернуться')) ?>

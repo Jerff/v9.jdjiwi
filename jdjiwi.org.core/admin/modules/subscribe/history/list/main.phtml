@@ -1,0 +1,26 @@
+
+	<? view_command::viewLimitButton($list->getLimitUrl(), $list->getLinkPage()) ?>
+
+
+<?=$list->html()->startForm() ?>
+	<table class="great_table">
+	<tr class="header_col">
+	<td width="50px">Дата</td>
+	<td width="200px">Заголовок</td>
+	<td>Список адресов</td>
+	</tr>
+
+<?	foreach($list as $key=>$value){
+		list($form, $data) = $value->main;
+
+	 ?>
+	<?=view_list::startTR($list) ?>
+	<td><?=$data->date ?></td>
+	<td><? if($key) echo cmfAdminView::buttonType3($list->getEditUrl(), $data->header) ?></td>
+	<td><?=$data->email ?></td>
+	</tr>
+<? } ?>
+	</table>
+<?=$list->html()->endForm() ?>
+
+	<? view_command::viewLimitButton($list->getLimitUrl(), $list->getLinkPage()) ?>

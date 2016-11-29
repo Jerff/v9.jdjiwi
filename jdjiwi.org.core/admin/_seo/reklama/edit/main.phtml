@@ -1,0 +1,49 @@
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjaxSave('update');", 'Сохранить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') .
+	                   cmfAdminView::buttonType2($edit->url()->getCatalog(), 'Вернуться')) ?>
+
+
+<?=$edit->html()->startForm() ?>
+<? list($form) = $edit->current()->main ?>
+<table class="great_table">
+<tr class="header_col">
+<td colspan="2">&nbsp;</td>
+</tr>
+
+<tr>
+<td class="svet_td">Наименование:</td>
+<td class="svet_td2"><?=$form->html('name', 'class="width99"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Код:</td>
+<td class="svet_td2"><?=$form->html('html', 'class="width99" rows="10"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Список урлов
+<br>Например:
+<br>/index/
+<br>/news/
+<br>all:</td>
+<td class="svet_td2"><?=$form->html('uri', 'class="width99" rows="6"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Тип блока:</td>
+<td class="svet_td2"><?=$form->html('type') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Отображать:</td>
+<td class="svet_td2"><?=$form->html('visible') ?></td>
+</tr>
+
+</table>
+<?=$edit->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjaxSave('update');", 'Сохранить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') .
+	                   cmfAdminView::buttonType2($edit->url()->getCatalog(), 'Вернуться')) ?>

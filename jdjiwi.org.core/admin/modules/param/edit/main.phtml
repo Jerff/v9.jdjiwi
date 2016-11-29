@@ -1,0 +1,137 @@
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjaxSave('update');", 'Сохранить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') .
+	                   cmfAdminView::buttonType2($edit->url()->getCatalog(), 'Вернуться')) ?>
+
+
+<?=$edit->html()->startForm() ?>
+<? list($form) = $edit->current()->main ?>
+<table class="great_table">
+<tr class="header_col">
+<td colspan="3">&nbsp;</td>
+</tr>
+
+<tr>
+<td class="svet_td">&nbsp;</td>
+<td class="svet_td2 selectCheckbox" colspan="2">
+    <?=$form->label('visible', 'Отображать') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Наименование:</td>
+<td class="svet_td2" colspan="2"><?=$form->html('name', 'class="width50"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Единицы измерения:</td>
+<td class="svet_td2" colspan="2"><?=$form->html('prefix', 'class="width25"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Тип:</td>
+<td class="svet_td2" colspan="2">
+    <div style="margin-bottom:10px">Параметры <b>select</b> и <b>radio</b> равноценны, отличаются только видом при редактирование параметров (в системе админирования)
+    <br /><b>select</b> и <b>radio</b> имеют одно значение для параметра, <b>checkbox</b> - несколько значений
+    </div>
+<?=$form->html('type', 'class="width50" onchange="cmf.pages.typeShange();"') ?>
+<script language="JavaScript">
+cmf.pages.typeShange = function() {
+	switch(cmf.getValue('<?=$form->getId('type') ?>')) {
+		case 'select':
+		case 'radio':
+		case 'checkbox':
+		case 'basket':
+			$('.typeSelect').each(function() {
+				cmf.admin.showLine(this);
+			});
+		    break;
+		default:
+			$('.typeSelect').each(function() {
+				cmf.admin.hideLine(this);
+			});
+			break;
+	}
+	switch(cmf.getValue('<?=$form->getId('type') ?>')) {
+		case 'basket':
+			$('.typeBasket').each(function() {
+				cmf.admin.showLine(this);
+			});
+		    break;
+		default:
+			$('.typeBasket').each(function() {
+				cmf.admin.hideLine(this);
+			});
+			break;
+	}
+
+};
+cmf.pages.typeShange();
+</script>
+
+<div class="typeBasket">
+    <br />
+    подробно о параметре
+    <?=$form->html('header', 'class="width99"') ?>
+</div>
+</td>
+</tr>
+
+<tr>
+<td class="svet_td typeSelect">Описание стиля<br /> для фильтра в каталоге:</td>
+<td class="svet_td2 typeSelect" colspan="2"><?=$form->html('style', 'class="width25"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Описание:</td>
+<td class="svet_td2" colspan="2"><?=$form->html('notice') ?></td>
+</tr>
+
+<? if($edit->id()->get()) { ?>
+<tr>
+<td class="svet_td typeSelect">Тип сортировки:</td>
+<td class="svet_td3 typeSelect" colspan="2"><?=$form->html('sort', 'class="width25"') ?></td>
+</tr>
+<tr>
+<td class="svet_td typeSelect">Параметры:</td>
+<td class="svet_td3 typeSelect" id="paramView">
+<?	if($data->get('value')) {
+		$value = unserialize($data->value);
+		$param = array();
+		foreach($value as $k=>$v) {
+			$param[$k .' '. cmfHtmlSpecialchars($v)] = cmfHtmlSpecialchars($v);
+		}
+?>
+<select size="25" class="width99" onchange="cmf.pages.select(this.value);">
+<? foreach($param as $k=>$v) { ?>
+   <option value="<?=$k ?>"><?=$v ?></option>
+<? } ?>
+</select>
+<?
+	}
+
+?>
+</td>
+<td class="svet_td3 typeSelect width50">
+<div id="paramLog" class="cHide errorDiv"></div>
+<input name="paramId" id="paramId" type="hidden" value="">
+<input name="paramValue" id="paramValue" type="text" value="" style="width:80%">
+<br /><br /><input type="button" value=" Сохранить " onclick="modul.postAjax('paramUpdate');">&nbsp;&nbsp;&nbsp;<input type="button" value=" Добавить " onclick="modul.postAjax('paramAdd');">
+<br /><br /><input type="button" value=" Удалить " onclick="modul.postAjax('paramDelete');">
+<script language="JavaScript">
+cmf.pages.select = function(value) {
+	var value = (new RegExp('([0-9]+) (.*)')).exec(value)
+	cmf.setValue('paramId', value[1]);
+	cmf.setValue('paramValue', value[2]);
+};
+</script>
+</td>
+</tr>
+<? } ?>
+
+</table>
+<?=$edit->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjaxSave('update');", 'Сохранить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') .
+	                   cmfAdminView::buttonType2($edit->url()->getCatalog(), 'Вернуться')) ?>

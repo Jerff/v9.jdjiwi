@@ -1,0 +1,36 @@
+
+    <table class="table_position">
+    <tr class="header_col">
+    <td colspan="2">&nbsp;</td>
+    </tr>
+
+    <tr>
+    <td class="svet_td">Магазин:</td>
+    <td class="svet_td2"><?=$shop['name'] ?></td>
+    </tr>
+    <tr>
+    <td class="svet_td">Адресс:</td>
+    <td class="svet_td2"><?=nl2br($shop['adress']) ?></td>
+    </tr>
+    </table>
+
+
+
+<?=$edit->html()->startForm() ?>
+<? list($form) = $edit->current()->main ?>
+<table class="great_table">
+<tr class="header_col">
+<td colspan="2">&nbsp;</td>
+</tr>
+
+<tr>
+<td class="svet_td"><?=$data->date ?>:</td>
+<td class="svet_td2"><?=$data->text ?></td>
+</tr>
+
+
+</table>
+<?=$edit->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType2($edit->url()->getCatalog(), 'Вернуться')) ?>

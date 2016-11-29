@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <?=cmfHeader::getTitleMeta() ?>
+    <?=cmfHeader::getHead() ?>
+    <?=$head ?>
+
+</head>
+<body>
+<script type="text/javascript">
+core.ajax.init({url: '<?=cAjaxUrl ?>'});
+//core.ready(cmf.basket.header);
+//core.ready(cmf.user.header);
+</script>
+    <div class="background <? if(!$isMain) { ?>southmoon<? } ?>">
+        <?=$callback ?>
+        <div class="main-part">
+            <div class="main-content">
+                <? if(isset($content)) { ?>
+                    <div class="headerContent">
+                        <?=$content ?>
+                    </div>
+                <? } ?>
+                <div class="header">
+                    <div class="header-right-block">
+                        <div id="basketOrder"><span><img class="icon" src="/images/icon-cart.png"></span></div>
+                        <div class="header-right-block2">
+                            <div class="header-cart">В вашей <a href="<?=$basket ?>">корзине</a><span>0 товаров</span></div>
+                            <div class="user-links" id="userHeader1">
+                                <a href="<?=$userEnter ?>" class="user-a-login">Вход в кабинет</a>
+                                <a href="<?=$userRegister ?>" class="user-a-register">Регистрация</a>
+                                <span class="user-links-sep"></span>
+                            </div>
+                            <div class="user-links cHide" id="userHeader2">
+                                <a href="<?=$user ?>" class="user-a">Личный кабинет</a>
+                                <a href="<?=$userExit ?>" class="user-a-exit">Выход</a>
+                                <span class="user-links-sep"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="logo-block"><a href="<?=$index ?>"><img src="<?=$showcase['logo'] ?>" alt="logo" width="184" height="44" /></a></div>
+                    <div class="search-block">
+                        <form action="<?=$searchUrl ?>?form" method="post" onsubmit="return cmf.main.search.start();">
+                            <fieldset>
+                                <input type="submit" class="seasch-btn" value="" />
+                                <input type="text" class="seasch-text" id="searchName" name="searchName" value="<?=$searchName ?>" placeholder="<?=$defaultName ?>"/>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <? if(isset($callBackUrl)) { ?>
+                    <div class="call-back">
+                        <a href="<?=$callBackUrl ?>">Перезвоните мне</a>
+                    </div>
+                    <? } ?>
+                    <div class="phone-block <? if(isset($showcase['phone'][1])) { ?>phone-block2<? } else { ?>phone-block1<? } ?>">
+                        <div class="time"><?=$showcase['time'] ?></div>
+                        <div class="timeOld">&nbsp;</div>
+                        <div class="phone-number"><?=$showcase['phone'][0][0] ?> <strong><?=get3($showcase, 'phone', 0, 1) ?></strong></div>
+                        <? if(isset($showcase['phone'][1])) { ?>
+                            <div class="phone-number"><?=$showcase['phone'][1][0] ?> <strong><?=get3($showcase, 'phone', 1, 1) ?></strong></div>
+                        <? } ?>
+                    </div>
+                </div>
+                <div class="main-menu">
+                    <ul>
+                    <? foreach($_catalog as $row) { ?>
+                        <li class="sep"></li>
+                        <li <?=isset($row['sel']) ? 'class="active"' : '' ?>><a href="<?=$row['url'] ?>"><?=$row['name'] ?></a></li>
+                    <? } ?>
+                        <li class="sep"></li>
+                    </ul>
+                </div>

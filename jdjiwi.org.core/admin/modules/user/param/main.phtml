@@ -1,0 +1,61 @@
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>
+
+
+<?=$edit->html()->startForm() ?>
+<? list($form) = $edit->current()->main ?>
+<? list($editForm) = $edit->current()->edit ?>
+<table class="great_table">
+
+<tr class="header_col">
+<td colspan="2">&nbsp;</td>
+</tr>
+
+<tr>
+<td class="svet_td">&nbsp;</td>
+<td class="svet_td2">
+<?	$i = 0;
+	foreach($userStat as $k=>$v) {
+		if($i++) echo '<br />';
+		echo $k .': '. $v;
+	} ?></td>
+</tr>
+
+<tr class="header_col">
+<td colspan="2">Информация</td>
+</tr>
+
+<tr>
+<td class="svet_td">Пользователь:</td>
+<td class="svet_td2"><?=$userName ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">&nbsp;</td>
+<td class="svet_td2 selectCheckbox">
+<? foreach(model_subscribe::typeList() as $k=>$v) { ?>
+<?=$form->label($k, $v['name']) ?>
+<? } ?>
+</td>
+</tr>
+
+<tr>
+<td class="svet_td">Телефон:</td>
+<td class="svet_td2"><?=$form->html('cod') ?> <?=$form->html('phone', 'class="width50"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Город:</td>
+<td class="svet_td2"><?=$form->html('gorod', 'class="width50"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Индекс:</td>
+<td class="svet_td2"><?=$form->html('index', 'class="width50"') ?></td>
+</tr>
+
+</table>
+<?=$edit->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>

@@ -1,0 +1,62 @@
+<script>
+    cmf.admin.menu.select(<?= $parent1 ?>, <?= $parent2 ?>, <?= $parent3 ?>);
+</script>
+<?= $counters ?>
+<table width="100%" cellpadding="0" cellspacing="0" border="0" class="menu_table">
+    <tr>
+        <td width="30px">&nbsp;</td>
+        <td>
+            <ul class="right_container_menu">
+                <?
+                while (list($k, $v) = each($menu)) {
+                    $class = $end == $k ? 'right_container_border' : '';
+
+                    $width = ceil(10 * $v['length']);
+                    if (isset($v['sel'])) {
+                        if ($class) {
+                            $style = 'class="' . $class . ' item' . $v['sel'] . '" style="width:' . $width . 'px;"';
+                        } else {
+                            $style = 'class="item' . $v['sel'] . ' ' . $class . '" style="width:' . $width . 'px;"s';
+                        }
+                    } else {
+                        if ($class) {
+                            $style = 'class="' . $class . '" style="width:' . $width . 'px;"';
+                        } else {
+                            $style = 'style="width:' . $width . 'px;"';
+                        }
+                    }
+                    ?>
+
+                    <li <?= $style ?>><a href="<?= $v['url'] ?>" onclick="return cmf.ajax.menuOpen(this.href);"><?= $v['name'] ?></a></li>
+                <? } ?>
+
+            </ul>
+        </td>
+    </tr>
+
+
+    <? if ($subMenu) { ?>
+        <tr>
+            <td colspan='2'>
+                <ul class="right_container_menu">
+                    <?
+                    while (list($k, $v) = each($subMenu)) {
+                        $class = $subMenuEnd == $k ? 'right_container_border' : '';
+                        if (isset($v['sel'])) {
+                            $class .= ' item' . $v['sel'];
+                        }
+                        $style = 'class="' . $class . '"';
+                        ?>
+
+                        <li <?= $style ?>><a href="<?= $v['url'] ?>" onclick="return cmf.ajax.menuOpen(this.href);"><?= $v['name'] ?></a></li>
+    <? } ?>
+                </ul>
+            </td>
+        </tr>
+<? } ?>
+
+
+</table>
+
+<div class="botton_and_radio_container">
+

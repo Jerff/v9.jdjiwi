@@ -1,0 +1,70 @@
+<table class="great_table sectionCommand">
+<tr class="header_col">
+<td colspan="2"><a onclick="$('.sectionCommand').hide(); $('.sectionEdit').show(); ">Показать настройки</a></td>
+</tr>
+</table>
+
+<?=$config->html()->startForm('edit') ?>
+<? list($configForm) = $config->current()->main ?>
+<table class="great_table sectionEdit cHide"">
+<tr class="header_col">
+<td colspan="2"><a onclick="$('.sectionEdit').hide(); $('.sectionCommand').show(); ">Скрыть настройки</a></td>
+</tr>
+<tr>
+<td colspan="2" class="svet_td">
+    <? view_command::viewLineButton(
+                       cmfAdminView::buttonType1("edit.postAjax('update');", 'Сохранить')) ?>
+</td>
+</tr>
+<tr>
+<td class="svet_td">Максимальное количество отпрявляемых писем (в час):</td>
+<td class="svet_td2"><?=$configForm->html('mailMax', 'class="width25"') ?></td>
+</tr>
+<tr>
+<td class="svet_td">Адресс для тестирование рассылки:</td>
+<td class="svet_td2"><?=$configForm->html('email', 'class="width25"') ?></td>
+</tr>
+</table>
+<?=$config->html()->endForm() ?>
+
+    <table class="table_position">
+    <tr class="header_col">
+    <td>Разделы: <?=cmfView::selectOncahge($filterType, 'class="width99"') ?></td>
+    </tr>
+	</table>
+
+	<? view_command::viewLimitButton($limitUrl, $linkPage,
+	                   cmfAdminView::buttonType2($list->url->getNew(), 'Добавить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>
+
+
+<?=$list->html()->startForm() ?>
+	<table class="great_table">
+	<tr class="header_col">
+	<td width="100px">Дата старта <br>рассылки</td>
+	<td width="200px">Тип рассылки</td>
+	<td>Названание рассылки</td>
+	<td width="100px">Статус</td>
+	<td width="22px">Вид</td>
+	<td width="22px">Уд.</td>
+	</tr>
+
+<?	foreach($list as $key=>$value){
+		list($form, $data) = $value->main;
+
+	 ?>
+	<?=view_list::startTR($list) ?>
+	<td nowrap><?=$data->dateStart ?></td>
+	<td><?=get2($filterType, $data->type, 'name', 'нет') ?></td>
+	<td><? if($key) echo cmfAdminView::buttonType3($list->getEditUrl(), $data->name) ?></td>
+	<td id="status<?=$key ?>"><?=$list->getStatus($data->status) ?></td>
+	<td><?=$form->html('visible') ?></td>
+	<td><?=$list->viewDelete() ?></td>
+	</tr>
+<? } ?>
+	</table>
+<?=$list->html()->endForm() ?>
+
+	<? view_command::viewLimitButton($limitUrl, $linkPage,
+	                   cmfAdminView::buttonType2($list->url->getNew(), 'Добавить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>

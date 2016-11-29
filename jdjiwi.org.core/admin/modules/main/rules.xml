@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduls package="Информация">
+	<modul id="main" name="Cтраницы информации">
+		<menuList>
+			<menu1 id="about">
+				<link name="/admin/main/" menu="Главная"/>
+			</menu1>
+			<menu id="image">
+				<link name="/admin/main/image/" menu="Изображения"/>
+			</menu>
+			<menu id="contact">
+				<link name="/admin/contact/" menu="Контакты" submenu="Информация"/>
+				<link name="/admin/contact/main/" submenu="Контакты на сайте"/>
+			</menu>
+		</menuList>
+		<pages>
+			<page1 name="/admin/main/" preg="/(main)/" path="main/info"/>
+			<page name="/admin/contact/" preg="/(contact)/" path="main/info"/>
+			<page name="/admin/contact/main/" preg="/(contact/main)/" path="main/info"/>
+			<page name="/admin/main/image/"/>
+		</pages>
+		<rules>
+			<rule id="main">
+				<elements>
+					<element>info</element>
+				</elements>
+			</rule>
+			<rule id="config">
+				<elements>
+					<element>config</element>
+				</elements>
+			</rule>
+			<rule id="contact">
+				<elements>
+					<element>info</element>
+				</elements>
+			</rule>
+			<rule id="image">
+				<elements>
+					<element>image</element>
+				</elements>
+			</rule>
+		</rules>
+	</modul>
+</moduls>

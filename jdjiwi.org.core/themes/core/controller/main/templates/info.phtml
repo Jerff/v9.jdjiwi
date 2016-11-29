@@ -1,0 +1,33 @@
+
+    <h1><?=$info['name'] ?></h1>
+    <div class="clearFloat"></div>
+    <? if(isset($_info)) { ?>         
+    
+        <div class="<?=$info['viewMenu']=='right' ? 'infoList newsYear' : 'infoList' ?>">
+        <? foreach($_info as $row) { ?>
+            <div class="infoSubList"><a href="<?=$row['url'] ?>"><?=$row['name'] ?></a></div>
+        <? } ?>
+        </div>
+    <? } ?>
+    <?=$info['content'] ?>
+
+    <? if(isset($_faq)) { ?>
+        <? foreach($_faq as $id=>$row) { ?>
+            <div class="title_question listFaq" id="<?=$id ?>"><img src="/images/faqClose.png"><?=$row['name'] ?></div>
+            <div class="contentFaq cHide" id="faq<?=$id ?>"><?=$row['content'] ?></div>
+        <? } ?>
+        <script type="text/javascript">
+        $('.listFaq').click(function() {
+            var id = '#faq'+ $(this).attr('id');
+            if(style.hideShow(id)) {
+                $('img', $(this)).attr('src', '/images/faqOpen.png');
+                $(id).show();
+            } else {
+                $('img', $(this)).attr('src', '/images/faqClose.png');
+                $(id).hide();
+            }
+        });
+        </script>
+    <? } ?>
+
+

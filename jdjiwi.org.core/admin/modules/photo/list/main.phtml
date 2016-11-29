@@ -1,0 +1,73 @@
+<table class="great_table sectionCommand">
+<tr class="header_col">
+<td colspan="2"><a onclick="$('.sectionCommand').hide(); $('.sectionEdit').show(); ">Показать настройки</a></td>
+</tr>
+</table>
+
+<?=$config->html()->startForm('edit') ?>
+<? list($configForm) = $config->current()->main ?>
+<table class="great_table sectionEdit cHide"">
+<tr class="header_col">
+<td colspan="2"><a onclick="$('.sectionEdit').hide(); $('.sectionCommand').show(); ">Скрыть настройки</a></td>
+</tr>
+<tr>
+<td colspan="2" class="svet_td">
+    <? view_command::viewLineButton(
+                       cmfAdminView::buttonType1("edit.postAjax('update');", 'Сохранить')) ?>
+</td>
+</tr>
+<tr>
+<td class="svet_td">Фотообзоров на главной</td>
+<td class="svet_td2"><?=$configForm->html('photoMain', 'class="width25"') ?></td>
+</tr>
+<? /*
+<tr>
+<td class="svet_td">Фотообзоров в разделе</td>
+<td class="svet_td2"><?=$configForm->html('photoSection', 'class="width25"') ?></td>
+</tr>*/ ?>
+<tr>
+<td class="svet_td">Фотообзоров на страницу</td>
+<td class="svet_td2"><?=$configForm->html('photoLimit', 'class="width25"') ?></td>
+</tr>
+<tr>
+<td class="svet_td">Фотообзоров страниц (навигация)</td>
+<td class="svet_td2"><?=$configForm->html('photoPage', 'class="width25"') ?></td>
+</tr>
+</table>
+<?=$config->html()->endForm() ?>
+
+	<? view_command::viewLimitButton($list->getLimitUrl(), $list->getLinkPage(),
+	                   cmfAdminView::buttonType2($list->url->getNew(), 'Добавить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>
+
+
+<?=$list->html()->startForm() ?>
+	<table class="great_table">
+	<tr class="header_col">
+	<td width="50px">Дата</td>
+	<td>Заголовок</td>
+	<td width="200px">Постоянная ссылка</td>
+	<td width="22px">Вверху списка</td>
+	<td width="22px">Вид</td>
+	<td width="22px">Уд.</td>
+	</tr>
+
+<?	foreach($list as $key=>$value){
+		list($form, $data) = $value->main;
+
+	 ?>
+	<?=view_list::startTR($list) ?>
+	<td><?=$data->date ?></td>
+	<td><? if($key) echo cmfAdminView::buttonType3($list->getEditUrl(), $data->header) ?></td>
+	<td><?=$list->viewListSiteUrl($data) ?></td>
+	<td><?=$form->html('isMain') ?></td>
+	<td><?=$form->html('visible') ?></td>
+	<td><?=$list->viewDelete() ?></td>
+	</tr>
+<? } ?>
+	</table>
+<?=$list->html()->endForm() ?>
+
+	<? view_command::viewLimitButton($list->getLimitUrl(), $list->getLinkPage(),
+	                   cmfAdminView::buttonType2($list->url->getNew(), 'Добавить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>

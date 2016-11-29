@@ -1,0 +1,25 @@
+
+<div class="register-page-fancybox">
+    <?= $userEnter->startForm() ?>
+    <?= $userEnter->formError() ?>
+    <div class="form-title">Вход в личный кабинет</div>
+    <fieldset>
+        <label>Email</label>
+        <?= $form->html('login', 'class="i-text"') ?>
+    </fieldset>
+    <fieldset>
+        <label>Пароль</label>
+        <?= $form->html('password', 'class="i-text noreq"') ?>
+    </fieldset>
+    <br />
+    <fieldset>
+        <a href="<?= $passwordUrl ?>">Восстановить пароль</a>
+        <input type="image" src="images/enter-fancybox.png" class="reg-btn"   />
+    </fieldset>
+</form>
+<script type="text/javascript">
+    cmf.getId('<?= $form->getId('login') ?>').errorView = cmf.main.form.login;
+    cmf.getId('<?= $form->getId('password') ?>').errorView = cmf.main.form.login;
+</script>
+<?= $userEnter->endForm() ?>
+</div>

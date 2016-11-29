@@ -1,0 +1,53 @@
+    <? view_command::viewLineButton(
+                       cmfAdminView::buttonType1("edit.postAjax('update');", 'Сохранить')) ?>
+
+
+<?=$config->html()->startForm('edit') ?>
+<? list($configForm) = $config->current()->main ?>
+<table class="great_table">
+<tr class="header_col">
+<td colspan="2">Настройки</td>
+</tr>
+<tr>
+<td class="svet_td">Шагов в фильтре цены:</td>
+<td class="svet_td2"><?=$configForm->html('priceStep', 'class="width25"') ?></td>
+</tr>
+<?=$config->html()->endForm() ?>
+
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType2($list->url->getNew(), 'Добавить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>
+
+
+<?=$list->html()->startForm() ?>
+	<table class="great_table">
+	<tr class="header_col">
+	<td>Наименование</td>
+	<td width="150px"></td>
+	<td width="100px"></td>
+	<td width="22px">Ед.<br>изм.</td>
+	<td width="22px">Вид</td>
+	<td width="22px">Уд.</td>
+	</tr>
+
+<?	foreach($list as $key=>$value){
+		list($form, $data) = $value->main;
+
+		?>
+	<?=view_list::startTR($list) ?>
+
+	<td><?=cmfAdminView::buttonType3($list->getEditUrl(), $data->name) ?></td>
+	<td><?=get(array('basket'=>'Параметр указывается в корзине'), $data->type) ?></td>
+	<td><?=$data->type ?></td>
+	<td><?=$data->prefix ?></td>
+	<td><?=$form->html('visible') ?></td>
+	<td><?=$list->viewDelete() ?></td>
+	</tr>
+<? } ?>
+	</table>
+<?=$list->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType2($list->url->getNew(), 'Добавить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>

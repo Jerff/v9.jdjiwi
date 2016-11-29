@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduls package="Система">
+	<modul id="cache.template" name="Кеш шаблонов">
+		<menu>
+			<link name="/admin/cache/template/" menu="Кеш шаблонов"/>
+		</menu>
+		<pages>
+			<page name="/admin/cache/template/"/>
+		</pages>
+		<rules>
+			<rule id="cache.template">
+				<elements>
+					<element>template</element>
+				</elements>
+			</rule>
+		</rules>
+	</modul>
+	<modul id="cache.data" name="Работа с данными">
+		<menu>
+			<link name="/admin/cache/data/" menu="Работа с данными"/>
+		</menu>
+		<pages>
+			<page name="/admin/cache/data/"/>
+		</pages>
+		<rules>
+			<rule id="cache.data">
+				<elements>
+					<element>data</element>
+				</elements>
+			</rule>
+		</rules>
+	</modul>
+</moduls>

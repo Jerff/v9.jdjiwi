@@ -1,0 +1,52 @@
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjaxSave('update');", 'Сохранить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') .
+	                   cmfAdminView::buttonType2($edit->url()->getCatalog(), 'Вернуться')) ?>
+
+
+
+<?=$edit->html()->startForm() ?>
+<? list($form) = $edit->current()->main ?>
+<table class="great_table">
+<tr class="header_col">
+<td colspan="2">&nbsp;</td>
+</tr>
+
+<tr>
+<td class="svet_td">&nbsp;</td>
+<td class="svet_td2 selectCheckbox">
+    <?=$form->label('visible', 'Отображать') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Каталог:</td>
+<td class="svet_td2"><?=$form->html('parent', 'class="width50" onchange="cmf.pages.parentShange();"') ?>
+<script language="JavaScript">
+cmf.pages.parentShange = function() {
+	var value = !parseInt(cmf.getValue('<?=$form->getId('parent') ?>'));
+	$('.parentSection').each(function() {
+		cmf.admin.hideShowLine(this, value);
+	});
+};
+cmf.pages.parentShange();
+</script>
+</td>
+</tr>
+
+<tr>
+<td class="svet_td">Название:<?=cmfWysiwyng::typograf($form->getId('name')) ?></td>
+<td class="svet_td2"><?=$form->html('name', 'class="width99"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td parentSection">Описание:</td>
+<td class="svet_td2 parentSection"><?=$form->html('content', 400) ?></td>
+</tr>
+
+</table>
+<?=$edit->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjaxSave('update');", 'Сохранить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') .
+	                   cmfAdminView::buttonType2($edit->url()->getCatalog(), 'Вернуться')) ?>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduls package="Каталог">
+	<modul id="product.dump" name="Проверка наличия размеров">
+		<menu>
+			<link1 name="/admin/dump/" menu="Размеры" submenu="Настройки"/>
+			<link1 name="/admin/dump/log/" submenu="Лог операций"/>
+		</menu>
+		<pages>
+			<page name="/admin/dump/" subpath="size"/>
+			<page name="/admin/dump/log/"/>
+		</pages>
+		<rules>
+			<rule id="user.dump">
+				<elements>
+					<element>config</element>
+					<element>size</element>
+					<element>log</element>
+				</elements>
+			</rule>
+		</rules>
+	</modul>
+</moduls>

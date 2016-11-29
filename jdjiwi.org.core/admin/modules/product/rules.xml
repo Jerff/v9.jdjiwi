@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduls package="Каталог">
+	<modul id="catalog.product" name="Товары">
+		<menu>
+			<link name="/admin/product/" menu="Товары"/>
+			<link name="/admin/product/edit/" select="product" submenu="Свойства"/>
+			<link name="/admin/product/param/" select="product" submenu="Параметры"/>
+			<link name="/admin/product/image/" select="product" submenu="Изображения"/>
+			<link name="/admin/dump/" menu="Размеры" header=" " submenu="Настройки"/>
+			<link name="/admin/dump/log/" header=" " submenu="Лог операций"/>
+			<link name="/admin/product/remains/" menu="Остатки"/>
+			<link name="/admin/product/watermark/" menu="Водяные знаки"/>
+		</menu>
+		<pages>
+			<page name="/admin/product/" subpath="list"/>
+			<page name="/admin/product/edit/"/>
+			<page name="/admin/product/image/" subpath="list"/>
+			<page name="/admin/product/param/"/>
+			<page name="/admin/product/attach/" template="admin.productList"/>
+			<page name="/admin/product/remains/"/>
+			<page name="/admin/product/watermark/"/>
+		</pages>
+		<rules>
+			<rule id="product" object="true">
+				<elements>
+					<element>edit</element>
+					<element>list</element>
+					<element>param</element>
+					<element>tag</element>
+					<element>remains</element>
+				</elements>
+				<childs>
+					<child parentId="product">product.image</child>
+					<child parentId="product1,product2">product.attach</child>
+				</childs>
+			</rule>
+			<rule id="product.image">
+				<elements>
+					<element>image/list</element>
+					<element>image/edit</element>
+					<element>image/multi</element>
+				</elements>
+			</rule>
+			<rule id="product.attach">
+				<elements>
+					<element>attach</element>
+				</elements>
+			</rule>
+			<rule id="product.watermark">
+				<elements>
+					<element>watermark</element>
+				</elements>
+			</rule>
+		</rules>
+	</modul>
+</moduls>

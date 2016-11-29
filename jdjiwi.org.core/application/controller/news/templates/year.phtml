@@ -1,0 +1,21 @@
+    <h1>Новости</h1>
+
+<? if(isset($_year)) { ?>
+<div class="newsYear">
+<? while(list(, $v) = each($_year)) { ?>
+	<p><a href="<?=$v['url'] ?>"><?=$v['name'] ?></a></p>
+<? } ?>
+</div>
+<? } ?>
+
+<? while(list(, $v) = each($_news)) { ?>
+	<p><span class="news-item-date"><?=$v['date'] ?></span>&nbsp;<a href="<?=$v['url'] ?>"><?=$v['header'] ?></a>
+	<br /><?=$v['notice'] ?></p>
+<? } ?>
+
+
+    <div class="hrEmpty"></div>
+
+<? if(isset($_page_url)) {
+    cmfPagination::view($_page_url);
+} ?>

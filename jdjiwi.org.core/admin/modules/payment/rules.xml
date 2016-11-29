@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduls package="Клиенты">
+    <modul id="user.payment" name="Способы оплаты">
+        <menu>
+            <link name="/admin/payment/" menu="Способы оплаты"/>
+            <link name="/admin/payment/edit/" select="param" submenu="Свойства"/>
+            <link name="/admin/payment/param/" select="param" submenu="Параметры"/>
+        </menu>
+        <pages>
+            <page name="/admin/payment/" subpath="list"/>
+            <page name="/admin/payment/edit/"/>
+            <page name="/admin/payment/param/"/>
+        </pages>
+        <rules>
+            <rule id="user.payment">
+                <elements>
+                    <element>config</element>
+					<element>edit</element>
+                    <element>list</element>
+                    <element>param</element>
+                    <element>param/edit</element>
+                </elements>
+            </rule>
+		</rules>
+	</modul>
+</moduls>

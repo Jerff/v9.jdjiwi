@@ -1,0 +1,77 @@
+<?=$list->html()->startForm('filter') ?>
+	<table class="table_position">
+
+    <tr class="header_col">
+    <td width="33%">Разделы: <?=cmfView::selectOncahge($filterSection, 'class="width99"') ?></td>
+    <td width="33%" colspan="2">Производитель: <?=cmfView::selectOncahge($filterBrand, 'class="width99"') ?></td>
+	<td width="33%">Фильтр: <?=cmfView::selectOncahge($filterFilter, 'class="width99"') ?></td>
+	</tr>
+
+	<tr class="header_col">
+	<td colspan="2">
+    	Артикул <input name="articul" id="articul" type="text" value="<?=$articul ?>" size="30">
+    	<br /><?=cmfAdminView::onclickType1("filter.postAjax('changeFilter');", 'Найти') ?>&nbsp;&nbsp;
+    	<?=cmfAdminView::onclickType1("cmf.setValue('articul', ''); filter.postAjax('changeFilter');", 'Сброс') ?>
+	</td>
+	<td colspan="2">
+    	Цена: от <input name="price1" id="price1" type="text" value="<?=$price1 ?>" size="10">
+    	до <input name="price2" id="price2" type="text" value="<?=$price2 ?>" size="10">&nbsp;&nbsp;
+    	<br /><?=cmfAdminView::onclickType1("filter.postAjax('changeFilter');", 'Найти') ?>&nbsp;&nbsp;
+    	<?=cmfAdminView::onclickType1("cmf.setValue('price1', ''); cmf.setValue('price2', ''); filter.postAjax('changeFilter');", 'Сброс') ?>
+	</td>
+	</tr>
+	</table>
+<?=$list->html()->endForm() ?>
+
+	<? view_command::viewLimitButton(
+						'<td width="120px">Всего товаров: <b>'. $list->getTotal() .'</b></td>',
+						$limitUrl, $linkPage,
+						cmfAdminView::buttonType2($list->url->getNew(), 'Добавить') .
+						cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>
+
+
+<?=$list->html()->startForm() ?>
+	<table class="great_table">
+	<tr class="header_col">
+	<td width="22px">#</td>
+	<td width="200px">Раздел</td>
+	<td width="150px">Производитель</td>
+	<td width="100px">Артикул</td>
+	<td>Название</td>
+	<td width="50px">Рекомендуем</td>
+	<td width="80px">Цена</td>
+	<td width="50px">Остатки</td>
+	<td width="22px">Под заказ</td>
+	<td width="22px">Вид</td>
+	<td width="22px">Уд.</td>
+	</tr>
+
+<?	foreach($list as $key=>$value){
+		list($form, $data) = $value->main;
+		?>
+	<?=view_list::startTR($list) ?>
+
+	<?=$list->getPostMove($data) ?>
+	<td><?=get2($filterSection, $data->section, 'name', 'нет') ?></td>
+	<td><?= $data->get('brand') ? get2($filterBrand, $data->brand, 'name', 'нет') : 'нет' ?></td>
+
+	<td><?=$data->articul ?></td>
+	<td><? if($key) echo cmfAdminView::buttonType3($list->getEditUrl(), $data->name) ?></td>
+
+	<td><?=cmfAdminView::buttonType3($list->getProductUrl(), '('. (int)get($attach, $key) .')') ?></td>
+	<td><?=$data->price ?> руб.</td>
+	<td><?=$form->html('count', 'class="width99"') ?></td>
+	<td><?=$form->html('isOrder') ?></td>
+	<td><?=$form->html('visible') ?></td>
+	<td><?=$list->viewDelete() ?></td>
+	</tr>
+<? } ?>
+	</table>
+<?=$list->html()->endForm() ?>
+
+	<? view_command::viewLimitButton(
+						'<td width="120px">Всего товаров: <b>'. $list->getTotal() .'</b></td>',
+						$limitUrl, $linkPage,
+						cmfAdminView::buttonType2($list->url->getNew(), 'Добавить') .
+						cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>
+

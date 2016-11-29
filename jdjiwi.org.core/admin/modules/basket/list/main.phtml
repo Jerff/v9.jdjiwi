@@ -1,0 +1,113 @@
+<?=$list->html()->startForm('filter') ?>
+	<table class="table_position">
+	<tr class="header_col">
+	<td width="50%">Тип: <?=cmfView::selectOncahge($filterType) ?></td>
+	<td width="50%">
+	    <div id="searchError" class="cHide"></div>
+	    <div class="empry"></div>
+	    № заказа <input name="number" type="text" size="5">
+	    <?=cmfAdminView::onclickType1("filter.postAjax('searchOrder');", 'Найти') ?>
+	</td>
+	</tr>
+	</table>
+<?=$list->html()->endForm() ?>
+
+	<? view_command::viewLimitButton(
+						'<td width="120px">Всего заказов: <b>'. $list->getTotal() .'</b></td>',
+						$limitUrl, $linkPage, '') ?>
+
+
+<?=$list->html()->startForm() ?>
+	<table class="great_table">
+	<tr class="header_col">
+	<td width="22px">№</td>
+	<td width="150px">Статус</td>
+	<td width="150px">Операции</td>
+	<td colspan="2">Дата создания заказа</td>
+	<td width="22px">Уд.</td>
+	</tr>
+	<tr style="display:none">
+	<td>Статус</td>
+	<td>Операции</td>
+	<td colspan="2">Дата</td>
+	<td>Удалить</td>
+	</tr>
+
+<?	foreach($list as $key=>$value) if($key) {
+		list($form, $data) = $value->main;
+
+		list(, , $userData) = unserialize($data->data);
+		list($countAll, $priceAll, $priceDiscount, $priceDelivery, $discount) = unserialize($data->price);
+		?>
+
+	<tr class="columnn_svet2" id="<?=$list->getHtmlIdDel() ?>">
+	<td><?=$key ?></td>
+	<td nowrap><?=$list->getStatus($data) ?></td>
+	<td nowrap><?=$list->getCommand($key, $data) ?></td>
+
+	<td><?=cmfAdminView::buttonType3($list->getEditUrl(), $data->registerDate) ?></td>
+	<td><?=cmfAdminView::buttonType3($list->getPrintUrl(), 'печать') ?></td>
+	<td><?=$list->viewDelete() ?></td>
+	</tr>
+
+	<tr class="columnn_svet" id="data_<?=$list->getHtmlIdDel() ?>">
+	<td colspan="6">
+
+
+<? if(isset($listUser[$data->user])) { ?>
+		<table border="1" cellspacing="0" cellpadding="4">
+		<tr>
+		<td class="svet_td">Профайл пользователя</td>
+		<td class="svet_td2"><?=cmfAdminView::buttonType3($list->getUserUrl($data->user), $listUser[$data->user]) ?></td>
+		</tr>
+		</table>
+		<br>
+<? } ?>
+
+		<table border="1" cellspacing="0" cellpadding="4">
+<? $i=0; foreach($userData as $k=>$v) if($i++<4){ ?>
+		<tr>
+		<td class="svet_td"><?=$k ?>:</td>
+		<td class="svet_td2"><?=$v ?></td>
+		</tr>
+<? } ?>
+
+		<tr>
+		<td class="svet_td">Сумма:
+		<? if($discount) { ?>
+		    <br />Со скидкой:
+		<? } ?>
+		<? if($data->isDelivery==='yes') { ?>
+		    <br />C доставкой:
+		<? } ?>
+		<? if($discount) { ?>
+		    <br />Скидка:
+		<? } ?>
+		</td>
+		<td class="svet_td2"><?=$priceAll ?> руб.
+		<? if($discount) { ?>
+		    <br /><?=$priceDiscount ?> руб.
+		<? } ?>
+		<? if($data->isDelivery==='yes') { ?>
+		    <br /><?=$priceDelivery ?> руб.
+		<? } ?>
+		<? if($discount) { ?>
+		    <br /><?=$discount ?> руб.
+		<? } ?>
+		</td>
+		</tr>
+
+		</table>
+		<br><br>
+
+	</td>
+	</tr>
+
+<? } ?>
+	</table>
+<?=$list->html()->endForm() ?>
+
+	<? view_command::viewLimitButton(
+						'<td width="120px">Всего заказов: <b>'. $list->getTotal() .'</b></td>',
+						$limitUrl, $linkPage, '') ?>
+

@@ -1,0 +1,63 @@
+    <? view_command::viewLineButton(
+                       cmfAdminView::buttonType1("edit.postAjax('update');", 'Применить')) ?>
+
+
+<?=$config->html()->startForm('edit') ?>
+<? list($configForm) = $config->current()->main ?>
+<table class="great_table">
+
+<tr class="header_col">
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr>
+<td class="svet_td">Meta теги</td>
+<td class="svet_td2"><?=$configForm->html('head', 'class="width99" rows="5"') ?></td>
+</tr>
+
+</table>
+<?=$config->html()->endForm() ?>
+
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Сохранить')) ?>
+
+
+<?=$edit->html()->startForm() ?>
+<? list($form) = $edit->current()->main ?>
+<table class="great_table">
+<tr class="header_col">
+<td colspan="2">&nbsp;</td>
+</tr>
+
+<tr>
+<td class="svet_td">Страница:</td>
+<td class="svet_td2"><?=$form->html('uri', 'class="width50" onchange="document.location=\''. $edit->getChangeUrl() .'&id=\' + this.value"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Переменные:</td>
+<td class="svet_td2"><?=$form->html('value', 'class="width99" readonly') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">title:</td>
+<td class="svet_td2"><?=$form->html('title', 'class="width99"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">keywords:</td>
+<td class="svet_td2"><?=$form->html('keywords', 'class="width99"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">description:</td>
+<td class="svet_td2"><?=$form->html('description', 'class="width99"') ?></td>
+</tr>
+
+</table>
+<?=$edit->html()->endForm() ?>
+
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Сохранить') .
+	                   cmfAdminView::buttonType1("modul.ajax('delete');", 'Удалить')) ?>

@@ -1,0 +1,28 @@
+<div id="contentflash" class="div-showcase">
+    <div style="position: relative; height:<?=$main['height'] ?>px;" id="showcases_box">
+        <div class="showcase">
+            <? foreach($small as $id=>$row) { ?>
+                <a title="<?=$row['title'] ?>" href="<?=$row['url'] ?>"><span style="top: <?=$row['top'] ?>px; left: <?=$row['left'] ?>px; height: <?=$row['height'] ?>px; width: <?=$row['width'] ?>px;" class="area"></span></a>
+            <? } ?>
+            <img class="showcase_img" src="<?=$main['image'] ?>" width="<?=$main['width'] ?>" height="<?=$main['height'] ?>" alt="<?=$main['title'] ?>"/>
+        </div>
+    </div>
+
+    <? if(isset($_article)) { ?>
+        <div class="article-block-section article-block-section-top">
+            <div class="article-block">
+                <? foreach($_article as $row) { ?>
+                <div class="news-item">
+                    <h3><a href="<?=$row['url'] ?>"><?=$row['header'] ?></a></h3>
+                    <? if($row['image']) { ?>
+                        <a href="<?=$row['url'] ?>"><img class="articleImg" src="<?=$row['image'] ?>" alt="<?=$row['title'] ?>"/></a>
+                    <? } ?>
+                    <p><?=$row['notice'] ?></p>
+                    <p class="news-item-date"><?=$row['date'] ?></p>
+                </div>
+                <? } ?>
+            </div>
+        </div>
+    <? } ?>
+</div>
+

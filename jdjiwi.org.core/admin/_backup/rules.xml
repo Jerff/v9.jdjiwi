@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduls package="Система">
+	<modul id="backupDb" name="Управление Базами данных">
+        <menu>
+			<link name="/admin/backup/table/" menu="Базы данных"/>
+		</menu>
+		<pages>
+			<page name="/admin/backup/table/"/>
+		</pages>
+		<rules>
+			<rule id="backup.table">
+				<elements>
+					<element>table</element>
+				</elements>
+			</rule>
+		</rules>
+	</modul>
+	<modul id="backup" name="Резервное копирование">
+		<menu>
+			<link name="/admin/backup/site/" menu="Резервное копирование"/>
+		</menu>
+		<pages>
+			<page name="/admin/backup/site/" subpath="list"/>
+		</pages>
+		<rules>
+			<rule id="backup.site">
+				<elements>
+					<element>site/import</element>
+					<element>site/list</element>
+				</elements>
+			</rule>
+		</rules>
+	</modul>
+</moduls>

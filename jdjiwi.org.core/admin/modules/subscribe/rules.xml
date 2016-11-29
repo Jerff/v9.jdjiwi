@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduls package="Информация">
+	<modul id="subscribe" name="Рассылка">
+		<menu>
+			<link name="/admin/subscribe/" menu="Рассылка"></link>
+			<link name="/admin/subscribe/edit/" select="history" submenu="Свойства">></link>
+			<link name="/admin/subscribe/history/" select="history" submenu="История"></link>
+			<link name="/admin/subscribe/history/view/" select="historyView" submenu="Просмотр рассылки"></link>
+			<link name="/admin/subscribe/mail/" menu="Подписчики"></link>
+			<link name="/admin/subscribe/mail/edit/"></link>
+		</menu>
+		<pages>
+			<page name="/admin/subscribe/" subpath="list"></page>
+			<page name="/admin/subscribe/edit/"></page>
+			<page name="/admin/subscribe/history/" subpath="list"></page>
+			<page name="/admin/subscribe/history/view/"></page>
+			<page name="/admin/subscribe/mail/" subpath="list"></page>
+			<page name="/admin/subscribe/mail/edit/"></page>
+		</pages>
+		<rules>
+			<rule id="subscribe">
+				<elements>
+					<element>edit</element>
+					<element>list</element>
+					<element>config</element>
+					<element>mail/edit</element>
+					<element>mail/list</element>
+					<element>history/view</element>
+					<element>history/list</element>
+				</elements>
+			</rule>
+		</rules>
+	</modul>
+</moduls>

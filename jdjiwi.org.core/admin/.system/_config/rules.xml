@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduls package="Настройки">
+	<modul id="config" name="Настройки">
+        <menuList>
+            <menu id="view">
+                <link name="/admin/config/site/" menu="Настройки Отображений"/>
+            </menu>
+            <menu id="cron">
+                <link name="/admin/config/cron/" menu="Настройки Обновлений"/>
+            </menu>
+		</menuList>
+		<pages>
+			<page name="/admin/config/site/"/>
+			<page name="/admin/config/cron/"/>
+		</pages>
+		<rules>
+			<rule id="config.site">
+				<elements>
+					<element>site</element>
+				</elements>
+			</rule>
+			<rule id="config.cron">
+				<elements>
+					<element>cron/config</element>
+					<element>cron/list</element>
+				</elements>
+			</rule>
+		</rules>
+	</modul>
+</moduls>

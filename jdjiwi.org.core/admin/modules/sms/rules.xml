@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduls package="Клиенты">
+	<modul id="user.sms.inform" name="SMS оповещение">
+		<menu>
+			<link1 name="/admin/sms/inform/" menu="SMS оповещение"/>
+		</menu>
+		<pages>
+			<page name="/admin/sms/inform/"/>
+		</pages>
+		<rules>
+			<rule id="user.country">
+				<elements>
+					<element>config</element>
+					<element>inform</element>
+				</elements>
+			</rule>
+		</rules>
+	</modul>
+</moduls>

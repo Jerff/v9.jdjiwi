@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduls package="Настройки">
+	<modul id="seo" name="Управление seo">
+		<menu>
+			<link name="/admin/seo/" menu="Управление Мета-тегами"/>
+			<link name="/admin/seo/sitemap/" menu="SiteMap"/>
+			<link name="/admin/seo/copyright/" menu="Копирайт"/>
+			<link name="/admin/seo/counters/" menu="Счетчики"/>
+			<link name="/admin/seo/counters/edit/"/>
+			<!--//<link name="/admin/seo/reklama/" menu="Рекламные блоки"/>
+			<link name="/admin/seo/reklama/edit/"/>//-->
+		</menu>
+		<pages>
+			<page name="/admin/seo/" subpath="title"/>
+			<page name="/admin/seo/copyright/"/>
+			<page name="/admin/seo/counters/" subpath="list"/>
+			<page name="/admin/seo/counters/edit/"/>
+			<page name="/admin/seo/sitemap/"/>
+			<page name="/admin/seo/reklama/" subpath="list"/>
+			<page name="/admin/seo/reklama/edit/"/>
+		</pages>
+		<rules>
+			<rule id="seo.title">
+				<elements>
+					<element>title</element>
+					<element>title/config</element>
+				</elements>
+			</rule>
+			<rule id="seo.copyright">
+				<elements>
+					<element>copyright</element>
+				</elements>
+			</rule>
+			<rule id="seo.counters">
+				<elements>
+					<element>counters/list</element>
+					<element>counters/edit</element>
+				</elements>
+			</rule>
+			<rule id="seo.sitemap">
+				<elements>
+					<element>sitemap/config</element>
+					<element>sitemap/list</element>
+				</elements>
+			</rule>
+			<rule id="seo.reklama">
+				<elements>
+					<element>reklama/list</element>
+					<element>reklama/edit</element>
+				</elements>
+			</rule>
+		</rules>
+	</modul>
+</moduls>

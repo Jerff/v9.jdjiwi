@@ -1,0 +1,115 @@
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjaxSave('update');", 'Сохранить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') .
+	                   cmfAdminView::buttonType2($edit->url()->getCatalog(), 'Вернуться')) ?>
+
+
+<?=$edit->html()->startForm() ?>
+<? list($form) = $edit->current()->main ?>
+<table class="great_table">
+<tr class="header_col">
+<td colspan="2"><?=$edit->siteUrl()->item() ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Каталог:</td>
+<td class="svet_td2" colspan="3"><?=$form->html('section', 'class="width50"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">&nbsp;</td>
+<td class="svet_td2 selectCheckbox"><?=$form->label('visible', 'Включить') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Дата:</td>
+<td class="svet_td2" id="f_date3">
+<?=$form->html('date', 'class="width25" onfocus="cmf.pages.focus(this);"') ?>
+<script type="text/javascript">
+cmf.pages.cal = Calendar.setup({
+	showTime: 24,
+	minuteStep: 1,
+	onSelect: function(cal) {
+		cmf.pages.updateFields(cal);
+		cal.hide()
+	},
+    onTimeChange: function(cal) {
+		cmf.pages.updateFields(cal);
+	},
+});
+cmf.pages.focus = function(input) {
+	var date = (new RegExp("([0-9]{2})\.([0-9]{2})\.([0-9]{4}) ([0-9]{2})\:([0-9]{2})")).exec(input.value);
+	cmf.pages.cal.setHours(date[4]);
+	cmf.pages.cal.setMinutes(date[5]);
+	date = new Date(date[3], date[2]-1, date[1], date[4], date[5]);
+	cmf.pages.cal.selection.set(date)
+	cmf.pages.cal.moveTo(date)
+	cmf.pages.cal.popup(cmf.getId('datePopup'), 'right');
+}
+cmf.pages.updateFields = function(cal) {
+	var date = cal.selection.get();
+	if (date) {
+		date = Calendar.intToDate(date);
+		date.setHours(cal.getHours());
+		date.setMinutes(cal.getMinutes());
+		cmf.setValue('<?=$form->getId('date') ?>', Calendar.printDate(date, "%d-%m-%Y %H:%M"));
+	}
+};
+</script>
+</td>
+</tr>
+
+<tr>
+<td class="svet_td">Адрес:</td>
+<td class="svet_td2" id="datePopup"><?=$form->html('uri', 'class="width50"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Заголовок:<?=cmfWysiwyng::typograf($form->getId('header')) ?></td>
+<td class="svet_td2"><?=$form->html('header', 'class="width99"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td">Изображение:</td>
+<td class="svet_td2">
+            <?=$form->html('image_title', 'class="width50"') ?><br>
+            <?=$edit->getImage('main', 'image') ?>
+</td>
+</tr>
+
+<tr>
+<td class="svet_td">Анонс:<?=cmfWysiwyng::typograf($form->getId('notice')) ?></td>
+<td class="svet_td2"><?=$form->html('notice', 'class="width99" rows="5"') ?></td>
+</tr>
+
+<tr>
+<td class="svet_td" nowrap>Подробный текст:</td>
+<td class="svet_td2"><?=$form->html('content', 400) ?></td>
+</tr>
+
+<tr class="header_col">
+<td colspan="2">Seo</td>
+</tr>
+<tr>
+<td class="svet_td">title:</td>
+<td class="svet_td2">
+<?=$form->html('title', 'class="width99" rows="3"') ?></td>
+</tr>
+<tr>
+<td class="svet_td">keywords:</td>
+<td class="svet_td2">
+<?=$form->html('keywords', 'class="width99" rows="3"') ?></td>
+</tr>
+<tr>
+<td class="svet_td">description:</td>
+<td class="svet_td2">
+<?=$form->html('description', 'class="width99" rows="3"') ?></td>
+</tr>
+
+</table>
+<?=$edit->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjaxSave('update');", 'Сохранить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить') .
+	                   cmfAdminView::buttonType2($edit->url()->getCatalog(), 'Вернуться')) ?>

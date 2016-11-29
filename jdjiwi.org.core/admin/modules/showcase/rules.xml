@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduls package="Каталог">
+	<modul id="catalog.showcase" name="Витрина">
+		<menu>
+			<link name="/admin/showcase/" menu="Главная"/>
+			<link name="/admin/showcase/edit/" header="Витрина"/>
+		</menu>
+		<pages>
+			<page name="/admin/showcase/" subpath="list"/>
+			<page name="/admin/showcase/edit/"/>
+		</pages>
+		<rules>
+			<rule id="catalog.showcase">
+				<elements>
+					<element>edit</element>
+					<element>edit/image</element>
+					<element>list</element>
+					<element>list/config</element>
+				</elements>
+			</rule>
+		</rules>
+	</modul>
+</moduls>

@@ -1,0 +1,67 @@
+<table class="great_table sectionCommand">
+<tr class="header_col">
+<td colspan="2"><a onclick="$('.sectionCommand').hide(); $('.sectionEdit').show(); ">Показать настройки</a></td>
+</tr>
+</table>
+
+<?=$config->html()->startForm('edit') ?>
+<? list($configForm) = $config->current()->main ?>
+<table class="great_table sectionEdit cHide"">
+<tr class="header_col">
+<td colspan="2"><a onclick="$('.sectionEdit').hide(); $('.sectionCommand').show(); ">Скрыть настройки</a></td>
+</tr>
+<tr>
+<td colspan="2" class="svet_td">
+    <? view_command::viewLineButton(
+                       cmfAdminView::buttonType1("edit.postAjax('update');", 'Сохранить')) ?>
+</td>
+</tr>
+<tr>
+<td class="svet_td parentSection">Текст вверху размеров:</td>
+<td class="svet_td2 parentSection"><?=$configForm->html('header', 200) ?></td>
+</tr>
+<tr>
+<td class="svet_td parentSection">Текст внизу размеров:</td>
+<td class="svet_td2 parentSection"><?=$configForm->html('footer', 300) ?></td>
+</tr>
+</table>
+<?=$config->html()->endForm() ?>
+
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType2($list->url->getNew(), 'Добавить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>
+
+
+<?=$list->html()->startForm() ?>
+	<table class="great_table">
+	<tr class="header_col">
+	<td width="22px">#</td>
+	<td colspan="<?=$list->getColspan() ?>">Название</td>
+	<td width="100px">Добавить подраздел</td>
+	<td width="22px">Вид</td>
+	<td width="22px">Уд.</td>
+	</tr>
+
+<?	foreach($list as $key=>$value){
+		list($form, $data) = $value->main;
+	 ?>
+	<?=view_list::startTR($list) ?>
+
+	<? view_list_tree::viewTreeLine($key, $data) ?>
+	<?=$list->getPostMove($data) ?>
+	<td <?=$list->getColspanLine($data) ?>>
+		<?=cmfAdminView::buttonType3($list->getEditUrl(), $data->name) ?>
+	</td>
+
+	<td><?= $data->level<1 ? cmfAdminView::buttonType3($list->getAddChildUrl(), 'Добавить') : '' ?> </td>
+	<td><?=$form->html('visible') ?></td>
+	<td><?=$list->viewDelete() ?></td>
+	</tr>
+<? } ?>
+	</table>
+<?=$list->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType2($list->url->getNew(), 'Добавить') .
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>

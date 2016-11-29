@@ -1,0 +1,24 @@
+
+<table class="great_table">
+<tr class="header_col">
+<td colspan="2"><?=$urlView ?></td>
+</tr>
+</table>
+
+	<? view_command::viewLineMenuButton(
+	                   cmfAdminView::buttonType1("window.open('". $edit->getSelectUrl() ."', 'param').focus();;", 'Открыть фильтры товара') .
+                       cmfAdminView::buttonType1("window.open('". $edit->getNoticeUrl() ."', 'param').focus();", 'Открыть параметры описание товара'),
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>
+
+<?=$edit->html()->startForm() ?>
+<? list($form) = $edit->current()->main ?>
+<table class="great_table">
+<tr class="header_col">
+<td colspan="4">Параметры</td>
+</tr>
+<?=$edit->paramView() ?>
+</table>
+<?=$edit->html()->endForm() ?>
+
+	<? view_command::viewLineButton(
+	                   cmfAdminView::buttonType1("modul.postAjax('update');", 'Применить')) ?>

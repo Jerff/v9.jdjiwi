@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduls package="Каталог">
+	<modul id="catalog.section" name="Каталог">
+		<menu>
+			<link name="/admin/catalog/section/" menu="Каталог"/>
+			<link name="/admin/catalog/section/edit/" select="group" submenu="Свойства"/>
+			<link name="/admin/catalog/section/shop/" select="shop" submenu="Витрина"/>
+			<link name="/admin/param/group/select/" select="group" submenu="Фильтры"/>
+			<link name="/admin/param/group/notice/" select="group" submenu="Описание товара"/>
+			<link name="/admin/param/group/filter/" menu="Фильтр для поиска"/>
+			<link name="/admin/catalog/brand/" menu="Бренды"/>
+			<link name="/admin/catalog/brand/edit/"/>
+			<link name="/admin/param/color/" menu="Цвета"/>
+			<link name="/admin/param/color/edit/"/>
+			<link name="/admin/param/discount/" menu="Скидки"/>
+			<link name="/admin/param/discount/edit/"/>
+			<link name="/admin/param/" menu="Параметры"/>
+			<link name="/admin/param/edit/"/>
+			<link name="/admin/catalog/size/" menu="Размеры"/>
+			<link name="/admin/catalog/size/edit/"/>
+		</menu>
+		<pages>
+			<page name="/admin/catalog/section/"/>
+			<page name="/admin/catalog/section/shop/"/>
+			<page name="/admin/catalog/section/edit/" path="catalog/section"/>
+			<page name="/admin/catalog/brand/" subpath="list"/>
+			<page name="/admin/catalog/brand/edit/"/>
+			<page name="/admin/catalog/size/" subpath="list"/>
+			<page name="/admin/catalog/size/edit/"/>
+		</pages>
+		<rules>
+			<rule id="product.section" object="true">
+				<elements>
+					<element>section/list</element>
+					<element>section/edit</element>
+					<element>section/config</element>
+					<element>discount</element>
+				</elements>
+				<childs>
+					<child parentId="section">product</child>
+				</childs>
+			</rule>
+			<rule id="product.brand">
+				<elements>
+					<element>brand/list</element>
+					<element>brand/edit</element>
+				</elements>
+			</rule>
+			<rule id="catalog.size">
+				<elements>
+					<element>size/edit</element>
+					<element>size/list</element>
+					<element>size/config</element>
+				</elements>
+			</rule>
+		</rules>
+	</modul>
+</moduls>

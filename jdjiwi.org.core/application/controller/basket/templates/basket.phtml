@@ -1,0 +1,83 @@
+                <div id="main" class="basket bcont">
+                    <form enctype="multipart/form-data" id="basketId" method="post" onsubmit="return cmf.basket.update(this);">
+                    <input name="update" id="update" type="hidden" value="order">
+                        <? cmfBasketView::menu() ?>
+                        <div class="l-block item-info">
+                            <div class="t-title">
+                                <span class="nr1">наименование</span>
+                                <span class="nr2">количество</span>
+                                <span class="nr3">стоимость</span>
+                                <span class="nr4">удалить</span>
+                            </div>
+<?
+$index = 1;
+foreach($_basket as $k=>$v) {
+    $is = true;
+    $isReload = 0;
+    foreach($v['param'] as $pId=>$pName) if(isset($v['count'][$pId])) {
+        foreach($v['count'][$pId] as $cId=>$cValue) if(isset($v['color'][$cId]) or !$cId) {
+            $isReload++;
+        }
+    }
+    foreach($v['param'] as $pId=>$pName) if(isset($v['count'][$pId])) {
+        foreach($v['count'][$pId] as $cId=>$cValue) if(isset($v['color'][$cId]) or !$cId) { ?>
+                            <div class="item <?=$is ? 'itemFirst' : 'itemNext' ?>" id="basketList_<?=$k ?>_<?=$pId ?>_<?=$cId ?>">
+                                <span class="nr1">
+                                    <? if($is) { ?>
+                                        <div class="img"><img src="<?=$v['image'] ?>" alt="<?=$v['title'] ?>" width="45" /></div>
+                                        <h6><a href="<?=$v['url'] ?>"><?=$v['name'] ?></a>
+                                            <sup id="comment<?=$k ?>_<?=$pId ?>_<?=$cId ?>"><? if(!empty($v['comment'][$pId][$cId])) { ?>(<?=$v['comment'][$pId][$cId] ?>)<? } ?></sup>
+                                        </h6>
+                                    <? } else { ?>
+                                        <div class="imgNone"></div>
+                                        <sup id="comment<?=$k ?>_<?=$pId ?>_<?=$cId ?>"><? if(!empty($v['comment'][$pId][$cId])) { ?>(<?=$v['comment'][$pId][$cId] ?>)<? } ?></sup>
+                                    <? } ?>
+                                    <div class="text">
+                                        <? if($is) { ?>
+                                            <?=$v['bName'] ?><br />
+                                        <? } ?>
+                                        <? if($pId) { ?>
+                                            <?=$v['header'] ?> <?=$pName ?><? if($cId) { echo ';';} ?>
+                                        <? } ?>
+                                        <? if($cId) { ?>
+                                            Цвет: <?=$v['color'][$cId]['name'] ?>
+                                        <? } ?>
+                                    </div>
+                                </span>
+                                <span class="nr2">
+                                    <input id="product[<?=$k ?>][<?=$pId ?>][<?=$cId ?>]" name="product[<?=$k ?>][<?=$pId ?>][<?=$cId ?>]" type="hidden" value="<?=$cValue ?>">
+                                    <a class="prew <? if($cValue>1) { ?>prewOn<? } else { ?>prewOff<? } ?>" onclick="cmf.basket.updateCount(cmf.getId('product[<?=$k ?>][<?=$pId ?>][<?=$cId ?>]'), -1);"></a>
+                                    <b id="value<?=$k ?>_<?=$pId ?>_<?=$cId ?>"><?=$cValue ?></b>
+                                    <a class="next" onclick="cmf.basket.updateCount(cmf.getId('product[<?=$k ?>][<?=$pId ?>][<?=$cId ?>]'), 1);"></a>
+                                </span>
+                                <span class="nr3" id="price<?=$k ?>_<?=$pId ?>_<?=$cId ?>"><?=$v['view'][$pId][$cId] ?><b></b></span>
+                                <span class="nr4"><a onclick="cmf.basket.del(<?=$k ?>, <?=$pId ?>, <?=$cId ?>, <?=($is and $isReload>1) ? 'true' : 'false' ?>);"></a></span>
+                            </div>
+<?  $is = false;
+    } }
+} ?>
+                        </div>
+                          <div class="r-block item-right">
+                            <div id="basketPrice">
+                                <b>Всего товаров на сумму</b>
+                                <b class="price"><i><?=$priceAll ?></i></b>
+                                <? if($discount) { ?>
+                                    <b>Цена со скидкой</b>
+                                    <b class="price"><i><?=$priceDiscount ?></i></b>
+                                <? } ?>
+                                <? if(isset($priceDelivery)) { ?>
+                                    <b>Цена с доставкой</b>
+                                    <b class="price"><i><?=$priceDelivery ?></i></b>
+                                <? } ?>
+                                <? if($discount) { ?>
+                                    <b>Скидка</b>
+                                    <b class="price"><i><?=$discount ?></i></b>
+                                <? } ?>
+                            </div>
+                            <a onclick="cmf.basket.setOrder();" class="add-order"></a>
+                            <? if(isset($referer)) { ?>
+                                <a href="<?=$referer ?>" class="go-shop">или вернуться к шоппингу</a>
+                            <? } ?>
+                        </div>
+                    </form>
+                </div>
