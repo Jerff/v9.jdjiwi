@@ -1,0 +1,82 @@
+/*
+ * imgAreaSelect default style
+ */
+
+.imgareaselect-border1 {
+	background: url(border-v.gif) repeat-y left top;
+}
+
+.imgareaselect-border2 {
+    background: url(border-h.gif) repeat-x left top;
+}
+
+.imgareaselect-border3 {
+    background: url(border-v.gif) repeat-y right top;
+}
+
+.imgareaselect-border4 {
+    background: url(border-h.gif) repeat-x left bottom;
+}
+
+.imgareaselect-border1, .imgareaselect-border2,
+.imgareaselect-border3, .imgareaselect-border4 {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.imgareaselect-handle {
+    background-color: #fff;
+    border: solid 1px #000;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.imgareaselect-outer {
+    background-color: #000;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.imgareaselect-selection {
+}
+
+
+.gallery {
+}
+
+.gallery p {
+	padding: 0.3em 0.6em;
+	margin: 0.3em auto;
+}
+
+.gallery p.instructions {
+	font-style: italic;
+	xfont-size: 90%;
+
+	line-height: 130%;
+}
+
+ul.features {
+	color: #333;
+	line-height: 135%;
+}
+
+.gallery table td {
+	xwidth: 6.5em;
+}
+
+.gallery table td {
+	padding-left: 1em;
+}
+
+.gallery table td input {
+	width: 4em;
+	text-align: right;
+	padding: 0.3em auto;
+}
+
+.gallery div.frame {
+	background: #fff;
+	padding: 0.8em;
+	border: solid 1px #000;
+}

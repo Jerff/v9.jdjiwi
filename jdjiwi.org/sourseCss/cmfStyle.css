@@ -1,0 +1,65 @@
+.cmfHide {
+    display:none;
+}
+
+#idDebugLog {
+    align:left;
+}
+#idAjaxLog {
+}
+#idAjaxLog #idDebugLog {
+    padding-bottom: 15px;
+}
+.adminAjaxLog #idDebugLog {
+    padding-bottom: 0 !important;
+}
+.empty {
+    height: 0px;
+    clear: both;
+    font-size: 0px;
+}
+
+.empty20px {
+    height: 40px;
+    clear: both;
+    font-size: 0px;
+}
+
+div#Gmap {
+    width: 99%;
+    height:300px;
+    margin:0px 0px 0px 0px;
+    border:4px solid #F5F5F5;
+}
+
+
+.width10 { width: 10%; }
+.width20 { width: 20%; }
+.width25px { width: 25px; }
+.width25 { width: 25%; }
+.width30 { width: 30%; }
+.width50 { width: 50%; }
+.width75 { width: 75%; }
+.width85 { width: 85%; }
+.width99 { width: 99%; }
+
+
+.galleryList{
+    width:100%;
+    overflow:hidden;
+}
+.galleryList ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+    position:relative;
+}
+.galleryList ul li{
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:1;
+    opacity: 0;
+}
+.galleryList ul li.active{z-index:2;opacity: 1;}
+.galleryList ul li.none {opacity: 0;}

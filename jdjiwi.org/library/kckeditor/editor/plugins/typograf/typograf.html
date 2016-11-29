@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+ * FCKeditor - The text editor for Internet - http://www.fckeditor.net
+ * Copyright (C) 2003-2008 Frederico Caldeira Knabben
+ *
+ * == BEGIN LICENSE ==
+ *
+ * Licensed under the terms of any of the following licenses at your
+ * choice:
+ *
+ *  - GNU General Public License Version 2 or later (the "GPL")
+ *    http://www.gnu.org/licenses/gpl.html
+ *
+ *  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+ *    http://www.gnu.org/licenses/lgpl.html
+ *
+ *  - Mozilla Public License Version 1.1 or later (the "MPL")
+ *    http://www.mozilla.org/MPL/MPL-1.1.html
+ *
+ * == END LICENSE ==
+ *
+ * This is the sample "Find" plugin window.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="robots" content="noindex, nofollow" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/fck_typo.js"></script>
+		<script type="text/javascript">
+		</script>
+<!--	    <link href="typo.css" rel="stylesheet" type="text/css">-->
+    </head>
+	<body onLoad="OnLoad()" scroll="no" style="OVERFLOW: hidden">
+<table  width="100%" border="0">
+  <tr id="zgOut" align="center">
+    <th colspan="2" width="100%" scope="col" align="center"><span  fckLang="DlgMyAfterTypograf">After Typograf</span></th>
+  </tr>
+  <tr id="zgIn" align="center">
+    <th colspan="2" width="100%" scope="col" align="center">
+      <span fckLang="DlgMyByTypograf">By Typograf</span>
+    </th>
+  <tr>
+  <td colspan="2" align="center">
+    <form name="form2" method="post" action="">
+      <input id="btnEdit" onclick="edit_text();" type="button" value="Edit" fckLang="DlgMyEdit"/>
+      <input id="btnView" onclick="view_text();" type="button" value="View" fckLang="DlgMyView"/>
+      <input id="btnTypo" onclick="typo_text();" type="button" value="Typo" fckLang="DlgMyTypograf"/>
+    </form>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+	    <form name="form1" method="post" action="">
+	        <label style="display: none;">
+	        <input name="radio" type="radio" id="typo_var" value="1">
+	        off-line</label>
+	        <label>
+	        <input type="radio" name="radio" id="typo_var" value="2" checked="checked">
+	        www.typograf.ru</label>
+	        <label>
+	        <input type="radio" name="radio" id="typo_var" value="3">
+	        ArtLebedevStudio</label>
+	    </form>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><div id="txtViewTypo"></div><textarea rows="30" id="txtEditTypo" style="WIDTH: 100%" tabindex="1" onKeyUp="btnStat(this.form)"></textarea></td>
+  </tr>
+  <tr>
+    <td colspan="2"><div id="txtOutTypo">&nbsp;</div></td>
+  </tr>
+  <tr>
+    <td colspan="2" width="100%" scope="col">&nbsp;</td>
+  </tr>
+</table>
+
+	</body>
+</html>

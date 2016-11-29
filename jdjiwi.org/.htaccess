@@ -1,0 +1,25 @@
+AddDefaultCharset utf-8
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^core.jdjiwi.ru$ [NC]
+RewriteRule ^(.*)$ http://www.core.jdjiwi.ru/$1 [R=301,L]
+
+RedirectMatch ^/admin$ /admin/
+
+
+RewriteCond %{REQUEST_URI} ^/\.cron
+RewriteRule ^.*$ .cron.php [L]
+
+RewriteCond %{REQUEST_URI} ^/admin
+RewriteRule ^.*$ admin.php [L]
+
+RewriteCond %{REQUEST_URI} ^/callAjax
+RewriteRule ^.*$ callAjax.php [L]
+
+RewriteCond %{REQUEST_URI} !\.(eot|svg|ttf|woff|7z|aiff|asf|avi|bmp|csv|doc|fla|flv|gif|gz|gzip|jpeg|jpg|mid|mov|mp3|mp4|mpc|mpeg|mpg|ods|odt|pdf|png|ppt|pxd|qt|ram|rar|rm|rmi|rmvb|rtf|sdc|sitd|swf|sxc|sxw|tar|tgz|tif|tiff|txt|vsd|wav|wma|wmv|xls|xml|zip|js|css|ico)
+php_value register_globals Off
+php_value magic_quotes_gpc Off
+php_value magic_quotes_runtime Off
+#  php_value display_errors 0
+
+RewriteRule ^.*$ index.php [L]

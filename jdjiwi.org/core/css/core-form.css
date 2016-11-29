@@ -1,0 +1,33 @@
+/* формы */
+.formError {
+    display: none;
+    padding-bottom: 20px;
+}
+.formElementError {
+    display: none;
+    color: #FF0000;
+    margin:0px;
+    padding:0px;
+}
+.formInputDefault {
+}
+.formInputText {
+}
+.formElement {
+}
+.formRadio {
+}
+.formRadioAll {
+}
+
+
+/* ajax формы */
+.formAjaxError {
+    display: none;
+    color: #CCCCCC;
+    font-size: 12px;
+    line-height: 20px;
+}
+.formAjaxSave {
+    display: none;
+}
